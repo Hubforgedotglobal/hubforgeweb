@@ -2088,3 +2088,392 @@ ul {
         font-size: 1.75rem;
     }
 }
+/* ===========================================
+   PROGRAM PAGES - SPACEX-INSPIRED MODULAR DESIGN
+   =========================================== */
+
+/* --- HERO SECTIONS --- */
+.page-hero {
+    background: #000000;
+    color: #ffffff;
+    padding: 180px 0 120px;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -2px;
+}
+
+.hero-subtitle {
+    font-size: 1.75rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+}
+
+/* --- SECTION LAYOUTS --- */
+.section-dark {
+    background: #000000;
+    color: #ffffff;
+    padding: 120px 0;
+}
+
+.section-light {
+    background: #ffffff;
+    color: #000000;
+    padding: 120px 0;
+}
+
+.section-cta-dark {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    color: #ffffff;
+    padding: 140px 0;
+}
+
+/* --- CONTAINER VARIATIONS --- */
+.container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* --- TYPOGRAPHY --- */
+.section-heading {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 3rem;
+    letter-spacing: -1px;
+}
+
+.section-heading-center {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 4rem;
+    text-align: center;
+    letter-spacing: -1px;
+}
+
+.large-text {
+    font-size: 1.375rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+/* --- GRID SYSTEMS --- */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+/* --- CARD COMPONENTS --- */
+.card-modern {
+    background: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.section-light .card-modern {
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+}
+
+.card-modern:hover {
+    border-color: #A8E86D;
+    transform: translateY(-4px);
+}
+
+.section-light .card-modern:hover {
+    border-color: #E94BC4;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: inherit;
+}
+
+.card-text {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: inherit;
+    opacity: 0.9;
+}
+
+/* --- FEATURE BLOCKS --- */
+.feature-block {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feature-block:last-child {
+    border-bottom: none;
+}
+
+.feature-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.feature-text {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    opacity: 0.85;
+}
+
+/* --- PROCESS/TIMELINE COMPONENTS --- */
+.process-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.process-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.process-number {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #A8E86D;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.process-content {
+    padding-top: 0.5rem;
+}
+
+.process-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.process-text {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    opacity: 0.85;
+}
+
+/* --- CTA COMPONENTS --- */
+.text-center {
+    text-align: center;
+}
+
+.cta-heading {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.cta-text {
+    font-size: 1.375rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* --- BUTTON STYLES --- */
+.btn-primary-large {
+    display: inline-block;
+    background: #ffffff;
+    color: #000000;
+    padding: 18px 40px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid #ffffff;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-primary-large:hover {
+    background: #A8E86D;
+    border-color: #A8E86D;
+    color: #000000;
+}
+
+.btn-secondary-large {
+    display: inline-block;
+    background: transparent;
+    color: #ffffff;
+    padding: 18px 40px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-secondary-large:hover {
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media screen and (max-width: 1024px) {
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .page-hero {
+        padding: 140px 0 80px;
+        min-height: 50vh;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .section-dark,
+    .section-light {
+        padding: 80px 0;
+    }
+    
+    .section-cta-dark {
+        padding: 100px 0;
+    }
+    
+    .container-narrow {
+        padding: 0 24px;
+    }
+    
+    .section-heading,
+    .section-heading-center {
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .large-text {
+        font-size: 1.125rem;
+    }
+    
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .card-modern {
+        padding: 2rem;
+    }
+    
+    .process-item {
+        grid-template-columns: 60px 1fr;
+        gap: 2rem;
+    }
+    
+    .process-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .process-title,
+    .feature-title {
+        font-size: 1.5rem;
+    }
+    
+    .cta-heading {
+        font-size: 2.5rem;
+    }
+    
+    .cta-text {
+        font-size: 1.125rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn-primary-large,
+    .btn-secondary-large {
+        width: 100%;
+        padding: 16px 32px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-title {
+        font-size: 2.25rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .section-heading,
+    .section-heading-center {
+        font-size: 2rem;
+    }
+    
+    .container-narrow {
+        padding: 0 20px;
+    }
+    
+    .card-modern {
+        padding: 1.5rem;
+    }
+    
+    .process-item {
+        grid-template-columns: 50px 1fr;
+        gap: 1.5rem;
+    }
+    
+    .process-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+}
