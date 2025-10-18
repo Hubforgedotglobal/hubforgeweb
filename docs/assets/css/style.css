@@ -974,3 +974,175 @@ ul {
     grid-template-columns: 1fr;
   }
 }
+
+/* Comprehensive Mobile Optimizations */
+@media (max-width: 768px) {
+  /* Reduce spacing on mobile */
+  :root {
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2.5rem;
+    --spacing-xl: 3rem;
+  }
+  
+  /* Container padding */
+  .container {
+    padding: 0 1rem;
+  }
+  
+  /* Navigation */
+  .nav-brand {
+    font-size: 0.9rem;
+    max-width: 150px;
+  }
+  
+  .nav-logo img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Hero section */
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  .hero-tagline {
+    font-size: 1.25rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+  }
+  
+  /* Section titles */
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .section-description {
+    font-size: 1rem;
+  }
+  
+  /* Mission grid */
+  .mission-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Values grid */
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Program cards */
+  .program-card {
+    padding: 1.5rem;
+  }
+  
+  .program-number {
+    font-size: 2rem;
+  }
+  
+  .program-title {
+    font-size: 1.5rem;
+  }
+  
+  /* Why section */
+  .why-title {
+    font-size: 2rem;
+  }
+  
+  .why-lead {
+    font-size: 1.1rem;
+  }
+  
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .why-point {
+    padding: 1.5rem;
+  }
+  
+  /* Service cards */
+  .service-card {
+    padding: 1.5rem;
+  }
+  
+  .service-title {
+    font-size: 1.25rem;
+  }
+  
+  /* CTA section */
+  .cta-title {
+    font-size: 1.5rem;
+  }
+  
+  .cta-description {
+    font-size: 1rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* Footer */
+  .footer-about-section p {
+    font-size: 0.85rem;
+  }
+  
+  /* Touch-friendly buttons */
+  .btn {
+    padding: 1rem 1.5rem;
+    min-height: 48px;
+  }
+  
+  .btn-large {
+    padding: 1.125rem 2rem;
+  }
+}
+
+/* Extra small devices (phones in portrait) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1.1rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .nav-brand {
+    font-size: 0.75rem;
+  }
+  
+  .program-number {
+    font-size: 1.5rem;
+  }
+  
+  .why-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Landscape orientation fixes */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .section {
+    padding: var(--spacing-md) 0;
+  }
+}
