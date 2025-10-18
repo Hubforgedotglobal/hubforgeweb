@@ -365,14 +365,16 @@ ul {
 /* Fix button visibility on dark backgrounds */
 .section-dark .btn-secondary {
   color: white;
-  border: none;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0.875rem 1.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.9rem;
 }
 
 .section-dark .btn-secondary:hover {
   background: white;
   color: var(--color-dark);
+  border-color: white;
   transform: translateX(5px);
 }
 
