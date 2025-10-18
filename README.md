@@ -105,16 +105,21 @@ The site uses HubForge's vibrant brand palette:
 
 ## ✨ Sections
 
-1. **Hero**: Vision statement and call-to-action
+### Homepage:
+1. **Hero**: Vision statement with Section 8 Non-Profit badge
 2. **Vision**: Our aspirations for a just and thriving world
 3. **Mission**: How we nurture globally connected ecosystems
-4. **Why HubForge**: Our purpose and commitment
-5. **Values**: Five core principles that guide our work
-6. **Programs**: 
-   - HubForge Impact Lab
-   - EvalAtlas
-   - Glocal Impact Awards (GIA-M&E)
-7. **Contact**: Get involved and connect with us
+4. **Services**: M&E Consulting, Evaluations, Trainings & Workshops
+5. **Why HubForge**: Our purpose and commitment
+6. **Values**: Five core principles that guide our work
+7. **Programs**: Three flagship programs with detailed pages
+8. **Contact**: Get involved and connect with us
+
+### Program Pages:
+Each program has its own dedicated page with detailed information:
+- **Impact Lab** (impact-lab.html): Volunteer-driven MERL support
+- **EvalAtlas** (evalatlas.html): Global evaluation directory
+- **GIA-M&E Awards** (gia-mande.html): Recognition for grassroots champions
 
 ## 🛠️ Customization
 
