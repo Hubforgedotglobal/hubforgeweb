@@ -1812,3 +1812,279 @@ ul {
     font-size: 1.75rem;
   }
 }
+
+/* ===========================================
+   Program Pages - Minimal Design
+   =========================================== */
+
+/* Simple Hero */
+.simple-hero {
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: 120px 0 80px;
+    text-align: center;
+}
+
+.hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #A8E86D;
+    margin-bottom: 1rem;
+}
+
+.hero-heading {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.hero-lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 80px 0;
+}
+
+.content-section.bg-light {
+    background: #f8f8f8;
+}
+
+.content-section.bg-dark {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+.content-section.cta-section {
+    background: linear-gradient(135deg, #E94BC4 0%, #7B68EE 100%);
+    color: #ffffff;
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.content-section h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.content-section p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: inherit;
+}
+
+.content-section.bg-light p {
+    color: #333;
+}
+
+/* Container Variations */
+.container-narrow {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Text Utilities */
+.text-center {
+    text-align: center;
+}
+
+.lead-text {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+/* Simple Grid */
+.simple-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Simple Card */
+.simple-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.simple-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.simple-card h3 {
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.simple-card p {
+    color: #555;
+    margin-bottom: 0;
+}
+
+/* List Group */
+.list-group {
+    margin-top: 2rem;
+}
+
+.list-item {
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.bg-dark .list-item {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.list-item:last-child {
+    border-bottom: none;
+}
+
+.list-item h3 {
+    margin-bottom: 0.75rem;
+}
+
+/* Steps List */
+.steps-list {
+    margin-top: 3rem;
+}
+
+.step-item {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-item:last-child {
+    border-bottom: none;
+}
+
+.step-num {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #E94BC4 0%, #7B68EE 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.step-content h3 {
+    margin-bottom: 0.75rem;
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+/* Button Outline Variant */
+.btn-outline {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.btn-outline:hover {
+    background: #ffffff;
+    color: #E94BC4;
+}
+
+/* Mobile Optimizations */
+@media screen and (max-width: 768px) {
+    .simple-hero {
+        padding: 100px 0 60px;
+    }
+    
+    .hero-heading {
+        font-size: 2.5rem;
+    }
+    
+    .hero-lead {
+        font-size: 1.125rem;
+    }
+    
+    .content-section {
+        padding: 60px 0;
+    }
+    
+    .content-section h2 {
+        font-size: 2rem;
+    }
+    
+    .content-section h3 {
+        font-size: 1.25rem;
+    }
+    
+    .content-section p {
+        font-size: 1rem;
+    }
+    
+    .simple-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .simple-card {
+        padding: 1.5rem;
+    }
+    
+    .step-item {
+        gap: 1rem;
+    }
+    
+    .step-num {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .button-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .button-group .btn {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-heading {
+        font-size: 2rem;
+    }
+    
+    .content-section h2 {
+        font-size: 1.75rem;
+    }
+}
