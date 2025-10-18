@@ -367,15 +367,15 @@ ul {
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.3);
   background: transparent;
-  padding: 0.65rem 1.25rem;
-  font-size: 0.9rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.875rem;
+  margin-top: var(--spacing-sm);
 }
 
 .section-dark .btn-secondary:hover {
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   color: var(--color-dark);
-  border-color: white;
-  transform: translateX(5px);
+  border-color: rgba(255, 255, 255, 0.95);
 }
 
 .btn-large {
@@ -573,6 +573,11 @@ ul {
 .program-card:hover {
   background: rgba(255, 255, 255, 0.08);
   transform: translateX(10px);
+}
+
+.program-btn {
+  margin-top: var(--spacing-md);
+  display: inline-block;
 }
 
 .program-header {
