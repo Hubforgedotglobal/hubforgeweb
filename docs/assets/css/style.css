@@ -664,9 +664,9 @@ ul {
 
 /* Footer */
 .footer {
-  background: var(--color-darker);
+  background: #000000;
   color: var(--color-light);
-  padding: var(--spacing-lg) 0 var(--spacing-md);
+  padding: var(--spacing-xl) 0 0;
 }
 
 .footer-content {
@@ -716,7 +716,9 @@ ul {
 
 .footer-bottom {
   text-align: center;
-  padding-top: var(--spacing-md);
+  padding: var(--spacing-md) 0;
+  margin-top: var(--spacing-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-bottom p {
@@ -1398,41 +1400,15 @@ ul {
   line-height: 1.8;
 }
 
-/* About Footer Section */
-.section-about-footer {
-  background: #000000;
-  color: white;
-  padding: var(--spacing-lg) 0;
-  text-align: center;
-}
-
-.about-footer-content {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.about-footer-content > p {
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 0;
-}
-
-.legal-separator {
-  width: 60px;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.3);
-  margin: var(--spacing-md) auto;
-}
-
-.legal-text {
+/* Footer Legal moved into footer */
+.footer-legal .legal-text {
   font-size: 0.8rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: var(--spacing-sm);
 }
 
-.legal-small {
+.footer-legal .legal-small {
   font-size: 0.7rem;
   line-height: 1.4;
   color: rgba(255, 255, 255, 0.6);
@@ -1641,4 +1617,13 @@ ul {
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.7);
   margin: 0;
+}
+
+/* Footer Legal Section */
+.footer-legal {
+  max-width: 900px;
+  margin: var(--spacing-xl) auto var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
 }
