@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Homepage -->
+    <url>
+        <loc>https://www.hubforgeglobal.com/</loc>
+        <lastmod>2025-10-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://www.hubforgeglobal.com/assets/images/banner.png</image:loc>
+            <image:title>HubForge Global Impact Network</image:title>
+        </image:image>
+    </url>
+    
+    <!-- HubForge Impact Lab -->
+    <url>
+        <loc>https://www.hubforgeglobal.com/impact-lab.html</loc>
+        <lastmod>2025-10-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- EvalAtlas -->
+    <url>
+        <loc>https://www.hubforgeglobal.com/evalatlas.html</loc>
+        <lastmod>2025-10-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Glocal Impact Awards 2026 -->
+    <url>
+        <loc>https://www.hubforgeglobal.com/gia-mande.html</loc>
+        <lastmod>2025-10-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+</urlset>

@@ -1,0 +1,11 @@
+# HubForge Global Impact Network - Robots Configuration
+# Allow all search engines to crawl the entire site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.hubforgeglobal.com/sitemap.xml
+
+# Crawl-delay (optional, helps prevent overload)
+Crawl-delay: 1

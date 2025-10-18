@@ -1,0 +1,105 @@
+I’ve successfully pushed my HubForge website from Replit to GitHub, and it’s live via GitHub Pages at https://www.hubforgeglobal.com
+.
+
+I now want you to set up and optimize everything needed for SEO and secure HTTPS visibility. The goal is for the website to be discoverable, indexed, secure, and trusted.
+
+🔧 What to do:
+1. SEO Essentials
+
+Add or improve meta tags (title, description, canonical, OG/Twitter).
+
+Add structured data (JSON-LD) describing HubForge as an NGO / Global Initiative.
+
+Create and include:
+
+robots.txt (allow all, reference sitemap).
+
+sitemap.xml (list all key pages).
+
+Add <meta name="robots" content="index, follow"> to all pages.
+
+Add <link rel="canonical" href="https://www.hubforgeglobal.com/"> to all pages.
+
+Ensure <meta name="viewport" content="width=device-width, initial-scale=1"> is present.
+
+Check all internal links use HTTPS, not HTTP.
+
+2. Social & Share Optimization
+
+Add OpenGraph and Twitter meta tags for all key pages:
+
+<meta property="og:title" content="HubForge — Forging Social Insights for a Better World">
+<meta property="og:description" content="Global Impact Network promoting accessible, inclusive evaluations and evidence-driven change.">
+<meta property="og:image" content="https://www.hubforgeglobal.com/assets/images/social-preview.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hubforgeglobal.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HubForge — Global Impact Network">
+<meta name="twitter:description" content="Connecting people, evidence, and impact.">
+<meta name="twitter:image" content="https://www.hubforgeglobal.com/assets/images/social-preview.png">
+
+3. SSL / HTTPS
+
+Verify that HTTPS is enforced in the GitHub Pages config.
+
+If not, add the CNAME file correctly with www.hubforgeglobal.com.
+
+Ensure all internal assets (css, js, img) load with https:// absolute paths or relative paths.
+
+Confirm there are no mixed-content warnings.
+
+Add a badge or small footer text: “🔒 Secured by GitHub Pages (SSL Certified)”.
+
+4. Performance / Lighthouse
+
+Add a build command (optional) to minify HTML/CSS/JS.
+
+Run a Lighthouse mobile test (if possible) and summarize:
+
+Performance
+
+Accessibility
+
+SEO
+
+Best Practices
+
+Suggest the top 3 improvements (with code).
+
+5. Deliverables
+
+Updated HTML/CSS files with SEO + HTTPS fixes.
+
+New robots.txt, sitemap.xml, and JSON-LD schema added.
+
+Short section in README.md titled “SEO & SSL Verification” explaining how to:
+
+Add the site to Google Search Console and Bing Webmaster Tools.
+
+Verify domain via DNS TXT (for hubforgeglobal.com).
+
+Reindex the sitemap.
+
+Example meta block to be reused on all pages.
+
+🧭 Notes:
+
+The brand tone should stay professional and globally inclusive.
+
+No external trackers or analytics unless specified (keep it privacy-friendly).
+
+Prefer lightweight SEO best practices (no heavy JS frameworks).
+
+After updating, make sure all changes pass mobile Lighthouse tests (SEO > 90).
+
+Output expected:
+
+Updated repo ready to push to GitHub.
+
+SEO-optimized HTML.
+
+robots.txt and sitemap.xml added.
+
+README instructions for Google/Bing verification and SSL confirmation.
+
+Optional screenshot or summary of mobile Lighthouse results.
