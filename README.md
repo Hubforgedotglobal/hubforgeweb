@@ -1,18 +1,17 @@
 # HubForge Global Impact Network
 
-**Your Trusted M&E Partner for Evidence-Driven Impact**
+**Where social insights shape a better tomorrow**
 
-A modern, eye-catching website for HubForge Global Impact Network - your partner in strengthening how the world builds and shares evidence for transformative change.
+A modern, responsive static website for HubForge Global Impact Network - reimagining how the world builds and shares evidence for change.
 
 ## 🌟 Features
 
-- **Futuristic Design**: Eye-catching gradients, glowing hover effects, and smooth animations
-- **M&E Partner Positioning**: Clear brand identity as a trusted M&E consulting partner
-- **Vibrant Gradients**: Dynamic color transitions using HubForge's brand palette
+- **Modern Design**: Clean aesthetic with gradients, smooth animations, and hover effects
+- **Vibrant Brand Colors**: Dynamic color palette with coral, pink, lime, yellow, and purple
 - **Fully Responsive**: Mobile-first design that works beautifully on all devices
 - **Accessibility-First**: WCAG 2.1 AA compliant with semantic HTML and ARIA labels
 - **Performance Optimized**: Fast loading times with minimal dependencies
-- **SEO Ready**: Comprehensive meta tags optimized for M&E sector
+- **SEO Ready**: Comprehensive meta tags for search engines and social media
 - **GitHub Pages Ready**: Zero-configuration deployment
 
 ## 🚀 Quick Start
@@ -108,15 +107,15 @@ The site uses HubForge's vibrant brand palette:
 ## ✨ Sections
 
 ### Homepage:
-1. **Hero**: "Your Trusted M&E Partner" with compelling vision statement
+1. **Hero**: Vision statement - "Reimagining how the world builds and shares evidence for change"
 2. **Vision**: Our aspirations for a just and thriving world
 3. **Mission**: How we nurture globally connected ecosystems
 4. **Why HubForge**: Our purpose and commitment
 5. **Values**: Five core principles that guide our work
 6. **Programs**: Three flagship programs with detailed pages
 7. **Services**: M&E Consulting, Evaluations, and Capacity Building
-8. **About HubForge**: Complete organizational information with registration details
-9. **Contact**: Get involved and connect with us
+8. **Contact**: Get involved and connect with us
+9. **About**: Organizational information with registration details
 
 ### Program Pages:
 Each program has its own dedicated page with detailed information:
