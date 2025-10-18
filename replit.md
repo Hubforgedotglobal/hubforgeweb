@@ -188,6 +188,19 @@ hubforge-website/
 
 ## Recent Changes
 
+### October 18, 2025 - Glocal Impact Awards 2026 Update
+- **Rebranded to "Glocal Impact Awards 2026"** with bold, inclusive messaging
+- **Main page teaser** updated to emphasize that evidence belongs to everyone—not just traditional M&E professionals
+- **Program page completely restructured**:
+  - New hero subtitle: "Reimagining recognition in the world of evidence"
+  - "Evidence belongs to everyone" opening section
+  - "Who We Celebrate" section with 4 categories: Community Changemakers, Field Innovators, Institutional Pioneers, Collaborative Champions
+  - "Why This Matters" section highlighting inclusive values
+  - "Co-Create the 2026 Edition With Us" partnership invitation section
+  - CTA updated to "Partner With Us" for collaboration
+- Tone: Bold, inclusive, visionary—celebrating anyone building, innovating, or using evidence for good
+- Feature tags updated: "Inclusive Recognition", "Global + Local", "Co-Created"
+
 ### October 18, 2025 - EvalAtlas Content Refinement & Updates
 - **Homepage EvalAtlas section** condensed to 2 concise paragraphs with clear CTA: "Join us in building an evaluation ecosystem that connects people, ideas, and action"
 - **Programs page** restructured with professional storytelling approach:

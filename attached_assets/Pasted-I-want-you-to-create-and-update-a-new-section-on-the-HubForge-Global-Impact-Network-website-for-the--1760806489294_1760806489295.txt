@@ -1,0 +1,61 @@
+I want you to create and update a new section on the HubForge Global Impact Network website for the Glocal Impact Awards 2026.
+This initiative reflects our belief that anyone can be a champion of evidence for good — not just traditional M&E professionals.
+
+Core idea (raw content):
+The Glocal Impact Awards 2026 aim to recognise and celebrate people and institutions around the world who are building, innovating, or using evidence for good — irrespective of their designation, affiliation, or background.
+
+It’s not limited to people with fancy degrees, titles, or traditional M&E roles.
+It’s about honouring anyone or any community using data, evidence, and learning to create better programs, stronger voices, and smarter policies.
+
+The awards celebrate inclusivity, innovation, and the spirit of “global + local” action — spotlighting changemakers who prove that evidence belongs to everyone.
+
+We’re also inviting partners and collaborators to join us in co-creating and shaping the 2026 edition.
+
+What to do:
+
+Create a dedicated section (or page) titled “Glocal Impact Awards 2026”.
+
+You can place a short highlight/teaser on the main page, and a full section or separate page under Programs or Initiatives.
+
+Tone and design:
+
+Tone: bold, inclusive, inspiring, globally relevant yet locally rooted.
+
+Use HubForge’s design language (clean, minimal, accessible).
+
+Include diverse imagery or subtle global visuals to represent inclusivity.
+
+Structure suggestion for the page:
+
+Hero headline: inspiring statement about reimagining recognition in evidence.
+
+Short paragraph: explain what Glocal Impact Awards are and why they exist.
+
+Subsection: who it celebrates (e.g., “For individuals, institutions, communities innovating with evidence for change”).
+
+Call to Action (CTA):
+
+“We’re inviting partners, institutions, and changemakers to collaborate in shaping the 2026 edition. Join us in redefining what recognition means in the world of evidence.”
+
+Add a CTA button or link: “Partner with Us” or “Get Involved”.
+
+Accessibility & layout:
+
+Ensure strong contrast, readable typography, and mobile-friendly layout.
+
+Add meaningful alt text for any images or icons.
+
+Optional visual idea: subtle world map or connected dots motif to represent global–local connections.
+
+Output expected:
+
+New “Glocal Impact Awards 2026” section (main highlight + full page)
+
+Finalized text, layout, and CTA button
+
+Proofread and polished for clarity, inclusivity, and brand alignment with HubForge
+
+HubForge brand tone:
+Visionary yet grounded.
+Global, collaborative, and people-first.
+Centered on accessibility, inclusion, and the democratization of evaluation and evidence.
