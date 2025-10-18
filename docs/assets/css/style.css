@@ -362,6 +362,18 @@ ul {
   color: white;
 }
 
+/* Fix button visibility on dark backgrounds */
+.section-dark .btn-secondary {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.section-dark .btn-secondary:hover {
+  background: white;
+  color: var(--color-dark);
+  border-color: white;
+}
+
 .btn-large {
   padding: 1.25rem 2.5rem;
   font-size: 1.125rem;
@@ -1616,4 +1628,17 @@ ul {
     width: 80px;
     height: 80px;
   }
+}
+
+/* Footer About Column */
+.footer-about {
+  flex: 1.5;
+  max-width: 300px;
+}
+
+.footer-about-text {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
 }
