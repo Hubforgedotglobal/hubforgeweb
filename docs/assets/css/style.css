@@ -2491,3 +2491,328 @@ ul {
         font-size: 1.25rem;
     }
 }
+
+/* ========================================
+   COMPREHENSIVE MOBILE-FIRST IMPROVEMENTS
+   Enhanced breakpoints for phones: 360px, 375px, 412px, 425px
+   ======================================== */
+
+/* Extra Small Phones (360px and below) */
+@media screen and (max-width: 360px) {
+    /* Container adjustments */
+    .container {
+        padding: 0 16px;
+    }
+    
+    .container-narrow {
+        padding: 0 16px;
+    }
+    
+    /* Navigation */
+    .nav-brand {
+        font-size: 0.9rem;
+    }
+    
+    .nav-logo img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    /* Hero */
+    .hero-title {
+        font-size: 1.75rem;
+        line-height: 1.3;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+    }
+    
+    /* Page Hero */
+    .page-hero {
+        padding: 120px 0 60px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    /* Sections */
+    .section-dark,
+    .section-light {
+        padding: 60px 0;
+    }
+    
+    .section-heading,
+    .section-heading-center {
+        font-size: 1.75rem;
+    }
+    
+    .large-text {
+        font-size: 1rem;
+    }
+    
+    /* Cards */
+    .card-modern {
+        padding: 1.25rem;
+    }
+    
+    .card-title {
+        font-size: 1.25rem;
+    }
+    
+    .card-text {
+        font-size: 1rem;
+    }
+    
+    /* Buttons */
+    .btn-primary-large,
+    .btn-secondary-large {
+        padding: 14px 24px;
+        font-size: 1rem;
+    }
+    
+    /* CTA */
+    .cta-heading {
+        font-size: 1.75rem;
+    }
+    
+    .cta-text {
+        font-size: 1rem;
+    }
+    
+    /* Process items */
+    .process-item {
+        grid-template-columns: 45px 1fr;
+        gap: 1rem;
+    }
+    
+    .process-number {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+    
+    .process-title {
+        font-size: 1.25rem;
+    }
+    
+    .process-text {
+        font-size: 0.95rem;
+    }
+}
+
+/* Small Phones - 375px to 425px */
+@media screen and (min-width: 361px) and (max-width: 425px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .page-hero .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-heading,
+    .section-heading-center {
+        font-size: 2rem;
+    }
+    
+    .cta-heading {
+        font-size: 2rem;
+    }
+}
+
+/* Tablets and larger phones (426px to 768px) - refine existing styles */
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .page-hero .hero-title {
+        font-size: 3.5rem;
+    }
+}
+
+/* Navigation improvements for ALL mobile sizes */
+@media screen and (max-width: 768px) {
+    /* Ensure mobile menu is properly accessible */
+    .nav-toggle {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-menu.active {
+        max-height: 400px;
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .nav-menu li {
+        margin: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: 16px var(--spacing-md);
+        font-size: 1.125rem;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .nav-link:hover {
+        background: rgba(168, 232, 109, 0.1);
+    }
+}
+
+/* Prevent horizontal scroll on all mobile devices */
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+        position: relative;
+    }
+    
+    * {
+        max-width: 100%;
+    }
+    
+    /* Fix any potentially overflowing elements */
+    .hero-title,
+    .page-hero .hero-title,
+    .section-heading,
+    .section-heading-center,
+    .cta-heading {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    /* Ensure containers don't overflow */
+    .container,
+    .container-narrow {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Touch target improvements - ensure minimum 44px for all interactive elements */
+@media screen and (max-width: 768px) {
+    a.btn,
+    button.btn,
+    .btn-primary,
+    .btn-secondary,
+    .btn-primary-large,
+    .btn-secondary-large {
+        min-height: 48px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+    
+    /* Ensure all links have adequate touch targets */
+    .nav-link,
+    .footer a,
+    .program-btn {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Improve readability and spacing on very small screens */
+@media screen and (max-width: 360px) {
+    /* Reduce spacing to prevent excessive scrolling */
+    .section-dark,
+    .section-light,
+    .section-cta-dark {
+        padding: 50px 0;
+    }
+    
+    /* Programs grid */
+    .programs-grid {
+        gap: 1.5rem;
+    }
+    
+    .program-card {
+        padding: 1.5rem;
+    }
+    
+    /* Services grid */
+    .services-grid {
+        gap: 1.5rem;
+    }
+    
+    .service-card {
+        padding: 1.5rem;
+    }
+    
+    /* Values grid */
+    .values-grid {
+        gap: 1.5rem;
+    }
+    
+    .value-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Landscape mode adjustments for small phones */
+@media screen and (max-height: 500px) and (orientation: landscape) and (max-width: 768px) {
+    .hero,
+    .page-hero {
+        min-height: auto;
+        padding: 80px 0 40px;
+    }
+    
+    .section-dark,
+    .section-light {
+        padding: 40px 0;
+    }
+    
+    .hero-title,
+    .page-hero .hero-title {
+        font-size: 1.75rem;
+    }
+}
+
+/* Accessibility improvements for focus states on mobile */
+@media screen and (max-width: 768px) {
+    a:focus,
+    button:focus,
+    .nav-link:focus,
+    .btn:focus {
+        outline: 3px solid var(--color-lime);
+        outline-offset: 2px;
+    }
+    
+    /* Ensure focus is visible on dark backgrounds */
+    .section-dark a:focus,
+    .section-dark button:focus,
+    .section-cta-dark a:focus,
+    .section-cta-dark button:focus {
+        outline-color: var(--color-yellow);
+    }
+}

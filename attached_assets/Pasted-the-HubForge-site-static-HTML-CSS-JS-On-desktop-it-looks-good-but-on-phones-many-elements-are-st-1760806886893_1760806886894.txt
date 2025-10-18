@@ -1,0 +1,73 @@
+the HubForge site (static HTML/CSS/JS). On desktop it looks good, but on phones many elements are stuck, overlapping, or not adapting correctly. Please audit and fix the entire website so it is mobile-first and all visuals adapt cleanly to common phone sizes (320px–430px widths) and tablets.
+
+Scope / goals
+
+Make the site mobile-first and responsive at common breakpoints (≤360px, 375px, 412px, 425px, 768px).
+
+Fix layout issues where elements “stick”, overflow, overlap, or don’t reflow on narrow screens.
+
+Ensure navigation, hero, cards, grids, forms, images, tables, and footers behave correctly on phones.
+
+Keep the desktop design intact — only improve CSS/structure so it adapts naturally.
+
+What to check & fix (concrete):
+
+Viewport meta — ensure <meta name="viewport" content="width=device-width, initial-scale=1"> in every page head.
+
+Container widths — convert fixed widths (px) to fluid units (%, max-width, rem) or use CSS grid/flex with sensible wrap rules. Replace width: 1200px–style rules that break on narrow screens.
+
+Images & media — add srcset/sizes, max-width:100%, and height:auto; use loading="lazy" for non-critical images.
+
+Hero and header — make hero content stack vertically on small screens; ensure CTA buttons remain visible without horizontal scroll. Transform wide multi-column hero into single-column on phones.
+
+Navigation — implement or fix a mobile menu / hamburger that is keyboard accessible and dismissible. Ensure nav links are tappable (min 44px target).
+
+Cards / grids — change multi-column grids to 1 column on small screens (use CSS grid grid-template-columns: 1fr or flex flex-direction: column).
+
+Forms & inputs — make inputs full-width, increase tap targets, label spacing, and place buttons under inputs on mobile.
+
+Typography — use responsive font sizes (clamp() or rem with media queries) to avoid overflow and ensure readability.
+
+Spacing & overflow — remove horizontal scroll by fixing any overflow-x issues, long min-width, or negative margins. Add box-sizing: border-box globally.
+
+Buttons & CTAs — ensure buttons are responsive, do not exceed viewport, and have consistent padding and touch size.
+
+Third-party embeds — make iframes, embeds, and social cards responsive with aspect-ratio wrappers.
+
+Contrast & accessibility on mobile — ensure contrast and focus outlines remain visible at small sizes.
+
+Deliverables
+
+Updated site files (HTML/CSS/JS) with mobile-first changes and no broken desktop layout.
+
+A short CHANGELOG.md listing key fixes and files changed.
+
+Example screenshots (mobile widths 375px & 412px) after changes (place in /assets/screenshots/).
+
+Clear commit history with messages:
+
+fix(responsive): add viewport meta & global box-sizing
+
+fix(responsive): fluid containers and responsive hero
+
+fix(nav): mobile hamburger & accessible menu
+
+perf(images): responsive images + lazy load
+
+A short testing checklist in README explaining how to test on device (incognito, Chrome device toolbar, real phone).
+
+Constraints & style
+
+Minimize new dependencies — prefer vanilla CSS (or Tailwind if site already uses it).
+
+Keep file sizes small; optimize images added.
+
+Maintain existing visual brand (colors, fonts) unless contrast or accessibility requires slight adjustments — flag those changes.
+
+Testing requirements
+
+Verify pages at breakpoints: 360px, 375px, 412px, 425px, 768px. Provide screenshots and list any unresolved issues.
+
+Test keyboard navigation and tap targets for nav and forms.
+
+Confirm no horizontal scroll appears on mobile.
