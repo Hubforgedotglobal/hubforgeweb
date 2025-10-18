@@ -201,13 +201,152 @@ Built with accessibility in mind:
 - Alt text for images
 - High contrast ratios
 
-## 🔍 SEO & Social Sharing
+## 🔍 SEO & SSL Verification
 
-Includes comprehensive meta tags:
-- Description and keywords
-- Open Graph tags (Facebook)
-- Twitter Card tags
-- Favicon support
+### SEO Optimization
+
+The website is fully optimized for search engines with:
+
+#### Meta Tags & Structured Data
+- ✅ **Canonical URLs** on all pages
+- ✅ **Robots meta tags** (`index, follow`)
+- ✅ **Open Graph tags** for Facebook/LinkedIn sharing
+- ✅ **Twitter Card tags** for Twitter sharing
+- ✅ **JSON-LD structured data** (Schema.org NGO markup)
+- ✅ **Comprehensive descriptions** and keywords
+
+#### SEO Files
+- ✅ **robots.txt** - Allows all search engines, references sitemap
+- ✅ **sitemap.xml** - Lists all pages for search engine crawling
+
+#### Example Meta Block (Reusable for New Pages)
+
+```html
+<!-- SEO Meta Tags -->
+<meta name="description" content="Your page description here (150-160 characters)">
+<meta name="keywords" content="keyword1, keyword2, keyword3">
+<meta name="author" content="HubForge Global Impact Network">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.hubforgeglobal.com/your-page.html">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hubforgeglobal.com/your-page.html">
+<meta property="og:title" content="Your Page Title — HubForge">
+<meta property="og:description" content="Your page description">
+<meta property="og:image" content="https://www.hubforgeglobal.com/assets/images/banner.png">
+<meta property="og:site_name" content="HubForge Global Impact Network">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://www.hubforgeglobal.com/your-page.html">
+<meta name="twitter:title" content="Your Page Title — HubForge">
+<meta name="twitter:description" content="Your page description">
+<meta name="twitter:image" content="https://www.hubforgeglobal.com/assets/images/banner.png">
+```
+
+### SSL/HTTPS Security
+
+✅ **GitHub Pages automatically provides SSL/HTTPS** for all custom domains
+✅ **All assets use relative paths** - compatible with HTTPS
+✅ **SSL badge displayed** in footer: "🔒 Secured by GitHub Pages (SSL Certified)"
+✅ **No mixed content warnings** - all resources load securely
+
+### Search Engine Verification
+
+#### Add Your Site to Google Search Console
+
+1. **Go to**: [Google Search Console](https://search.google.com/search-console)
+2. **Add Property**: Enter `https://www.hubforgeglobal.com`
+3. **Verify Domain Ownership** via one of these methods:
+
+   **Option A: DNS TXT Record** (Recommended for custom domains)
+   ```
+   1. Google will provide a TXT record like: google-site-verification=ABC123...
+   2. Add this TXT record to your DNS settings at your domain registrar
+   3. Wait 15-30 minutes for DNS propagation
+   4. Click "Verify" in Google Search Console
+   ```
+
+   **Option B: HTML File Upload**
+   ```
+   1. Download the verification HTML file from Google
+   2. Upload to docs/ folder in your repo
+   3. Push to GitHub
+   4. Click "Verify" in Google Search Console
+   ```
+
+4. **Submit Sitemap**:
+   - In Google Search Console, go to **Sitemaps**
+   - Enter: `https://www.hubforgeglobal.com/sitemap.xml`
+   - Click **Submit**
+
+#### Add Your Site to Bing Webmaster Tools
+
+1. **Go to**: [Bing Webmaster Tools](https://www.bing.com/webmasters)
+2. **Add Your Site**: Enter `https://www.hubforgeglobal.com`
+3. **Verify Domain** via one of these methods:
+
+   **Option A: Import from Google Search Console** (Easiest)
+   ```
+   - Click "Import from Google Search Console"
+   - Sign in with your Google account
+   - Bing will automatically verify
+   ```
+
+   **Option B: DNS TXT Record**
+   ```
+   - Add the TXT record Bing provides to your DNS settings
+   - Wait for DNS propagation
+   - Click "Verify"
+   ```
+
+4. **Submit Sitemap**:
+   - Go to **Sitemaps** section
+   - Enter: `https://www.hubforgeglobal.com/sitemap.xml`
+   - Click **Submit**
+
+#### Verify SSL Certificate
+
+To confirm your site is properly secured:
+
+1. **Visit**: https://www.hubforgeglobal.com
+2. **Check for padlock icon** 🔒 in browser address bar
+3. **Click the padlock** → View certificate details
+4. **Verify**: Certificate is issued by "Let's Encrypt" or GitHub
+
+**Or use SSL testing tools**:
+- [SSL Labs](https://www.ssllabs.com/ssltest/) - Enter your domain for detailed analysis
+- [Why No Padlock](https://www.whynopadlock.com/) - Check for mixed content issues
+
+### Reindexing After Updates
+
+When you make significant content changes:
+
+1. **Google Search Console**:
+   - Go to **URL Inspection**
+   - Enter the updated URL
+   - Click **Request Indexing**
+
+2. **Bing Webmaster Tools**:
+   - Go to **URL Submission**
+   - Enter updated URLs (up to 10,000/day)
+   - Click **Submit**
+
+3. **Resubmit Sitemap** (if pages added/removed):
+   - Update `lastmod` date in sitemap.xml
+   - Resubmit sitemap in both consoles
+
+### SEO Best Practices
+
+- ✅ Update meta descriptions to be unique for each page
+- ✅ Use descriptive, keyword-rich page titles
+- ✅ Keep URLs short and descriptive
+- ✅ Add alt text to all images
+- ✅ Use semantic HTML (h1, h2, nav, etc.)
+- ✅ Ensure fast page load times (<3 seconds)
+- ✅ Make sure all internal links work
+- ✅ Create quality content that answers user questions
 
 ## 📊 Performance
 
