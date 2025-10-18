@@ -1,16 +1,18 @@
 # HubForge Global Impact Network
 
-**Where social insights shape a better tomorrow**
+**Your Trusted M&E Partner for Evidence-Driven Impact**
 
-A modern, responsive static website for HubForge Global Impact Network - reimagining how the world builds and shares evidence for change.
+A modern, eye-catching website for HubForge Global Impact Network - your partner in strengthening how the world builds and shares evidence for transformative change.
 
 ## 🌟 Features
 
-- **Modern SpaceX-inspired Design**: Clean, minimal aesthetic with bold typography and smooth animations
+- **Futuristic Design**: Eye-catching gradients, glowing hover effects, and smooth animations
+- **M&E Partner Positioning**: Clear brand identity as a trusted M&E consulting partner
+- **Vibrant Gradients**: Dynamic color transitions using HubForge's brand palette
 - **Fully Responsive**: Mobile-first design that works beautifully on all devices
 - **Accessibility-First**: WCAG 2.1 AA compliant with semantic HTML and ARIA labels
 - **Performance Optimized**: Fast loading times with minimal dependencies
-- **SEO Ready**: Comprehensive meta tags for search engines and social sharing
+- **SEO Ready**: Comprehensive meta tags optimized for M&E sector
 - **GitHub Pages Ready**: Zero-configuration deployment
 
 ## 🚀 Quick Start
@@ -106,14 +108,15 @@ The site uses HubForge's vibrant brand palette:
 ## ✨ Sections
 
 ### Homepage:
-1. **Hero**: Vision statement with Section 8 Non-Profit badge
+1. **Hero**: "Your Trusted M&E Partner" with compelling vision statement
 2. **Vision**: Our aspirations for a just and thriving world
 3. **Mission**: How we nurture globally connected ecosystems
-4. **Services**: M&E Consulting, Evaluations, Trainings & Workshops
-5. **Why HubForge**: Our purpose and commitment
-6. **Values**: Five core principles that guide our work
-7. **Programs**: Three flagship programs with detailed pages
-8. **Contact**: Get involved and connect with us
+4. **Why HubForge**: Our purpose and commitment
+5. **Values**: Five core principles that guide our work
+6. **Programs**: Three flagship programs with detailed pages
+7. **Services**: M&E Consulting, Evaluations, and Capacity Building
+8. **About HubForge**: Complete organizational information with registration details
+9. **Contact**: Get involved and connect with us
 
 ### Program Pages:
 Each program has its own dedicated page with detailed information:
