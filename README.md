@@ -150,12 +150,46 @@ Edit `docs/assets/js/main.js` to add:
 
 ## 📱 Mobile Optimization
 
-The site is optimized for mobile devices with:
-- Hamburger navigation menu
-- Touch-friendly buttons and links
-- Responsive images
-- Optimized font sizes
-- Fast loading times
+The site is **fully mobile-first** and optimized for devices from 320px to desktop:
+
+### Responsive Features
+- **Comprehensive breakpoints**: 360px, 375px, 412px, 425px, 768px, 1024px+
+- **Hamburger navigation menu** with 44×44px touch targets
+- **Touch-friendly buttons** (minimum 48px height - WCAG 2.1 AA)
+- **Responsive images** that scale to viewport
+- **Optimized typography** that scales appropriately for each screen size
+- **Fast loading times** with minimal dependencies
+- **No horizontal scroll** on any device
+- **Landscape mode support** for phones
+
+### Mobile Testing
+
+For comprehensive mobile testing instructions, see **[TESTING.md](docs/TESTING.md)**
+
+#### Quick Test Checklist
+
+Test the site on these common breakpoints:
+
+```bash
+# Start local server
+python -m http.server 5000 --directory docs
+```
+
+Then in Chrome DevTools (F12 → Toggle Device Toolbar):
+- ✅ 360px (Galaxy S series)
+- ✅ 375px (iPhone X/11/12 mini)
+- ✅ 412px (Pixel 5)
+- ✅ 768px (iPad portrait)
+
+**Important**: Use **Incognito mode** and **hard refresh** (Ctrl+Shift+R) to see latest changes.
+
+#### What to Verify
+- [ ] No horizontal scrollbar on any page
+- [ ] All navigation links are tappable (48px min height)
+- [ ] Text is readable (no overflow or tiny fonts)
+- [ ] Buttons are full-width on small screens
+- [ ] Cards and grids collapse to single column
+- [ ] Images don't exceed viewport width
 
 ## ♿ Accessibility
 

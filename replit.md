@@ -188,6 +188,21 @@ hubforge-website/
 
 ## Recent Changes
 
+### October 18, 2025 - Comprehensive Mobile-First Responsive Improvements
+- **Added 330+ lines of mobile-first CSS** with enhanced breakpoints for all common phone sizes
+- **New breakpoints**: 360px, 361-425px, 426-768px for granular device support
+- **Navigation improvements**: 44×44px touch targets, improved mobile menu positioning and accessibility
+- **Typography scaling**: Responsive font sizes from 0.9rem to desktop sizes with proper word-wrapping
+- **Container fixes**: Fluid widths, eliminated horizontal scroll with overflow-x controls
+- **Touch target compliance**: All interactive elements meet WCAG 2.1 AA (minimum 48px height)
+- **Component optimizations**: Cards, grids, buttons, CTAs all adapt properly to mobile
+- **Landscape mode support**: Special handling for phones in landscape orientation
+- **Accessibility enhancements**: Enhanced focus outlines (3px solid) with color contrast for light/dark backgrounds
+- **Created CHANGELOG.md**: Comprehensive documentation of all mobile improvements
+- **Created TESTING.md**: Complete mobile testing guide with checklists and procedures
+- **Updated README.md**: Added mobile testing section with quick verification checklist
+- **Files changed**: `style.css` (major enhancements), `CHANGELOG.md` (new), `TESTING.md` (new), `README.md` (updated)
+
 ### October 18, 2025 - Glocal Impact Awards 2026 Update
 - **Rebranded to "Glocal Impact Awards 2026"** with bold, inclusive messaging
 - **Main page teaser** updated to emphasize that evidence belongs to everyone—not just traditional M&E professionals
