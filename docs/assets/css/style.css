@@ -399,7 +399,7 @@ ul {
 }
 
 .section-why {
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
   position: relative;
   overflow: hidden;
 }
@@ -407,11 +407,22 @@ ul {
 .section-why::before {
   content: '';
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(233, 75, 196, 0.15) 0%, transparent 60%);
+  border-radius: 50%;
+}
+
+.section-why::after {
+  content: '';
+  position: absolute;
+  bottom: -150px;
+  left: -150px;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(233, 75, 196, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(168, 232, 109, 0.1) 0%, transparent 60%);
   border-radius: 50%;
 }
 
@@ -890,14 +901,14 @@ ul {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 800;
   margin-bottom: var(--spacing-lg);
-  color: var(--color-dark);
+  color: white;
   line-height: 1.2;
 }
 
 .why-lead {
   font-size: 1.25rem;
   line-height: 1.8;
-  color: var(--color-gray);
+  color: rgba(255, 255, 255, 0.75);
   margin-bottom: var(--spacing-xl);
   max-width: 800px;
   margin-left: auto;
@@ -912,17 +923,21 @@ ul {
 }
 
 .why-point {
-  background: white;
+  background: rgba(255, 255, 255, 0.05);
   padding: var(--spacing-lg);
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
   text-align: left;
+  backdrop-filter: blur(10px);
 }
 
 .why-point:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(233, 75, 196, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(233, 75, 196, 0.4);
+  box-shadow: 0 12px 40px rgba(233, 75, 196, 0.25);
 }
 
 .why-icon {
@@ -934,21 +949,21 @@ ul {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: var(--spacing-sm);
-  color: var(--color-dark);
+  color: white;
   line-height: 1.4;
 }
 
 .why-point p {
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--color-gray);
+  color: rgba(255, 255, 255, 0.7);
   margin: 0;
 }
 
 .why-footer {
   font-size: 1.125rem;
   font-weight: 600;
-  color: var(--color-dark);
+  color: rgba(255, 255, 255, 0.85);
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.7;
