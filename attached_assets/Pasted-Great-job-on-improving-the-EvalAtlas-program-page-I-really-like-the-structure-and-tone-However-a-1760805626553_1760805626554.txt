@@ -1,0 +1,57 @@
+Great job on improving the EvalAtlas program page — I really like the structure and tone!
+However, a few key updates and small fixes are needed 👇
+
+Overall context:
+I’m updating the HubForge Global Impact Network website — specifically, the EvalAtlas content and visuals. The aim is to make it globally credible yet locally rooted, keeping the inclusive and collaborative spirit of HubForge.
+
+Here’s what I want you to do:
+
+Main Page (EvalAtlas Section)
+
+The content here still seems unchanged — please update it using the improved EvalAtlas description from the program page.
+
+Make it short and inspiring (2–3 lines max).
+
+Add a call to action like:
+
+“Join us in building an inclusive evaluation ecosystem that connects people, ideas, and action.”
+
+The tone should match HubForge’s style: clear, inclusive, visionary, and collaborative.
+
+EvalAtlas Program Page – Small Tweaks Only
+
+In the “Create Your Profile” section:
+
+Change the title to “Coming Soon”.
+
+Below it, add this call to action:
+
+“If you’re interested in co-building this feature or partnering with us, connect with us.”
+
+You can link the “connect with us” text to the Contact or Partner page.
+
+EvalAtlas Program Page – Visual/Font Fix
+
+In the “Who is this for” section:
+
+The titles (like NGO, Philanthropies, Researchers, etc.) aren’t clearly visible — check the font color, weight, or contrast and fix it so that titles stand out from the body text.
+
+Ensure consistent heading hierarchy and readable contrast (AA standard).
+
+Don’t change the rest of the EvalAtlas Program page content — the narrative and structure are good as they are.
+
+Output expected:
+
+Updated main page EvalAtlas section (text + CTA)
+
+Updated EvalAtlas Program page with the two small text changes and visual fixes.
+
+Ensure all pages remain mobile-friendly and accessible (good contrast, clear headings, alt text).
+
+Tone and style reminder:
+
+Global yet approachable.
+
+Collaborative and community-centered.
+
+Focused on bridging gaps and connecting people in the evaluation ecosystem.

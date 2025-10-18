@@ -1343,8 +1343,12 @@ ul {
 .feature-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: white;
+  color: #1a1a1a;
   margin-bottom: var(--spacing-sm);
+}
+
+.section-dark .feature-title {
+  color: white;
 }
 
 .feature-description {

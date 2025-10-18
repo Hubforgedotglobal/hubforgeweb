@@ -188,16 +188,16 @@ hubforge-website/
 
 ## Recent Changes
 
-### October 18, 2025 - EvalAtlas Content Refinement
-- Completely rewrote EvalAtlas content with professional storytelling approach
-- **Homepage teaser** now highlights problem → vision → impact structure
-- **Programs page** restructured with clear narrative flow:
+### October 18, 2025 - EvalAtlas Content Refinement & Updates
+- **Homepage EvalAtlas section** condensed to 2 concise paragraphs with clear CTA: "Join us in building an evaluation ecosystem that connects people, ideas, and action"
+- **Programs page** restructured with professional storytelling approach:
   - "The Problem: A Fragmented Ecosystem" section highlighting isolation and gaps
   - "The Vision: One Inclusive Ecosystem" section showcasing EvalAtlas mission
-  - "How EvalAtlas Works" with 4 key features
-  - "Who This Is For" expanded to 8 stakeholder groups (grid-3 layout)
+  - "How EvalAtlas Works" with 4 key features in 2-column grid
+  - "Who This Is For" expanded to 8 stakeholder groups in 3-column grid layout
 - Emphasized all stakeholders: NGOs, philanthropies, funders, field researchers, enumerators, tech professionals, evaluation agencies, educational institutions, VOPEs, emerging M&E professionals
-- Added compelling CTA: "Join the movement to co-create an inclusive evaluation ecosystem"
+- **CTA updated to "Coming Soon"** with partnership message: "If you're interested in co-building this feature or partnering with us to bring this vision to life, we'd love to hear from you"
+- **Fixed accessibility issue**: `.feature-title` font color now dark (#1a1a1a) on light backgrounds, white on dark backgrounds for proper contrast
 - Tone aligned with UNDP/Global Evaluation Initiative—credible, inclusive, forward-looking
 - Removed footer from all program pages for cleaner, minimal presentation
 
