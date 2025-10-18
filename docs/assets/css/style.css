@@ -1386,44 +1386,45 @@ ul {
   line-height: 1.8;
 }
 
-/* Integrated About Section */
-.about-divider {
-  width: 60px;
-  height: 2px;
-  background: linear-gradient(90deg, rgba(168, 232, 109, 0.5), rgba(255, 217, 61, 0.5));
-  margin: var(--spacing-xl) auto var(--spacing-lg);
-}
-
-.about-integrated {
-  max-width: 900px;
-  margin: 0 auto;
+/* About Footer Section */
+.section-about-footer {
+  background: #000000;
+  color: white;
+  padding: var(--spacing-lg) 0;
   text-align: center;
 }
 
-.about-intro {
+.about-footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-footer-content > p {
   font-size: 0.875rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: var(--spacing-lg);
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0;
 }
 
-.about-legal-info {
-  margin-top: var(--spacing-lg);
-  padding-top: var(--spacing-md);
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+.legal-separator {
+  width: 60px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: var(--spacing-md) auto;
 }
 
-.about-legal-info p {
+.legal-text {
   font-size: 0.8rem;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: var(--spacing-sm);
 }
 
-.legal-details {
-  font-size: 0.75rem !important;
-  color: rgba(255, 255, 255, 0.65) !important;
-  margin-top: var(--spacing-sm);
+.legal-small {
+  font-size: 0.7rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
 }
 
 @keyframes fadeIn {
