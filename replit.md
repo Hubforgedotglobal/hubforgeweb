@@ -43,6 +43,22 @@ The project explicitly avoids external JavaScript frameworks, CSS frameworks, th
 
 ## Recent Changes
 
+### October 20, 2025 - Resource Hub Pro Features & Final Expansion
+- **Expanded M&E Resource Hub to 41 resources** with smart filtering and cost transparency
+  - **New Features:**
+    - Resource counts in category chips (e.g., "AI & Automation (7)")
+    - Cost indicators: Free, Freemium, Paid badges on all resources
+    - "✓ Grassroots Friendly" badge for accessible tools perfect for small organizations
+  - **3 New Grassroots-Friendly Resources Added:**
+    - CommCare - Mobile platform for community health workers
+    - Orange Data Mining - Visual data analysis tool (no coding)
+    - JASP - Free alternative to SPSS for statistical analysis
+  - **Resource Breakdown by Cost:**
+    - Free: 26 resources (65% of total)
+    - Freemium: 11 resources (27.5%)
+    - Paid: 3 resources (7.5%)
+  - Complete category list: AI & Automation (7), Analytics & Dashboards (6), Collaboration & Planning (2), Data Collection (5), Evaluation Platforms (4), Learning Hubs (6), M&E Frameworks (2), Open Data (5), Qualitative Tools (3)
+
 ### October 20, 2025 - Resource Hub Expansion & UX Improvements
 - **Expanded M&E Resource Hub to 38 resources** across 9 categories
   - **New Categories Added:**
@@ -58,7 +74,6 @@ The project explicitly avoids external JavaScript frameworks, CSS frameworks, th
   - **UX Improvements:**
     - Changed button text from "Visit Tool" to "Visit Resource" for accuracy
     - Updated chip text from "All Tools" to "All Resources"
-  - Complete category list: AI & Automation, Analytics & Dashboards, Collaboration & Planning, Data Collection, Evaluation Platforms, Learning Hubs, M&E Frameworks, Open Data, Qualitative Tools
 
 ### October 20, 2025 - Resource Hub Launch + Mobile Menu Updates
 - **Launched M&E Resource Hub** - New standalone page at `/resource-hub/`
