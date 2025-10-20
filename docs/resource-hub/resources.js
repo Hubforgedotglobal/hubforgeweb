@@ -50,6 +50,15 @@ const RESOURCES = [
     cost: "freemium",
     grassroots: true
   },
+  {
+    id: "tally",
+    name: "Tally",
+    category: "Data Collection",
+    url: "https://tally.so",
+    description: "Beautiful, intuitive form builder with unlimited forms and responses on the free plan—perfect for surveys and data collection.",
+    cost: "freemium",
+    grassroots: true
+  },
 
   // Analytics & Dashboards (merged with Visualization)
   {
