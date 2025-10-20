@@ -43,7 +43,7 @@ The project explicitly avoids external JavaScript frameworks, CSS frameworks, th
 
 ## Recent Changes
 
-### October 20, 2025 - Mobile-First Hamburger Menu
+### October 20, 2025 - Mobile Menu, Button Improvements & Content Updates
 - **Added fully functional hamburger menu** for mobile navigation (max-width: 768px)
   - Smooth 3-line to X animation with cubic-bezier easing
   - Slide-down menu with backdrop blur and shadow
@@ -54,4 +54,12 @@ The project explicitly avoids external JavaScript frameworks, CSS frameworks, th
   - Mobile menu stacks vertically with proper spacing
   - No horizontal scrolling on any device (360px-768px tested)
   - All touch targets meet WCAG 2.1 AA standards (48px min)
-- **Files changed**: style.css (hamburger animations and mobile navigation)
+- **Added "Explore Our Services" button** in hero section
+  - Matches "Explore Our Programs" button styling
+  - Smooth scroll to Services section on click
+- **Improved Contact section contrast:**
+  - "Contact Us" button: changed to white background with dark text
+  - Email address: changed to white with text shadow for better readability
+- **Updated Mission section text:**
+  - New message: "Every changemaker & Community deserves the knowledge, tools, and Network to lead with evidence and change the world on their own terms."
+- **Files changed**: index.html (button and text updates), style.css (hamburger menu, button contrast improvements)
