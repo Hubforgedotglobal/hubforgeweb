@@ -268,6 +268,53 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Badges */
+        .badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.75rem;
+        }
+
+        .badge {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            padding: 0.25rem 0.625rem;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-free {
+            background: rgba(168, 232, 109, 0.15);
+            color: var(--color-lime);
+            border: 1px solid rgba(168, 232, 109, 0.3);
+        }
+
+        .badge-freemium {
+            background: rgba(255, 215, 0, 0.15);
+            color: #FFD93D;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .badge-paid {
+            background: rgba(255, 107, 107, 0.15);
+            color: #FF6B6B;
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .badge-grassroots {
+            background: linear-gradient(135deg, rgba(233, 75, 196, 0.2), rgba(123, 104, 238, 0.2));
+            color: var(--color-pink);
+            border: 1px solid rgba(233, 75, 196, 0.4);
+        }
+
+        .chip-count {
+            opacity: 0.7;
+            font-size: 0.8125rem;
+            margin-left: 0.25rem;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .resource-hero {
@@ -444,10 +491,14 @@
                 const chipsContainer = document.getElementById('categoryChips');
                 const allChip = chipsContainer.querySelector('[data-category="all"]');
                 
+                // Update "All Resources" count
+                allChip.innerHTML = `All Resources <span class="chip-count">(${RESOURCES.length})</span>`;
+                
                 CATEGORIES.forEach(category => {
                     const chip = document.createElement('button');
                     chip.className = 'chip';
-                    chip.textContent = category;
+                    const count = getCategoryCount(category);
+                    chip.innerHTML = `${category} <span class="chip-count">(${count})</span>`;
                     chip.setAttribute('data-category', category);
                     chip.addEventListener('click', () => filterByCategory(category));
                     chipsContainer.appendChild(chip);
@@ -535,6 +586,7 @@
                 card.onclick = () => window.open(resource.url, '_blank', 'noopener,noreferrer');
 
                 const logo = createLogo(resource);
+                const badges = createBadges(resource);
                 
                 card.innerHTML = `
                     <div class="card-header">
@@ -544,6 +596,7 @@
                             <div class="resource-category">${resource.category}</div>
                         </div>
                     </div>
+                    ${badges}
                     <div class="resource-description">${resource.description}</div>
                     <button class="visit-btn" onclick="event.stopPropagation(); window.open('${resource.url}', '_blank', 'noopener,noreferrer')">
                         Visit Resource
@@ -552,6 +605,25 @@
                 `;
 
                 return card;
+            }
+
+            // Create Badges
+            function createBadges(resource) {
+                let badgesHTML = '<div class="badges">';
+                
+                // Cost badge
+                if (resource.cost) {
+                    const costLabel = resource.cost === 'freemium' ? 'Freemium' : resource.cost.charAt(0).toUpperCase() + resource.cost.slice(1);
+                    badgesHTML += `<span class="badge badge-${resource.cost}">${costLabel}</span>`;
+                }
+                
+                // Grassroots badge
+                if (resource.grassroots) {
+                    badgesHTML += `<span class="badge badge-grassroots">✓ Grassroots Friendly</span>`;
+                }
+                
+                badgesHTML += '</div>';
+                return badgesHTML;
             }
 
             // Create Logo with Fallback
