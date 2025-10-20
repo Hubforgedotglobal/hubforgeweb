@@ -25,6 +25,13 @@ const RESOURCES = [
     url: "https://www.surveycto.com",
     description: "Secure, research-grade data collection platform with advanced features for complex surveys."
   },
+  {
+    id: "msforms",
+    name: "Microsoft Forms",
+    category: "Data Collection",
+    url: "https://www.microsoft.com/en/microsoft-365/online-surveys-polls-quizzes",
+    description: "Free, easy-to-use survey and form builder with real-time response tracking and analysis."
+  },
 
   // Analytics & Dashboards (merged with Visualization)
   {
@@ -77,6 +84,20 @@ const RESOURCES = [
     category: "Evaluation Platforms",
     url: "https://dhis2.org",
     description: "World's largest open-source health information system and monitoring platform."
+  },
+  {
+    id: "devresults",
+    name: "DevResults",
+    category: "Evaluation Platforms",
+    url: "https://www.devresults.com",
+    description: "Cloud-based M&E software for managing indicators, reporting, and data visualization in development programs."
+  },
+  {
+    id: "activityinfo",
+    name: "ActivityInfo",
+    category: "Evaluation Platforms",
+    url: "https://www.activityinfo.org",
+    description: "Humanitarian project monitoring platform for tracking activities, indicators, and beneficiaries in real-time."
   },
 
   // Qualitative Analysis Tools
@@ -146,6 +167,38 @@ const RESOURCES = [
     description: "Host and share open-source AI applications and machine learning demos."
   },
 
+  // Collaboration & Planning
+  {
+    id: "miro",
+    name: "Miro",
+    category: "Collaboration & Planning",
+    url: "https://miro.com",
+    description: "Visual collaboration platform for creating theory of change, logic models, and participatory planning workshops."
+  },
+  {
+    id: "notion",
+    name: "Notion",
+    category: "Collaboration & Planning",
+    url: "https://www.notion.so",
+    description: "All-in-one workspace for M&E documentation, project tracking, and team collaboration."
+  },
+
+  // M&E Frameworks
+  {
+    id: "toctools",
+    name: "Theory of Change Online",
+    category: "M&E Frameworks",
+    url: "https://www.theoryofchange.org/what-is-theory-of-change/toc-background/toc-software/",
+    description: "Free online tool for developing and visualizing theory of change diagrams for programs and interventions."
+  },
+  {
+    id: "logframelab",
+    name: "Logframe Lab",
+    category: "M&E Frameworks",
+    url: "https://www.logframelab.com",
+    description: "Digital tool for creating logical framework matrices and results chains for project planning."
+  },
+
   // Open Data Sources
   {
     id: "worldbank",
@@ -167,6 +220,20 @@ const RESOURCES = [
     category: "Open Data",
     url: "https://data.humdata.org",
     description: "UN OCHA's open platform for sharing humanitarian data across crises and countries."
+  },
+  {
+    id: "undata",
+    name: "UN Data",
+    category: "Open Data",
+    url: "https://data.un.org",
+    description: "United Nations statistics portal with datasets on demographics, economics, environment, and social indicators."
+  },
+  {
+    id: "usaiddec",
+    name: "USAID Development Experience Clearinghouse",
+    category: "Open Data",
+    url: "https://dec.usaid.gov",
+    description: "Searchable database of USAID-funded technical and program documentation from development projects worldwide."
   },
 
   // Learning & Knowledge Hubs
@@ -204,6 +271,13 @@ const RESOURCES = [
     category: "Learning Hubs",
     url: "https://responsibledata.io",
     description: "Ethical guidance and frameworks for responsible data use in social impact work."
+  },
+  {
+    id: "zotero",
+    name: "Zotero",
+    category: "Learning Hubs",
+    url: "https://www.zotero.org",
+    description: "Free, open-source reference manager for collecting, organizing, and citing research sources."
   }
 ];
 
