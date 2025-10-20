@@ -43,6 +43,18 @@ The project explicitly avoids external JavaScript frameworks, CSS frameworks, th
 
 ## Recent Changes
 
+### October 20, 2025 - Resource Hub Launch + Mobile Menu Updates
+- **Launched M&E Resource Hub** - New standalone page at `/resource-hub/`
+  - 25 curated tools across 8 categories (Data Collection, Analytics, Evaluation Platforms, etc.)
+  - Live search with debounced filtering (300ms)
+  - Category filter chips with smooth interactions
+  - Resource cards with logo display and automatic favicon fallbacks
+  - Fully responsive grid layout (1-4 columns)
+  - SpaceX-style dark design with HubForge branding
+  - All vanilla JS - no build tools, easy to update
+  - Data-driven: add resources by editing `resources.js`
+- **Navigation Update:** Added "Resources" link to main menu
+
 ### October 20, 2025 - Mobile Menu, Button Improvements & Content Updates
 - **Added fully functional hamburger menu** for mobile navigation (max-width: 768px)
   - Smooth 3-line to X animation with cubic-bezier easing
