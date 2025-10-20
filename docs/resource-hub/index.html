@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Hub - HubForge Global Impact Network</title>
+    <meta name="description" content="Curated M&E, research, and tech tools for changemakers. Discover data collection, analysis, evaluation platforms, and learning resources.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <style>
+        /* Resource Hub Specific Styles */
+        .resource-hero {
+            background: #000000;
+            padding: 140px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resource-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top left, rgba(233, 75, 196, 0.1), transparent 50%),
+                        radial-gradient(circle at bottom right, rgba(123, 104, 238, 0.1), transparent 50%);
+            pointer-events: none;
+        }
+
+        .resource-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .resource-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--color-pink), var(--color-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .resource-hero p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+
+        /* Search Bar */
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            font-size: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--color-pink);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .search-box input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Category Chips */
+        .category-chips {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .chip {
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.7);
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .chip:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .chip.active {
+            background: linear-gradient(135deg, var(--color-coral), var(--color-pink));
+            color: white;
+            border-color: transparent;
+        }
+
+        /* Resource Grid */
+        .resource-section {
+            background: #0a0a0a;
+            padding: 4rem 0;
+            min-height: 60vh;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Resource Card */
+        .resource-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            min-height: 180px;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(233, 75, 196, 0.2);
+            border-color: var(--color-pink);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .resource-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px;
+            flex-shrink: 0;
+        }
+
+        .resource-logo.fallback {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.125rem;
+            color: white;
+        }
+
+        .card-info {
+            flex: 1;
+        }
+
+        .resource-name {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+
+        .resource-category {
+            font-size: 0.75rem;
+            color: var(--color-lime);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .resource-description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9375rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+
+        .visit-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.625rem 1.25rem;
+            background: linear-gradient(135deg, var(--color-coral), var(--color-pink));
+            color: white;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .visit-btn:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(233, 75, 196, 0.4);
+        }
+
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .visit-btn:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        /* Results Count */
+        .results-info {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 2rem;
+            font-size: 0.9375rem;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .no-results h3 {
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .resource-hero {
+                padding: 100px 0 60px;
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category-chips {
+                overflow-x: auto;
+                justify-content: flex-start;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                padding-bottom: 0.5rem;
+            }
+
+            .category-chips::-webkit-scrollbar {
+                display: none;
+            }
+
+            .chip {
+                white-space: nowrap;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .resource-card {
+                min-height: auto;
+            }
+
+            .card-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="../" class="nav-brand">
+                <img src="../assets/images/logo.png" alt="HubForge Logo" class="nav-logo">
+                <span class="brand-text">HubForge Global Impact Network</span>
+            </a>
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../#about" class="nav-link">About</a></li>
+                <li><a href="../#programs" class="nav-link">Programs</a></li>
+                <li><a href="../#services" class="nav-link">Services</a></li>
+                <li><a href="../#values" class="nav-link">Values</a></li>
+                <li><a href="./" class="nav-link">Resources</a></li>
+                <li><a href="../#contact" class="nav-link nav-cta">Get Involved</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="resource-hero">
+        <div class="container resource-hero-content">
+            <h1>M&E Resource Hub</h1>
+            <p>Curated tools for monitoring, evaluation, research & tech</p>
+            
+            <!-- Search Box -->
+            <div class="search-container">
+                <div class="search-box">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" id="searchInput" placeholder="Search tools..." aria-label="Search resources">
+                </div>
+            </div>
+
+            <!-- Category Chips -->
+            <div class="category-chips" id="categoryChips">
+                <button class="chip active" data-category="all">All Tools</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resource Grid Section -->
+    <section class="resource-section">
+        <div class="container">
+            <div class="results-info" id="resultsInfo"></div>
+            <div class="resource-grid" id="resourceGrid"></div>
+            <div class="no-results" id="noResults" style="display: none;">
+                <h3>No resources found</h3>
+                <p>Try adjusting your search or filter</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-about-section">
+                <p>HubForge Global Impact Network © 2024 | Empowering communities, youth, and changemakers with evidence-driven tools and networks.</p>
+            </div>
+
+            <div class="footer-nav">
+                <div class="footer-column">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="../impact-lab.html">HubForge Impact Lab</a></li>
+                        <li><a href="../evalatlas.html">EvalAtlas</a></li>
+                        <li><a href="../gia-mande.html">GIA 2026</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="mailto:hubforgeglobal@gmail.com">Email Us</a></li>
+                        <li><a href="../#contact">Get Involved</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="./">Resource Hub</a></li>
+                        <li><a href="../#services">Our Services</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Building evidence ecosystems for lasting change.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load Resources Data -->
+    <script src="resources.js"></script>
+    
+    <!-- Main App Script -->
+    <script src="../assets/js/main.js"></script>
+    
+    <script>
+        // Resource Hub Application
+        (function() {
+            let currentCategory = 'all';
+            let searchQuery = '';
+
+            // Initialize
+            function init() {
+                renderCategoryChips();
+                renderResources();
+                attachEventListeners();
+            }
+
+            // Render Category Chips
+            function renderCategoryChips() {
+                const chipsContainer = document.getElementById('categoryChips');
+                const allChip = chipsContainer.querySelector('[data-category="all"]');
+                
+                CATEGORIES.forEach(category => {
+                    const chip = document.createElement('button');
+                    chip.className = 'chip';
+                    chip.textContent = category;
+                    chip.setAttribute('data-category', category);
+                    chip.addEventListener('click', () => filterByCategory(category));
+                    chipsContainer.appendChild(chip);
+                });
+            }
+
+            // Filter by Category
+            function filterByCategory(category) {
+                currentCategory = category;
+                
+                // Update active state
+                document.querySelectorAll('.chip').forEach(chip => {
+                    chip.classList.remove('active');
+                    if (chip.getAttribute('data-category') === category) {
+                        chip.classList.add('active');
+                    }
+                });
+                
+                renderResources();
+            }
+
+            // Search with debounce
+            let searchTimeout;
+            function handleSearch(e) {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    searchQuery = e.target.value.toLowerCase().trim();
+                    renderResources();
+                }, 300);
+            }
+
+            // Filter Resources
+            function filterResources() {
+                let filtered = RESOURCES;
+
+                // Filter by category
+                if (currentCategory !== 'all') {
+                    filtered = filtered.filter(r => r.category === currentCategory);
+                }
+
+                // Filter by search
+                if (searchQuery) {
+                    filtered = filtered.filter(r => 
+                        r.name.toLowerCase().includes(searchQuery) ||
+                        r.description.toLowerCase().includes(searchQuery) ||
+                        r.category.toLowerCase().includes(searchQuery)
+                    );
+                }
+
+                return filtered;
+            }
+
+            // Render Resources
+            function renderResources() {
+                const grid = document.getElementById('resourceGrid');
+                const noResults = document.getElementById('noResults');
+                const resultsInfo = document.getElementById('resultsInfo');
+                const filtered = filterResources();
+
+                grid.innerHTML = '';
+
+                if (filtered.length === 0) {
+                    grid.style.display = 'none';
+                    noResults.style.display = 'block';
+                    resultsInfo.textContent = '';
+                    return;
+                }
+
+                grid.style.display = 'grid';
+                noResults.style.display = 'none';
+                
+                const categoryText = currentCategory === 'all' ? 'all categories' : currentCategory;
+                resultsInfo.textContent = `Showing ${filtered.length} resource${filtered.length !== 1 ? 's' : ''} in ${categoryText}`;
+
+                filtered.forEach(resource => {
+                    const card = createResourceCard(resource);
+                    grid.appendChild(card);
+                });
+            }
+
+            // Create Resource Card
+            function createResourceCard(resource) {
+                const card = document.createElement('div');
+                card.className = 'resource-card';
+                card.onclick = () => window.open(resource.url, '_blank', 'noopener,noreferrer');
+
+                const logo = createLogo(resource);
+                
+                card.innerHTML = `
+                    <div class="card-header">
+                        ${logo}
+                        <div class="card-info">
+                            <div class="resource-name">${resource.name}</div>
+                            <div class="resource-category">${resource.category}</div>
+                        </div>
+                    </div>
+                    <div class="resource-description">${resource.description}</div>
+                    <button class="visit-btn" onclick="event.stopPropagation(); window.open('${resource.url}', '_blank', 'noopener,noreferrer')">
+                        Visit Tool
+                        <span class="arrow">→</span>
+                    </button>
+                `;
+
+                return card;
+            }
+
+            // Create Logo with Fallback
+            function createLogo(resource) {
+                if (resource.logo) {
+                    return `<img src="${resource.logo}" alt="${resource.name} logo" class="resource-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="resource-logo fallback" style="display: none; background: ${getColorFromString(resource.id)}">
+                                ${getInitials(resource.name)}
+                            </div>`;
+                }
+
+                // Try favicon fallback
+                const domain = extractDomain(resource.url);
+                return `<img src="https://www.google.com/s2/favicons?domain=${domain}&sz=64" alt="${resource.name} icon" class="resource-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="resource-logo fallback" style="display: none; background: ${getColorFromString(resource.id)}">
+                            ${getInitials(resource.name)}
+                        </div>`;
+            }
+
+            // Extract Domain from URL
+            function extractDomain(url) {
+                try {
+                    const urlObj = new URL(url);
+                    return urlObj.hostname;
+                } catch {
+                    return '';
+                }
+            }
+
+            // Get Initials from Name
+            function getInitials(name) {
+                return name
+                    .split(' ')
+                    .map(word => word[0])
+                    .join('')
+                    .toUpperCase()
+                    .slice(0, 2);
+            }
+
+            // Generate Color from String (consistent hash-based color)
+            function getColorFromString(str) {
+                let hash = 0;
+                for (let i = 0; i < str.length; i++) {
+                    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+                }
+                
+                const colors = [
+                    'linear-gradient(135deg, #E94BC4, #7B68EE)',
+                    'linear-gradient(135deg, #FF6B6B, #E94BC4)',
+                    'linear-gradient(135deg, #A8E86D, #FFD93D)',
+                    'linear-gradient(135deg, #7B68EE, #4834DF)',
+                    'linear-gradient(135deg, #FF6B6B, #FF9FF3)'
+                ];
+                
+                return colors[Math.abs(hash) % colors.length];
+            }
+
+            // Attach Event Listeners
+            function attachEventListeners() {
+                const searchInput = document.getElementById('searchInput');
+                searchInput.addEventListener('input', handleSearch);
+
+                // Category chip for "All"
+                document.querySelector('[data-category="all"]').addEventListener('click', () => filterByCategory('all'));
+            }
+
+            // Initialize on load
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+    </script>
+</body>
+</html>
