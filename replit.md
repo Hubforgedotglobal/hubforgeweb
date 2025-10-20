@@ -43,6 +43,16 @@ The project explicitly avoids external JavaScript frameworks, CSS frameworks, th
 
 ## Recent Changes
 
+### October 20, 2025 - PDF Export & Resource Hub Enhancement
+- **Added Professional PDF Export** - Download branded resource list for offline use
+  - One-click PDF generation with HubForge branding (pink/purple gradient header)
+  - Professional formatting with all 41 resources organized by category
+  - Includes resource descriptions, URLs (clickable links), and cost/grassroots badges
+  - Multi-page support with automatic pagination and page numbers
+  - Footer includes hubforgeglobal.com and page count
+  - Filename: `HubForge-ME-Resources-[date].pdf`
+  - Uses jsPDF library for client-side generation (no server needed)
+
 ### October 20, 2025 - Resource Hub Pro Features & Final Expansion
 - **Expanded M&E Resource Hub to 41 resources** with smart filtering and cost transparency
   - **New Features:**
