@@ -315,6 +315,33 @@
             margin-left: 0.25rem;
         }
 
+        /* Export Button */
+        .export-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--color-purple), var(--color-pink));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .export-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(233, 75, 196, 0.4);
+        }
+
+        .export-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .resource-hero {
@@ -401,6 +428,16 @@
             <div class="category-chips" id="categoryChips">
                 <button class="chip active" data-category="all">All Resources</button>
             </div>
+
+            <!-- Export Button -->
+            <button class="export-btn" id="exportPdfBtn" aria-label="Download Resource List as PDF">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Download PDF Resource List
+            </button>
         </div>
     </section>
 
@@ -469,6 +506,9 @@
 
     <!-- Load Resources Data -->
     <script src="resources.js"></script>
+    
+    <!-- jsPDF Library for PDF Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     
     <!-- Main App Script -->
     <script src="../assets/js/main.js"></script>
@@ -688,6 +728,150 @@
 
                 // Category chip for "All"
                 document.querySelector('[data-category="all"]').addEventListener('click', () => filterByCategory('all'));
+
+                // PDF Export button
+                const exportBtn = document.getElementById('exportPdfBtn');
+                if (exportBtn) {
+                    exportBtn.addEventListener('click', generatePDF);
+                }
+            }
+
+            // Generate PDF with HubForge Branding
+            function generatePDF() {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+                
+                // HubForge Brand Colors
+                const pink = [233, 75, 196];
+                const purple = [123, 104, 238];
+                const lime = [168, 232, 109];
+                const coral = [255, 107, 107];
+                
+                let yPos = 20;
+                
+                // Header with gradient-inspired design
+                doc.setFillColor(233, 75, 196);
+                doc.rect(0, 0, 210, 35, 'F');
+                
+                // Title
+                doc.setTextColor(255, 255, 255);
+                doc.setFontSize(24);
+                doc.setFont('helvetica', 'bold');
+                doc.text('M&E Resource Hub', 105, 15, { align: 'center' });
+                
+                doc.setFontSize(11);
+                doc.setFont('helvetica', 'normal');
+                doc.text('HubForge Global Impact Network', 105, 22, { align: 'center' });
+                doc.text('Curated tools for monitoring, evaluation, research & tech', 105, 28, { align: 'center' });
+                
+                yPos = 45;
+                
+                // Stats Section
+                doc.setTextColor(50, 50, 50);
+                doc.setFontSize(10);
+                const freeCount = RESOURCES.filter(r => r.cost === 'free').length;
+                const grassrootsCount = RESOURCES.filter(r => r.grassroots).length;
+                doc.text(`Total Resources: ${RESOURCES.length} | Free: ${freeCount} | Grassroots-Friendly: ${grassrootsCount}`, 105, yPos, { align: 'center' });
+                
+                yPos += 10;
+                
+                // Resources by Category
+                CATEGORIES.forEach((category, catIndex) => {
+                    const categoryResources = RESOURCES.filter(r => r.category === category);
+                    
+                    // Check if we need a new page
+                    if (yPos > 270) {
+                        doc.addPage();
+                        yPos = 20;
+                    }
+                    
+                    // Category Header
+                    doc.setFillColor(123, 104, 238);
+                    doc.rect(10, yPos - 4, 190, 8, 'F');
+                    doc.setTextColor(255, 255, 255);
+                    doc.setFontSize(12);
+                    doc.setFont('helvetica', 'bold');
+                    doc.text(`${category} (${categoryResources.length})`, 12, yPos + 2);
+                    
+                    yPos += 10;
+                    
+                    // Resources in Category
+                    categoryResources.forEach((resource, resIndex) => {
+                        // Check if we need a new page
+                        if (yPos > 270) {
+                            doc.addPage();
+                            yPos = 20;
+                        }
+                        
+                        // Resource Name
+                        doc.setTextColor(50, 50, 50);
+                        doc.setFontSize(11);
+                        doc.setFont('helvetica', 'bold');
+                        doc.text(resource.name, 15, yPos);
+                        
+                        // Badges
+                        let badgeX = 15;
+                        yPos += 5;
+                        doc.setFontSize(8);
+                        doc.setFont('helvetica', 'normal');
+                        
+                        // Cost badge
+                        if (resource.cost === 'free') {
+                            doc.setFillColor(...lime);
+                            doc.setTextColor(50, 100, 50);
+                        } else if (resource.cost === 'freemium') {
+                            doc.setFillColor(255, 215, 0);
+                            doc.setTextColor(100, 80, 0);
+                        } else {
+                            doc.setFillColor(...coral);
+                            doc.setTextColor(100, 0, 0);
+                        }
+                        const costLabel = resource.cost === 'freemium' ? 'FREEMIUM' : resource.cost.toUpperCase();
+                        doc.roundedRect(badgeX, yPos - 3, 18, 4, 1, 1, 'F');
+                        doc.text(costLabel, badgeX + 1, yPos);
+                        badgeX += 20;
+                        
+                        // Grassroots badge
+                        if (resource.grassroots) {
+                            doc.setFillColor(...pink);
+                            doc.setTextColor(255, 255, 255);
+                            doc.roundedRect(badgeX, yPos - 3, 36, 4, 1, 1, 'F');
+                            doc.text('GRASSROOTS FRIENDLY', badgeX + 1, yPos);
+                        }
+                        
+                        yPos += 5;
+                        
+                        // Description
+                        doc.setTextColor(80, 80, 80);
+                        doc.setFontSize(9);
+                        doc.setFont('helvetica', 'normal');
+                        const splitDesc = doc.splitTextToSize(resource.description, 175);
+                        doc.text(splitDesc, 15, yPos);
+                        yPos += (splitDesc.length * 4) + 1;
+                        
+                        // URL
+                        doc.setTextColor(123, 104, 238);
+                        doc.setFontSize(8);
+                        doc.textWithLink(resource.url, 15, yPos, { url: resource.url });
+                        
+                        yPos += 7;
+                    });
+                    
+                    yPos += 3;
+                });
+                
+                // Footer on all pages
+                const pageCount = doc.internal.getNumberOfPages();
+                for (let i = 1; i <= pageCount; i++) {
+                    doc.setPage(i);
+                    doc.setFontSize(8);
+                    doc.setTextColor(150, 150, 150);
+                    doc.text(`HubForge Global Impact Network | hubforgeglobal.com | Page ${i} of ${pageCount}`, 105, 290, { align: 'center' });
+                }
+                
+                // Save PDF
+                const date = new Date().toISOString().split('T')[0];
+                doc.save(`HubForge-ME-Resources-${date}.pdf`);
             }
 
             // Initialize on load
