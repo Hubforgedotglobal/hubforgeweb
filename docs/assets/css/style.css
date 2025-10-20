@@ -298,6 +298,7 @@ ul {
   gap: var(--spacing-md);
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: var(--spacing-xl);
   animation: fadeInUp 0.8s ease-out 0.6s both;
 }
 
