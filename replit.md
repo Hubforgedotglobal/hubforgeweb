@@ -45,12 +45,16 @@ The project explicitly avoids external JavaScript frameworks, CSS frameworks, th
 
 ### October 20, 2025 - Resource Hub Launch + Mobile Menu Updates
 - **Launched M&E Resource Hub** - New standalone page at `/resource-hub/`
-  - 25 curated tools across 8 categories (Data Collection, Analytics, Evaluation Platforms, etc.)
+  - 28 curated tools across 7 categories
+  - Categories: Data Collection, Analytics & Dashboards, Evaluation Platforms, Qualitative Tools, AI & Automation, Open Data, Learning Hubs
+  - Added AI tools: Claude, Gemini, Perplexity AI, NotebookLM (alongside ChatGPT, Colab, Hugging Face)
+  - Merged Visualization into Analytics & Dashboards for better organization
   - Live search with debounced filtering (300ms)
   - Category filter chips with smooth interactions
   - Resource cards with logo display and automatic favicon fallbacks
   - Fully responsive grid layout (1-4 columns)
   - SpaceX-style dark design with HubForge branding
+  - Footer matches main site (legal info, Darpan ID, SSL badge)
   - All vanilla JS - no build tools, easy to update
   - Data-driven: add resources by editing `resources.js`
 - **Navigation Update:** Added "Resources" link to main menu

@@ -26,7 +26,7 @@ const RESOURCES = [
     description: "Secure, research-grade data collection platform with advanced features for complex surveys."
   },
 
-  // Analytics & Dashboards
+  // Analytics & Dashboards (merged with Visualization)
   {
     id: "looker",
     name: "Looker Studio",
@@ -47,6 +47,20 @@ const RESOURCES = [
     category: "Analytics & Dashboards",
     url: "https://www.airtable.com",
     description: "Spreadsheet-database hybrid for organizing project data, tracking, and collaboration."
+  },
+  {
+    id: "flourish",
+    name: "Flourish",
+    category: "Analytics & Dashboards",
+    url: "https://flourish.studio",
+    description: "Create beautiful, interactive charts, maps, and data stories without coding."
+  },
+  {
+    id: "datawrapper",
+    name: "Datawrapper",
+    category: "Analytics & Dashboards",
+    url: "https://www.datawrapper.de",
+    description: "Simple, fast tool for creating charts, maps, and tables for reports and presentations."
   },
 
   // Evaluation Platforms
@@ -90,6 +104,34 @@ const RESOURCES = [
     description: "AI assistant for drafting reports, summarizing data, and automating writing tasks."
   },
   {
+    id: "claude",
+    name: "Claude",
+    category: "AI & Automation",
+    url: "https://claude.ai",
+    description: "Anthropic's AI assistant for analysis, research, and creative work with extended context."
+  },
+  {
+    id: "gemini",
+    name: "Google Gemini",
+    category: "AI & Automation",
+    url: "https://gemini.google.com",
+    description: "Google's multimodal AI for research, analysis, and creative problem-solving."
+  },
+  {
+    id: "perplexity",
+    name: "Perplexity AI",
+    category: "AI & Automation",
+    url: "https://www.perplexity.ai",
+    description: "AI-powered search engine that provides cited answers and research assistance."
+  },
+  {
+    id: "notebooklm",
+    name: "NotebookLM",
+    category: "AI & Automation",
+    url: "https://notebooklm.google.com",
+    description: "Google's AI research assistant that helps you understand and synthesize documents."
+  },
+  {
     id: "colab",
     name: "Google Colab",
     category: "AI & Automation",
@@ -125,22 +167,6 @@ const RESOURCES = [
     category: "Open Data",
     url: "https://data.humdata.org",
     description: "UN OCHA's open platform for sharing humanitarian data across crises and countries."
-  },
-
-  // Visualization Tools
-  {
-    id: "flourish",
-    name: "Flourish",
-    category: "Visualization",
-    url: "https://flourish.studio",
-    description: "Create beautiful, interactive charts, maps, and data stories without coding."
-  },
-  {
-    id: "datawrapper",
-    name: "Datawrapper",
-    category: "Visualization",
-    url: "https://www.datawrapper.de",
-    description: "Simple, fast tool for creating charts, maps, and tables for reports and presentations."
   },
 
   // Learning & Knowledge Hubs
