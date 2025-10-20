@@ -43,23 +43,15 @@ The project explicitly avoids external JavaScript frameworks, CSS frameworks, th
 
 ## Recent Changes
 
-### October 20, 2025 - Mobile-First Hamburger Menu & Explore Sections
+### October 20, 2025 - Mobile-First Hamburger Menu
 - **Added fully functional hamburger menu** for mobile navigation (max-width: 768px)
   - Smooth 3-line to X animation with cubic-bezier easing
   - Slide-down menu with backdrop blur and shadow
   - Auto-closes on link click or ESC key
   - 44×44px touch targets for accessibility
-- **Created "Explore Our Programs" section** - Visual showcase with 3 program cards:
-  - Impact Lab, EvalAtlas, and GIA 2026
-  - Gradient backgrounds, hover animations, numbered badges
-  - Direct links to individual program pages
-- **Created "Explore Our Services" section** - Visual showcase with 3 service cards:
-  - M&E Consulting, Evaluations, and Capacity Building
-  - Colorful gradient accents with SVG icons
-  - Smooth hover effects and transitions
 - **Enhanced mobile responsiveness:**
   - Hamburger icon displays on screens ≤768px
   - Mobile menu stacks vertically with proper spacing
   - No horizontal scrolling on any device (360px-768px tested)
   - All touch targets meet WCAG 2.1 AA standards (48px min)
-- **Files changed**: index.html (added 2 new sections), style.css (added hamburger animations & explore card styles)
+- **Files changed**: style.css (hamburger animations and mobile navigation)
