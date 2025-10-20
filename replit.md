@@ -43,6 +43,23 @@ The project explicitly avoids external JavaScript frameworks, CSS frameworks, th
 
 ## Recent Changes
 
+### October 20, 2025 - Resource Hub Expansion & UX Improvements
+- **Expanded M&E Resource Hub to 38 resources** across 9 categories
+  - **New Categories Added:**
+    - Collaboration & Planning (Miro, Notion)
+    - M&E Frameworks (Theory of Change Online, Logframe Lab)
+  - **New Resources Added (10 total):**
+    - Data Collection: Microsoft Forms
+    - Evaluation Platforms: DevResults, ActivityInfo
+    - Open Data: UN Data, USAID Development Experience Clearinghouse
+    - Collaboration & Planning: Miro, Notion
+    - M&E Frameworks: Theory of Change Online, Logframe Lab
+    - Learning Hubs: Zotero
+  - **UX Improvements:**
+    - Changed button text from "Visit Tool" to "Visit Resource" for accuracy
+    - Updated chip text from "All Tools" to "All Resources"
+  - Complete category list: AI & Automation, Analytics & Dashboards, Collaboration & Planning, Data Collection, Evaluation Platforms, Learning Hubs, M&E Frameworks, Open Data, Qualitative Tools
+
 ### October 20, 2025 - Resource Hub Launch + Mobile Menu Updates
 - **Launched M&E Resource Hub** - New standalone page at `/resource-hub/`
   - 28 curated tools across 7 categories
