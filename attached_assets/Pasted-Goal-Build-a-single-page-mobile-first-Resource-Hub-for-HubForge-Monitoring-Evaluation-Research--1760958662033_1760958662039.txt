@@ -1,0 +1,133 @@
+Goal: Build a single-page, mobile-first Resource Hub for HubForge (Monitoring, Evaluation, Research & Tech). It must be modular (data-driven), accessible, attractive, and let users click a resource to open the official site in a new tab. Support optional logos for each resource with robust favicon/fallback logic. Produce a working repo with README.
+
+Tech stack:
+
+Vite + React (JSX)
+
+Tailwind CSS
+
+No backend — static site, data in /src/data/resources.js
+
+Use functional components and hooks
+
+Deliverables (files to create):
+
+package.json (via Vite init)
+
+index.html
+
+src/main.jsx
+
+src/App.jsx
+
+src/components/Hero.jsx
+
+src/components/CategoryChips.jsx
+
+src/components/SearchBar.jsx
+
+src/components/ToolGrid.jsx
+
+src/components/ToolCard.jsx
+
+src/components/LogoAvatar.jsx
+
+src/data/resources.js
+
+src/styles/tailwind.css
+
+tailwind.config.js
+
+README.md
+
+Requirements (features):
+
+Mobile-first responsive layout (single column mobile → multi-column desktop).
+
+Category chips (horizontal scroll on mobile; sidebar-esque row on desktop).
+
+Search (fuzzy by name + short description) and category filter combined.
+
+Tool cards: logo/avatar, name, 1-line short description, Visit button. Card click opens target="_blank" rel="noopener noreferrer".
+
+Logo logic: prefer logo field; fallback to Clearbit or Google favicon (https://logo.clearbit.com/<domain> or https://www.google.com/s2/favicons?domain=<domain>&sz=64); final fallback = initials avatar with generated color hash. Lazy-load images and cache where possible.
+
+Hover (desktop) / tap (mobile) expands to show longer description. Compact/Expanded toggle.
+
+Accessibility: aria labels, keyboard focus states, minimum 44px touch targets.
+
+Small animations using Tailwind (shadow/scale).
+
+Data-driven: all resources in src/data/resources.js as export const RESOURCES = [...]. Adding resources must require editing only this file.
+
+README: how to run (npm install → npm run dev), how to add resources and logos, how to build for production.
+
+Populate src/data/resources.js with the following sample resources (include logos when obvious; otherwise omit to test fallback):
+
+export const RESOURCES = [
+  { id: "kobo", name: "KoboToolbox", category: "Data Collection", url: "https://www.kobotoolbox.org", short: "Open-source mobile data collection for NGOs.", logo: "https://www.kobotoolbox.org/assets/images/logo.png" },
+  { id: "odk", name: "Open Data Kit (ODK)", category: "Data Collection", url: "https://getodk.org", short: "Build and deploy offline data collection forms." },
+  { id: "surveycto", name: "SurveyCTO", category: "Data Collection", url: "https://www.surveycto.com", short: "Secure, research-grade data collection." },
+
+  { id: "looker", name: "Looker Studio", category: "Analysis & Dashboards", url: "https://lookerstudio.google.com", short: "Free interactive dashboards from Google." },
+  { id: "metabase", name: "Metabase", category: "Analysis & Dashboards", url: "https://www.metabase.com", short: "Open-source BI for teams." },
+  { id: "airtable", name: "Airtable", category: "Analysis & Dashboards", url: "https://www.airtable.com", short: "Spreadsheet-database hybrid for project data." },
+
+  { id: "toladata", name: "TolaData", category: "Evaluation Platforms", url: "https://www.toladata.com", short: "M&E platform for program tracking." },
+  { id: "dhis2", name: "DHIS2", category: "Evaluation Platforms", url: "https://dhis2.org", short: "Open-source health information & monitoring." },
+
+  { id: "taguette", name: "Taguette", category: "Qualitative Tools", url: "https://taguette.org", short: "Open-source qualitative coding tool." },
+  { id: "nvivo", name: "NVivo", category: "Qualitative Tools", url: "https://www.qsrinternational.com/nvivo", short: "Software for in-depth qualitative analysis." },
+
+  { id: "chatgpt", name: "ChatGPT", category: "AI & Automation", url: "https://chat.openai.com", short: "AI assistant for drafts and summarisation." },
+  { id: "colab", name: "Google Colab", category: "AI & Automation", url: "https://colab.research.google.com", short: "Cloud Jupyter notebooks for prototyping." },
+  { id: "huggingface", name: "Hugging Face Spaces", category: "AI & Automation", url: "https://huggingface.co/spaces", short: "Host open-source AI apps and demos." },
+
+  { id: "worldbank", name: "World Bank Data", category: "Open Data", url: "https://data.worldbank.org", short: "Global development indicators & datasets." },
+  { id: "ourworld", name: "Our World in Data", category: "Open Data", url: "https://ourworldindata.org", short: "Research-based visualisations on global issues." },
+  { id: "hdx", name: "Humanitarian Data Exchange", category: "Open Data", url: "https://data.humdata.org", short: "UN OCHA open platform for humanitarian data." },
+
+  { id: "flourish", name: "Flourish", category: "Visualization", url: "https://flourish.studio", short: "Interactive charts & stories." },
+  { id: "datawrapper", name: "Datawrapper", category: "Visualization", url: "https://www.datawrapper.de", short: "Simple charts and maps for stories." },
+
+  { id: "betterevaluation", name: "BetterEvaluation", category: "Learning Hubs", url: "https://www.betterevaluation.org", short: "Comprehensive library of evaluation methods." },
+  { id: "merltech", name: "MERL Tech Initiative", category: "Learning Hubs", url: "https://merltech.org", short: "Hub for digital innovation in MERL." },
+  { id: "merlcenter", name: "MERL Center", category: "Learning Hubs", url: "https://merlcenter.org", short: "Open community for MERL practitioners." },
+  { id: "tools4dev", name: "Tools4Dev", category: "Learning Hubs", url: "https://tools4dev.org", short: "Practical M&E how-tos and resources." },
+  { id: "responsibledata", name: "Responsible Data Forum", category: "Learning Hubs", url: "https://responsibledata.io", short: "Ethical guidance for data use." }
+];
+
+
+UI & Behavior details to implement:
+
+Hero with title: HubForge MER-Tech Resource Hub, short subtitle, search box.
+
+CategoryChips derived from RESOURCES.map(r => r.category) unique list; include an “All” chip. Chips should horizontally scroll on small screens.
+
+SearchBar with debounced search (300ms) and fuzzy matching (simple .includes() ok). Search should filter name + short.
+
+ToolGrid displays cards for active category + search results. Grid responsive with Tailwind classes (grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4).
+
+ToolCard includes LogoAvatar on left, name, short text, Visit button. Entire card clickable; Visit button is explicit. On hover/tap card expands to reveal longer long description if present. Provide compact/expanded toggle in header.
+
+LogoAvatar logic: if resource.logo set → show it. Else try https://logo.clearbit.com/<domain> (extract domain from URL). If that 404s or CORS blocks, fallback to https://www.google.com/s2/favicons?domain=<domain>&sz=64. If neither shows (handle with onError), render initials avatar: compute initials from name and background color via hash function (consistent color per id).
+
+Accessibility: aria labels on chips and cards, focus ring, keyboard navigation (tab to cards, Enter to open).
+
+Small animations and shadow on hover: transition-transform duration-150 ease-out hover:-translate-y-1 hover:shadow-lg.
+
+Bonus (optional):
+
+Implement small local caching for fetched favicons (store in localStorage the successful favicon URL per domain).
+
+Provide a CSV export button for resources (download current filtered list as CSV).
+
+README.md: include instructions:
+
+How to run locally: npm install then npm run dev.
+
+Where to edit resources: src/data/resources.js.
+
+How to add logos: preferred options — host in /public/logos/ and add logo: "/logos/name.png" or add full URL.
+
+How to build for production: npm run build.
