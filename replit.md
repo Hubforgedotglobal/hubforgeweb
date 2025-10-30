@@ -43,6 +43,32 @@ The project explicitly avoids external JavaScript frameworks, CSS frameworks, th
 
 ## Recent Changes
 
+### October 30, 2025 - Polish & Performance Enhancements
+- **Implemented comprehensive polish features** for enhanced user experience using pure vanilla JavaScript
+  - **Scroll Progress Bar**: Gradient bar at top of page showing reading progress (coral→pink→purple gradient with glow effect)
+  - **Back-to-Top Button**: Floating button appears after scrolling, smooth scroll to top with gradient background
+  - **Enhanced Scroll Animations**: Intersection Observer-powered fade-in and slide-up animations for all sections
+    - Staggered element reveals with cascading delay (50ms per element)
+    - Threshold-based triggering for optimal timing
+    - Elements animate once and stay visible (unobserve after animation)
+  - **Page Load Animations**: Hero section elements reveal with staggered timing on initial page load
+  - **Subtle Parallax Effects**: Hero backgrounds move at different speeds for depth (desktop only, disabled on mobile for performance)
+  - **Enhanced Micro-interactions**: 
+    - Improved button hover states with lift and glow effects
+    - Card hover animations with smooth transforms
+    - All interactive elements use hardware-accelerated CSS (transform, will-change)
+- **Performance Optimizations**:
+  - Uses Intersection Observer API for efficient scroll tracking
+  - RequestAnimationFrame for smooth parallax effects
+  - Debounced scroll events to reduce CPU usage
+  - Lazy loading support for images with data-src attribute
+  - Hardware acceleration via transform: translateZ(0) and will-change
+  - Mobile optimization: parallax disabled on screens ≤768px
+  - Accessibility: Respects prefers-reduced-motion for users sensitive to animations
+- **Zero Dependencies**: All features built with vanilla JavaScript - maintains static site philosophy
+- **Browser Compatibility**: Modern browsers with Intersection Observer support (95%+ coverage)
+- **Files modified**: docs/assets/js/main.js (added 150+ lines), docs/assets/css/style.css (added 180+ lines)
+
 ### October 30, 2025 - Substack Newsletter Integration
 - **Integrated Substack newsletter** (https://hubforgeglobal.substack.com/) across the website
   - **Newsletter Section on Homepage**: Added dedicated newsletter signup section with Substack embed form
