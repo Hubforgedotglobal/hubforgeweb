@@ -55,13 +55,18 @@
   // PAGE LOAD ANIMATIONS
   // ========================================
   const initPageLoadAnimations = () => {
+    // Add loaded class to body
     document.body.classList.add('page-loaded');
     
-    // Stagger animation for hero elements
-    const heroElements = document.querySelectorAll('.hero-title, .hero-subtitle, .hero-description, .hero-buttons');
+    // Immediately show hero elements with staggered animation
+    const heroElements = document.querySelectorAll('.hero-title, .hero-subtitle, .hero-description, .hero-buttons, .program-hero-title, .program-hero-subtitle');
+    
     heroElements.forEach((el, index) => {
+      // Add animate-in class with slight delay for stagger effect
       setTimeout(() => {
         el.classList.add('animate-in');
+        // Force opacity to 1 to prevent any conflicts
+        el.style.opacity = '1';
       }, index * 100);
     });
   };
@@ -191,17 +196,21 @@
     }, observerOptions);
 
     // Observe all elements that should animate on scroll
+    // Exclude hero section and hero elements since they have page load animations
     const animateElements = document.querySelectorAll(
-      '.section, .value-card, .program-card, .stat-card, .service-card, ' +
+      '.section:not(.hero):not(.page-hero), .value-card, .program-card, .stat-card, .service-card, ' +
       '.feature-card, .card-modern, .grid-2 > *, .grid-3 > *, ' +
       '.section-header, .why-content, .mission-grid, .benefits-grid, ' +
       '.resource-card, .newsletter-content, .cta-content'
     );
     
     animateElements.forEach((el, index) => {
-      el.classList.add('fade-in-element');
-      el.style.setProperty('--animation-order', index);
-      observer.observe(el);
+      // Don't add animations to hero children
+      if (!el.closest('.hero') && !el.closest('.page-hero')) {
+        el.classList.add('fade-in-element');
+        el.style.setProperty('--animation-order', index);
+        observer.observe(el);
+      }
     });
   };
 

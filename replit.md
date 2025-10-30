@@ -51,7 +51,10 @@ The project explicitly avoids external JavaScript frameworks, CSS frameworks, th
     - Staggered element reveals with cascading delay (50ms per element)
     - Threshold-based triggering for optimal timing
     - Elements animate once and stay visible (unobserve after animation)
+    - Hero sections excluded to prevent animation conflicts
   - **Page Load Animations**: Hero section elements reveal with staggered timing on initial page load
+    - Forced opacity to ensure visibility
+    - Separate animation system from scroll animations
   - **Subtle Parallax Effects**: Hero backgrounds move at different speeds for depth (desktop only, disabled on mobile for performance)
   - **Enhanced Micro-interactions**: 
     - Improved button hover states with lift and glow effects
@@ -65,9 +68,14 @@ The project explicitly avoids external JavaScript frameworks, CSS frameworks, th
   - Hardware acceleration via transform: translateZ(0) and will-change
   - Mobile optimization: parallax disabled on screens ≤768px
   - Accessibility: Respects prefers-reduced-motion for users sensitive to animations
+  - Defensive null checks to prevent errors on pages missing elements
+- **Bug Fixes**:
+  - Fixed hero title disappearing after page load by excluding hero from scroll animations
+  - Fixed undefined variable errors by wrapping all code in initialization functions
+  - Fixed animation conflicts between page load and scroll animations
 - **Zero Dependencies**: All features built with vanilla JavaScript - maintains static site philosophy
 - **Browser Compatibility**: Modern browsers with Intersection Observer support (95%+ coverage)
-- **Files modified**: docs/assets/js/main.js (added 150+ lines), docs/assets/css/style.css (added 180+ lines)
+- **Files modified**: docs/assets/js/main.js (343 lines), docs/assets/css/style.css (added 180+ lines)
 
 ### October 30, 2025 - Substack Newsletter Integration
 - **Integrated Substack newsletter** (https://hubforgeglobal.substack.com/) across the website
