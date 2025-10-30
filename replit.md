@@ -43,6 +43,19 @@ The project explicitly avoids external JavaScript frameworks, CSS frameworks, th
 
 ## Recent Changes
 
+### October 30, 2025 - Substack Newsletter Integration
+- **Integrated Substack newsletter** (https://hubforgeglobal.substack.com/) across the website
+  - **Newsletter Section on Homepage**: Added dedicated newsletter signup section with Substack embed form
+    - Pink-to-purple gradient background matching HubForge brand
+    - Eye-catching design positioned between Contact and Footer sections
+    - Allows visitors to subscribe directly without leaving the site
+  - **Blog Link in Navigation**: Added "Blog" link to main menu on all pages
+    - Opens in new tab with proper security attributes (target="_blank", rel="noopener noreferrer")
+    - Visible on homepage, program pages (Impact Lab, EvalAtlas, GIA), and Resource Hub
+  - **Purpose**: Enables regular engagement through monthly M&E insights, resource updates, and changemaker stories
+  - **Implementation**: Pure HTML/CSS with Substack's native embed iframe - no JavaScript dependencies
+  - **Files modified**: index.html, impact-lab.html, evalatlas.html, gia-mande.html, resource-hub/index.html, style.css
+
 ### October 20, 2025 - PDF Export & Resource Hub Enhancement
 - **Added Professional PDF Export** - Download branded resource list for offline use
   - One-click PDF generation with HubForge branding (pink/purple gradient header)
