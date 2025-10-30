@@ -43,6 +43,23 @@ The project explicitly avoids external JavaScript frameworks, CSS frameworks, th
 
 ## Recent Changes
 
+### October 30, 2025 - EvalAtlas Waitlist Integration
+- **Added Tally.so waitlist form integration** with live submission counter display
+  - **Tally Form**: https://tally.so/r/nPxxzd (connected to spreadsheet backend)
+  - **EvalAtlas Page Hero**: Large pink-to-purple gradient counter + "Join the Waitlist" button
+  - **Homepage EvalAtlas Section**: Compact waitlist badge showing count + "Join Waitlist" button
+  - **Manual Counter**: Update `WAITLIST_COUNT` in main.js (line 93) to change the live count
+  - **Branding**: Full HubForge pink (#E94BC4) to purple (#7B68EE) gradient styling
+  - **Ready for Auto-Update**: Instructions provided to upgrade to Google Sheets API for automatic counting
+  - **Files modified**: index.html, evalatlas.html, style.css, main.js
+
+### October 30, 2025 - Section Height Reduction
+- **Reduced section spacing** for more compact layout
+  - spacing-lg: 4rem → 3rem (25% reduction)
+  - spacing-xl: 6rem → 4rem (33% reduction)
+  - Sections like "Our Purpose", "Our Programs", and "Our Services" now display more compactly
+  - **Files modified**: style.css
+
 ### October 30, 2025 - Code Simplification
 - **Removed experimental polish features** due to animation conflicts
   - Simplified JavaScript back to core functionality (mobile menu, smooth scrolling)

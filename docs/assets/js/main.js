@@ -85,4 +85,25 @@
     });
   });
 
+  // Waitlist Counter
+  // UPDATE THIS NUMBER: Change the value below to update the live count
+  const WAITLIST_COUNT = 0; // <-- EDIT THIS NUMBER
+  
+  // Update all waitlist counters on the page
+  const updateWaitlistCount = (count) => {
+    const evalatlasCounter = document.getElementById('waitlistCount');
+    const homeCounter = document.getElementById('waitlistCountHome');
+    
+    if (evalatlasCounter) {
+      evalatlasCounter.textContent = count;
+    }
+    
+    if (homeCounter) {
+      homeCounter.textContent = count;
+    }
+  };
+  
+  // Initialize counter on page load
+  updateWaitlistCount(WAITLIST_COUNT);
+
 })();

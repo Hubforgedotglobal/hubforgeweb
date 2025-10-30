@@ -3034,3 +3034,152 @@ ul {
         outline-color: var(--color-yellow);
     }
 }
+
+/* ========================================
+   WAITLIST COMPONENTS
+   ======================================== */
+
+/* Waitlist CTA on EvalAtlas Hero */
+.waitlist-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.waitlist-counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 2.5rem;
+    background: linear-gradient(135deg, #E94BC4, #7B68EE);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(233, 75, 196, 0.3);
+}
+
+.counter-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-light);
+    line-height: 1;
+}
+
+.counter-label {
+    font-size: 1rem;
+    color: var(--color-light);
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* Waitlist Button - Large */
+.btn-waitlist {
+    background: linear-gradient(135deg, #E94BC4, #7B68EE);
+    color: var(--color-light);
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(233, 75, 196, 0.3);
+    border: 2px solid transparent;
+}
+
+.btn-waitlist:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(233, 75, 196, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Waitlist Badge on Homepage */
+.waitlist-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #E94BC4, #7B68EE);
+    border-radius: 50px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 10px rgba(233, 75, 196, 0.2);
+}
+
+.waitlist-badge-number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-light);
+}
+
+.waitlist-badge {
+    font-size: 0.95rem;
+    color: var(--color-light);
+    font-weight: 600;
+}
+
+/* Waitlist Button - Small (on homepage) */
+.btn-waitlist-small {
+    background: linear-gradient(135deg, #E94BC4, #7B68EE);
+    color: var(--color-light);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+    border: 2px solid transparent;
+}
+
+.btn-waitlist-small:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(233, 75, 196, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Program Actions - Multiple buttons */
+.program-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .waitlist-cta {
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .waitlist-counter {
+        padding: 1.25rem 2rem;
+    }
+    
+    .counter-number {
+        font-size: 2.5rem;
+    }
+    
+    .counter-label {
+        font-size: 0.9rem;
+    }
+    
+    .btn-waitlist {
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+    }
+    
+    .waitlist-badge-number {
+        font-size: 1.25rem;
+    }
+    
+    .program-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .program-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
