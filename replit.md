@@ -48,9 +48,10 @@ The project explicitly avoids external JavaScript frameworks, CSS frameworks, th
   - **Tally Form**: https://tally.so/r/nPxxzd (connected to spreadsheet backend)
   - **EvalAtlas Page Hero**: Large pink-to-purple gradient counter + "Join the Waitlist" button
   - **Homepage EvalAtlas Section**: Compact waitlist badge showing count + "Join Waitlist" button
-  - **Manual Counter**: Update `WAITLIST_COUNT` in main.js (line 93) to change the live count
+  - **Auto-Update Counter**: Connected to Google Sheets via Apps Script API - updates in real-time
+  - **Google Apps Script URL**: Deployed and active, fetches live count from spreadsheet
   - **Branding**: Full HubForge pink (#E94BC4) to purple (#7B68EE) gradient styling
-  - **Ready for Auto-Update**: Instructions provided to upgrade to Google Sheets API for automatic counting
+  - **Counter updates automatically** whenever someone submits the Tally form
   - **Files modified**: index.html, evalatlas.html, style.css, main.js
 
 ### October 30, 2025 - Section Height Reduction

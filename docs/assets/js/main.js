@@ -85,9 +85,8 @@
     });
   });
 
-  // Waitlist Counter
-  // UPDATE THIS NUMBER: Change the value below to update the live count
-  const WAITLIST_COUNT = 0; // <-- EDIT THIS NUMBER
+  // Waitlist Counter - Auto-Update from Google Sheets
+  const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxnq81-qln_Ec4-jTOaoZCI13v-DcDCua_NoFR2Ic3y4ueQIOLYnSOdl5VkLbJ3MDUq/exec';
   
   // Update all waitlist counters on the page
   const updateWaitlistCount = (count) => {
@@ -103,7 +102,15 @@
     }
   };
   
-  // Initialize counter on page load
-  updateWaitlistCount(WAITLIST_COUNT);
+  // Fetch live count from Google Sheets
+  fetch(GOOGLE_APPS_SCRIPT_URL)
+    .then(response => response.json())
+    .then(data => {
+      updateWaitlistCount(data.count);
+    })
+    .catch(error => {
+      console.log('Using fallback count:', error);
+      updateWaitlistCount(0); // Fallback if fetch fails
+    });
 
 })();
