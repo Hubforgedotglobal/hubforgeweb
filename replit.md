@@ -43,6 +43,19 @@ The project explicitly avoids external JavaScript frameworks, CSS frameworks, th
 
 ## Recent Changes
 
+### October 30, 2025 - LinkedIn Social Media Integration & Navigation Improvements
+- **Added LinkedIn social media link** to footer "Connect" sections
+  - Link: https://www.linkedin.com/company/hubforge
+  - Opens in new tab with proper security attributes (target="_blank", rel="noopener noreferrer")
+  - Added to homepage (index.html) and Resource Hub (resource-hub/index.html)
+  - Program pages (EvalAtlas, Impact Lab, GIA) don't have footers, so no changes needed
+- **Improved navigation bar spacing** to prevent "Get Involved" button overlap
+  - Reduced nav-menu gap from 2.5rem to 1.75rem
+  - Made "Get Involved" button slightly smaller (padding: 0.75rem 1.5rem, font-size: 0.95rem)
+  - Added 0.5rem left margin to "Get Involved" button for better spacing
+  - Navigation now displays cleanly across all screen sizes
+  - **Files modified**: style.css, index.html, resource-hub/index.html
+
 ### October 30, 2025 - EvalAtlas Waitlist Integration
 - **Added Tally.so waitlist form integration** with live submission counter display
   - **Tally Form**: https://tally.so/r/nPxxzd (connected to spreadsheet backend)
