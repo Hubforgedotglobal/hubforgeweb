@@ -1850,6 +1850,57 @@ ul {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
 }
 
+/* Newsletter Section */
+.section-newsletter {
+  background: linear-gradient(135deg, var(--color-pink) 0%, var(--color-purple) 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-newsletter::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.newsletter-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.newsletter-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: var(--spacing-md);
+  color: white;
+}
+
+.newsletter-description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: var(--spacing-lg);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.newsletter-embed {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-lg);
+}
+
+.newsletter-embed iframe {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
 /* Centered Section Title */
 .section-title.centered {
   text-align: center;
