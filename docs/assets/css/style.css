@@ -917,8 +917,8 @@ body.page-loaded {
 .hero-buttons.animate-in,
 .program-hero-title.animate-in,
 .program-hero-subtitle.animate-in {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 /* Enhanced Scroll Animations */
