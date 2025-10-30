@@ -92,6 +92,7 @@
   const updateWaitlistCount = (count) => {
     const evalatlasCounter = document.getElementById('waitlistCount');
     const homeCounter = document.getElementById('waitlistCountHome');
+    const bottomCounter = document.getElementById('waitlistCountBottom');
     
     if (evalatlasCounter) {
       evalatlasCounter.textContent = count;
@@ -99,6 +100,10 @@
     
     if (homeCounter) {
       homeCounter.textContent = count;
+    }
+    
+    if (bottomCounter) {
+      bottomCounter.textContent = count;
     }
   };
   

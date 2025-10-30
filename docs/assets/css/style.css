@@ -3160,6 +3160,49 @@ ul {
     margin-top: 0.5rem;
 }
 
+/* Waitlist CTA Bottom Section (End of EvalAtlas Page) */
+.waitlist-cta-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.waitlist-counter-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 2.5rem;
+    background: linear-gradient(135deg, #E94BC4, #7B68EE);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(233, 75, 196, 0.3);
+    min-width: 280px;
+}
+
+.btn-waitlist-large {
+    background: linear-gradient(135deg, #E94BC4, #7B68EE);
+    color: var(--color-light);
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(233, 75, 196, 0.3);
+    border: 2px solid transparent;
+    min-width: 280px;
+    text-align: center;
+    display: inline-block;
+}
+
+.btn-waitlist-large:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(233, 75, 196, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
     .waitlist-cta {
@@ -3196,5 +3239,22 @@ ul {
     .program-actions .btn {
         width: 100%;
         text-align: center;
+    }
+    
+    .waitlist-cta-bottom {
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .waitlist-counter-bottom {
+        padding: 1.25rem 2rem;
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .btn-waitlist-large {
+        width: 100%;
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
     }
 }
