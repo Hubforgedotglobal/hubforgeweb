@@ -3133,12 +3133,6 @@ ul {
     color: var(--color-light);
 }
 
-.waitlist-badge {
-    font-size: 0.95rem;
-    color: var(--color-light);
-    font-weight: 600;
-}
-
 /* Waitlist Button - Small (on homepage) */
 .btn-waitlist-small {
     background: linear-gradient(135deg, #E94BC4, #7B68EE);
@@ -3163,7 +3157,7 @@ ul {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 /* Responsive adjustments */
