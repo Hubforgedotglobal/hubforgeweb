@@ -3209,23 +3209,35 @@ ul {
     .waitlist-cta {
         gap: 1rem;
         margin-top: 1.5rem;
+        width: 100%;
+        padding: 0 1rem;
     }
     
     .waitlist-counter {
-        padding: 1.25rem 2rem;
+        padding: 1.5rem 2rem;
+        min-width: auto;
+        width: 100%;
+        max-width: 100%;
     }
     
     .counter-number {
         font-size: 2.5rem;
     }
     
+    .counter-plus {
+        font-size: 1.75rem;
+    }
+    
     .counter-label {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
+        letter-spacing: 1.5px;
     }
     
     .btn-waitlist {
-        padding: 0.9rem 2rem;
+        padding: 1rem 2rem;
         font-size: 1rem;
+        width: 100%;
+        min-width: auto;
     }
     
     .waitlist-badge-number {
@@ -3245,17 +3257,48 @@ ul {
     .waitlist-cta-bottom {
         gap: 1rem;
         margin-top: 1.5rem;
+        width: 100%;
+        padding: 0 1rem;
     }
     
     .waitlist-counter-bottom {
-        padding: 1.25rem 2rem;
+        padding: 1.5rem 2rem;
         min-width: auto;
         width: 100%;
+        max-width: 100%;
     }
     
     .btn-waitlist-large {
         width: 100%;
-        padding: 0.9rem 2rem;
+        padding: 1rem 2rem;
         font-size: 1rem;
+        min-width: auto;
+    }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 480px) {
+    .waitlist-counter,
+    .waitlist-counter-bottom {
+        padding: 1.25rem 1.5rem;
+    }
+    
+    .counter-number {
+        font-size: 2rem;
+    }
+    
+    .counter-plus {
+        font-size: 1.5rem;
+    }
+    
+    .counter-label {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+    }
+    
+    .btn-waitlist,
+    .btn-waitlist-large {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.95rem;
     }
 }

@@ -43,6 +43,17 @@ The project explicitly avoids external JavaScript frameworks, CSS frameworks, th
 
 ## Recent Changes
 
+### October 30, 2025 - Mobile Waitlist Styling Fix
+- **Fixed mobile responsive design** for EvalAtlas waitlist counter components
+  - Added comprehensive mobile styles for tablets (max-width: 768px)
+  - Added extra-small phone styles (max-width: 480px)
+  - Waitlist counters now display full-width with proper padding on mobile
+  - Counter text sizes scale appropriately (2.5rem → 2rem on small phones)
+  - "Join Waitlist" buttons now full-width on mobile for better touch targets
+  - All gradient backgrounds, borders, and shadows display correctly on all devices
+  - Fixed min-width conflicts that were preventing proper mobile display
+  - **Files modified**: style.css
+
 ### October 30, 2025 - LinkedIn Social Media Integration & Navigation Improvements
 - **Added LinkedIn social media link** to footer "Connect" sections
   - Link: https://www.linkedin.com/company/hubforge
