@@ -107,15 +107,29 @@
     }
   };
   
-  // Fetch live count from Google Sheets
-  fetch(GOOGLE_APPS_SCRIPT_URL)
-    .then(response => response.json())
+  // Fetch live count from Google Sheets with better error handling
+  fetch(GOOGLE_APPS_SCRIPT_URL, {
+    method: 'GET',
+    redirect: 'follow',
+    mode: 'cors'
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok: ' + response.status);
+      }
+      return response.json();
+    })
     .then(data => {
-      updateWaitlistCount(data.count);
+      if (data && typeof data.count === 'number') {
+        updateWaitlistCount(data.count);
+      } else {
+        console.error('Invalid data format:', data);
+        updateWaitlistCount(2); // Use last known count
+      }
     })
     .catch(error => {
-      console.log('Using fallback count:', error);
-      updateWaitlistCount(0); // Fallback if fetch fails
+      console.error('Waitlist counter error:', error);
+      updateWaitlistCount(2); // Use last known count as fallback
     });
 
 })();
