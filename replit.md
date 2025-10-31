@@ -43,20 +43,6 @@ The project explicitly avoids external JavaScript frameworks, CSS frameworks, th
 
 ## Recent Changes
 
-### October 31, 2025 - EvalAtlas Dual Counter Feature (Members + Countries)
-- **Implemented dual waitlist counter** showing both member count and countries count side by side
-  - **New Display**: "X+ Joined" and "X+ Countries" counters shown together
-  - **Location**: EvalAtlas hero section and bottom CTA section
-  - **Backend**: Google Apps Script returns JSON with both `count` (members) and `countries` (unique country count)
-  - **Data Source**: Counts unique values from "Respondent's country" column in Google Sheets
-  - **Responsive Design**: 
-    - Desktop/tablet: Two counters side by side with flexbox layout
-    - Mobile: Counters stack vertically for better readability
-  - **Styling**: Both counters feature HubForge's signature pink-to-purple gradient (#E94BC4 to #7B68EE)
-  - **JavaScript**: Separate update functions for member count and country count with fallback handling
-  - **Frontend gracefully handles** if backend only returns member count (countries will show "0+")
-  - **Files modified**: evalatlas.html, main.js, style.css
-
 ### October 30, 2025 - Mobile Waitlist Styling Fix
 - **Fixed mobile responsive design** for EvalAtlas waitlist counter components
   - Added comprehensive mobile styles for tablets (max-width: 768px)

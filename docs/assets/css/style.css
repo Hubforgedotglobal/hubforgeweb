@@ -3049,14 +3049,6 @@ ul {
     margin-top: 3rem;
 }
 
-/* Row for multiple counters (members + countries) */
-.waitlist-counters-row {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 .waitlist-counter {
     display: flex;
     flex-direction: column;
@@ -3066,9 +3058,7 @@ ul {
     background: linear-gradient(135deg, #E94BC4, #7B68EE);
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(233, 75, 196, 0.3);
-    min-width: 200px;
-    flex: 1;
-    max-width: 280px;
+    min-width: 280px;
 }
 
 .counter-number-wrapper {
@@ -3189,9 +3179,7 @@ ul {
     background: linear-gradient(135deg, #E94BC4, #7B68EE);
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(233, 75, 196, 0.3);
-    min-width: 200px;
-    flex: 1;
-    max-width: 280px;
+    min-width: 280px;
 }
 
 .btn-waitlist-large {
@@ -3223,12 +3211,6 @@ ul {
         margin-top: 1.5rem;
         width: 100%;
         padding: 0 1rem;
-    }
-    
-    .waitlist-counters-row {
-        flex-direction: column;
-        gap: 1rem;
-        width: 100%;
     }
     
     .waitlist-counter {

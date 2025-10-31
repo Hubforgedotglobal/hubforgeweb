@@ -88,7 +88,7 @@
   // Waitlist Counter - Auto-Update from Google Sheets
   const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxnq81-qln_Ec4-jTOaoZCI13v-DcDCua_NoFR2Ic3y4ueQIOLYnSOdl5VkLbJ3MDUq/exec';
   
-  // Update all member counters on the page
+  // Update all waitlist counters on the page
   const updateWaitlistCount = (count) => {
     const evalatlasCounter = document.getElementById('waitlistCount');
     const homeCounter = document.getElementById('waitlistCountHome');
@@ -107,21 +107,7 @@
     }
   };
   
-  // Update all country counters on the page
-  const updateCountriesCount = (count) => {
-    const evalatlasCountriesCounter = document.getElementById('countriesCount');
-    const bottomCountriesCounter = document.getElementById('countriesCountBottom');
-    
-    if (evalatlasCountriesCounter) {
-      evalatlasCountriesCounter.textContent = count;
-    }
-    
-    if (bottomCountriesCounter) {
-      bottomCountriesCounter.textContent = count;
-    }
-  };
-  
-  // Fetch live counts from Google Sheets with better error handling
+  // Fetch live count from Google Sheets with better error handling
   fetch(GOOGLE_APPS_SCRIPT_URL, {
     method: 'GET',
     redirect: 'follow',
@@ -136,22 +122,14 @@
     .then(data => {
       if (data && typeof data.count === 'number') {
         updateWaitlistCount(data.count);
-        // Update countries count if available
-        if (typeof data.countries === 'number') {
-          updateCountriesCount(data.countries);
-        } else {
-          updateCountriesCount(0); // Fallback until Google Script is updated
-        }
       } else {
         console.error('Invalid data format:', data);
         updateWaitlistCount(2); // Use last known count
-        updateCountriesCount(0);
       }
     })
     .catch(error => {
       console.error('Waitlist counter error:', error);
       updateWaitlistCount(2); // Use last known count as fallback
-      updateCountriesCount(0);
     });
 
 })();
