@@ -23,16 +23,12 @@ outputType = "webview"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "python -m http.server 5000 --directory docs"
+args = "python -m http.server 5000 --bind 0.0.0.0 --directory docs"
 waitForPort = 5000
 
 [[ports]]
 localPort = 5000
 externalPort = 80
-
-[[ports]]
-localPort = 34415
-externalPort = 3002
 
 [[ports]]
 localPort = 34949
@@ -57,6 +53,10 @@ externalPort = 3001
 [[ports]]
 localPort = 42783
 externalPort = 5000
+
+[[ports]]
+localPort = 44619
+externalPort = 3002
 
 [[ports]]
 localPort = 46483
