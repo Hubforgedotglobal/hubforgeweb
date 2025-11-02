@@ -111,6 +111,7 @@
   const updateCountriesCount = (count) => {
     const evalatlasCountriesCounter = document.getElementById('countriesCount');
     const bottomCountriesCounter = document.getElementById('countriesCountBottom');
+    const homeCountriesCounter = document.getElementById('countriesCountHome');
     
     if (evalatlasCountriesCounter) {
       evalatlasCountriesCounter.textContent = count;
@@ -118,6 +119,10 @@
     
     if (bottomCountriesCounter) {
       bottomCountriesCounter.textContent = count;
+    }
+    
+    if (homeCountriesCounter) {
+      homeCountriesCounter.textContent = count;
     }
   };
   

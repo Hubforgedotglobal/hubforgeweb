@@ -3144,6 +3144,34 @@ ul {
     color: var(--color-light);
 }
 
+/* Waitlist Stats on Homepage (dual counter) */
+.waitlist-stats {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.waitlist-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #E94BC4, #7B68EE);
+    border-radius: 50px;
+    box-shadow: 0 2px 10px rgba(233, 75, 196, 0.2);
+    font-size: 0.95rem;
+    color: var(--color-light);
+    font-weight: 600;
+}
+
+.waitlist-stat-number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-light);
+}
+
 /* Waitlist Button - Small (on homepage) */
 .btn-waitlist-small {
     background: linear-gradient(135deg, #E94BC4, #7B68EE);
