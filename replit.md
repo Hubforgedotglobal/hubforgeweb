@@ -33,3 +33,25 @@ The design consistently applies HubForge's brand colors and a minimal aesthetic 
 - **Tally.so**: Integrated for waitlist forms, particularly for EvalAtlas, connected to a Google Sheets backend via Google Apps Script for live counter updates.
 - **Substack**: Newsletter integration for content distribution, embedded directly into the site.
 - **jsPDF library**: Used for client-side generation of professional PDF exports of the M&E Resource Hub.
+
+## Recent Changes
+
+### November 2, 2025 - EvalAtlas Positioning & Stakeholder Clarity
+- **Repositioned EvalAtlas** from "directory" to **"Ecosystem & Networking Platform for Social Impact"**
+  - **EvalAtlas Hero Subtitle**: "The global ecosystem & networking platform for social impact"
+  - **Homepage EvalAtlas Description**: Updated to reflect ecosystem & networking platform positioning
+  - **Rationale**: "Social impact" is more inclusive than "evaluation profession" given diverse stakeholders (NGOs, tech vendors, youth, enumerators, etc.)
+- **Expanded stakeholder list** to explicitly include key groups
+  - Added: **NGOs, tech vendors, youth, enumerators**
+  - Complete list: evaluators, NGOs, tech vendors, youth, enumerators, field researchers, agencies, funders, educational institutions, VOPEs, emerging M&E professionals
+  - **Purpose**: Ensure all critical stakeholders see themselves represented in EvalAtlas
+- **Enhanced counter labels** for clarity across all placements
+  - All counters now show: "Members Joined Waitlist" and "Countries Joined Waitlist"
+  - Applied to: Homepage EvalAtlas section, EvalAtlas hero, EvalAtlas bottom CTA
+  - **Files modified**: index.html, evalatlas.html
+
+### November 2, 2025 - EvalAtlas Dual Counter Feature (Members + Countries)
+- **Implemented dual waitlist counter** showing both member count and countries count side by side
+  - **Backend**: Google Apps Script returns JSON with both `count` (members) and `countries` (unique country count from "Respondent's country" column)
+  - **Responsive Design**: Desktop/tablet side-by-side, mobile stacks vertically
+  - **Files modified**: evalatlas.html, main.js, style.css
