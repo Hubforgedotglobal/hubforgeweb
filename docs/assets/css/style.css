@@ -3367,3 +3367,175 @@ ul {
     }
 }
 
+/* ===============================================
+   GIA 2026 PARTNERSHIP BANNER & BENEFITS
+   =============================================== */
+
+.gia-partnership-banner {
+    background: linear-gradient(135deg, rgba(255, 107, 157, 0.08), rgba(198, 91, 207, 0.08));
+    border-radius: 16px;
+    padding: 3rem;
+    border: 2px solid rgba(255, 107, 157, 0.2);
+}
+
+.partnership-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.partnership-label {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-pink);
+    margin-bottom: 1rem;
+}
+
+.partnership-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--color-pink), var(--color-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.partnership-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-gray);
+    margin-bottom: 2rem;
+}
+
+.partnership-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 2.5rem 0;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 107, 157, 0.2);
+}
+
+.highlight-icon {
+    font-size: 1.5rem;
+}
+
+.highlight-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+.partnership-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+/* Benefit Cards for GIA Page */
+.partnership-benefits {
+    margin-top: 3rem;
+}
+
+.benefits-subheading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-light);
+    margin-bottom: 1rem;
+}
+
+.benefit-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.benefit-card:hover {
+    border-color: var(--color-pink);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 107, 157, 0.2);
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.benefit-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-light);
+    margin-bottom: 0.75rem;
+}
+
+.benefit-text {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+    .gia-partnership-banner {
+        padding: 2rem 1.5rem;
+    }
+    
+    .partnership-title {
+        font-size: 1.8rem;
+    }
+    
+    .partnership-description {
+        font-size: 1rem;
+    }
+    
+    .partnership-highlights {
+        gap: 1rem;
+    }
+    
+    .highlight-item {
+        padding: 0.5rem 1rem;
+    }
+    
+    .highlight-text {
+        font-size: 0.85rem;
+    }
+    
+    .partnership-actions {
+        flex-direction: column;
+    }
+    
+    .partnership-actions .btn {
+        width: 100%;
+    }
+    
+    .benefit-card {
+        padding: 1.5rem;
+    }
+    
+    .benefit-icon {
+        font-size: 2.5rem;
+    }
+    
+    .benefit-title {
+        font-size: 1.1rem;
+    }
+}
+

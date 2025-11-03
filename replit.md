@@ -36,6 +36,20 @@ The design consistently applies HubForge's brand colors and a minimal aesthetic 
 
 ## Recent Changes
 
+### November 3, 2025 - GIA 2026 Partnership CTA
+- **Added partnership CTA sections** for Glocal Impact Awards 2026
+  - **Main homepage**: Dedicated partnership banner after programs section
+    - Pink/purple gradient box with label, title, and description
+    - 4 highlight badges: Global Reach, Co-Create Vision, Amplify Impact, Founding Partner Recognition
+    - Two CTA buttons: "Become a Partner" (email) and "Learn More" (GIA page)
+  - **GIA page**: Enhanced CTA section with "Why Partner With Us?" benefits
+    - 4 benefit cards in 2x2 grid: Global Reach, Co-Create Vision, Amplify Mission, Visible Recognition
+    - Each card has icon, title, and description
+    - Dark background with hover effects
+    - Email CTA: hubforgeglobal@gmail.com with subject "GIA 2026 Partnership Inquiry"
+  - **Purpose**: Attract organizations, evaluation networks, funders, and institutions to partner on GIA 2026
+  - **Files modified**: index.html, gia-mande.html, style.css
+
 ### November 3, 2025 - Founding Member Badge Integration
 - **Added simple Founding Member Badge note** integrated with existing counters
   - **Placement**: Between counters and map on both hero and bottom sections
