@@ -36,6 +36,15 @@ The design consistently applies HubForge's brand colors and a minimal aesthetic 
 
 ## Recent Changes
 
+### November 3, 2025 - Content Refinement
+- **Removed all em dashes ("—")** across the entire website, replacing with regular hyphens ("-")
+  - **Files modified**: All HTML files (index.html, evalatlas.html, impact-lab.html, gia-mande.html)
+  - **Rationale**: Cleaner, simpler typography per user preference
+- **Revised EvalAtlas "How EvalAtlas Works" section** for inclusive stakeholder language
+  - **Changed**: "If you're doing evaluation work" → "Whether you're an evaluator, NGO, tech vendor, youth professional, enumerator, or any social impact stakeholder"
+  - **Updated card titles**: "Searchable Expertise, Instantly" → "Connect & Discover"
+  - **Files modified**: evalatlas.html
+
 ### November 2, 2025 - EvalAtlas Positioning & Stakeholder Clarity
 - **Repositioned EvalAtlas** from "directory" to **"Ecosystem & Networking Platform for Social Impact"**
   - **EvalAtlas Hero Subtitle**: "The global ecosystem & networking platform for social impact"
