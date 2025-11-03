@@ -3348,3 +3348,386 @@ ul {
         font-size: 0.95rem;
     }
 }
+
+/* ===============================================
+   EVALATLAS ENHANCEMENTS - ECOSYSTEM ANIMATION
+   =============================================== */
+
+.ecosystem-animation {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.ecosystem-svg {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.node {
+    fill: var(--color-pink);
+    opacity: 0;
+    animation: fadeInNode 0.5s ease-out forwards;
+}
+
+.node-evaluator {
+    animation-delay: 0.2s;
+}
+
+.node-ngo {
+    animation-delay: 0.4s;
+}
+
+.node-tech {
+    animation-delay: 0.6s;
+}
+
+.node-youth {
+    animation-delay: 0.8s;
+}
+
+.node-enumerator {
+    animation-delay: 1s;
+}
+
+.node-small {
+    fill: var(--color-purple);
+    animation-delay: 1.2s;
+}
+
+.connection-line {
+    stroke: url(#lineGradient);
+    stroke-width: 2;
+    stroke-linecap: round;
+    opacity: 0;
+    animation: drawLine 1s ease-out 1.5s forwards;
+}
+
+.hub-node {
+    fill: var(--color-lime);
+    opacity: 0;
+    animation: fadeInHub 0.8s ease-out 2.5s forwards, pulse 2s ease-in-out 3.5s infinite;
+}
+
+@keyframes fadeInNode {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes drawLine {
+    from {
+        opacity: 0;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+    }
+    to {
+        opacity: 0.6;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fadeInHub {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        r: 15;
+        opacity: 1;
+    }
+    50% {
+        r: 18;
+        opacity: 0.8;
+    }
+}
+
+.ecosystem-caption {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    color: var(--color-gray);
+    font-weight: 300;
+    font-style: italic;
+}
+
+/* Add gradient for connection lines in SVG */
+svg defs linearGradient {
+    --gradient-start: var(--color-pink);
+    --gradient-end: var(--color-purple);
+}
+
+/* ===============================================
+   VALUE PROPOSITION CARDS
+   =============================================== */
+
+.value-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: var(--transition);
+}
+
+.value-card:hover {
+    border-color: var(--color-pink);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 107, 157, 0.2);
+}
+
+.value-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.value-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-light);
+    text-align: center;
+}
+
+.value-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.value-list li {
+    color: rgba(255, 255, 255, 0.85);
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.value-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-lime);
+    font-weight: bold;
+}
+
+/* ===============================================
+   FOUNDING MEMBER BADGE SECTION
+   =============================================== */
+
+.founding-member-box {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+}
+
+.founding-member-box::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, var(--color-pink), var(--color-purple), var(--color-lime));
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.badge-icon {
+    margin-bottom: 1.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.founding-heading {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--color-pink), var(--color-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.founding-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-gray);
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.founding-counter {
+    margin: 2rem 0;
+}
+
+.spots-remaining {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.spots-number {
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-pink), var(--color-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.spots-label {
+    font-size: 1rem;
+    color: var(--color-gray);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.founding-benefits {
+    margin: 2rem 0;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.benefits-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-dark);
+    text-align: center;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.benefits-list li {
+    padding: 0.75rem 0;
+    padding-left: 2rem;
+    position: relative;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--color-dark);
+}
+
+.benefits-list li::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: var(--color-pink);
+    font-size: 1.25rem;
+}
+
+.benefits-list li strong {
+    color: var(--color-purple);
+}
+
+.btn-founding {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-pink), var(--color-purple));
+    color: var(--color-light);
+    padding: 1.25rem 3rem;
+    border-radius: 50px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 2rem;
+    transition: var(--transition);
+    box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+}
+
+.btn-founding:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 107, 157, 0.4);
+}
+
+.founding-note {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--color-gray);
+    font-style: italic;
+}
+
+/* Responsive Design for New Sections */
+@media screen and (max-width: 768px) {
+    .ecosystem-svg {
+        max-width: 100%;
+        height: 200px;
+    }
+    
+    .ecosystem-caption {
+        font-size: 1rem;
+    }
+    
+    .value-card {
+        padding: 1.5rem;
+    }
+    
+    .value-icon {
+        font-size: 2.5rem;
+    }
+    
+    .value-title {
+        font-size: 1.1rem;
+    }
+    
+    .founding-member-box {
+        padding: 2rem 1.5rem;
+    }
+    
+    .founding-heading {
+        font-size: 2rem;
+    }
+    
+    .founding-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .spots-number {
+        font-size: 3rem;
+    }
+    
+    .spots-label {
+        font-size: 0.9rem;
+    }
+    
+    .benefits-heading {
+        font-size: 1.25rem;
+    }
+    
+    .benefits-list li {
+        font-size: 0.95rem;
+        padding-left: 1.75rem;
+    }
+    
+    .btn-founding {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        width: 100%;
+    }
+}

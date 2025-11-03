@@ -126,6 +126,20 @@
     }
   };
   
+  // Update founding member spots remaining (10,000 - current count)
+  const updateFoundingSpotsRemaining = (currentCount) => {
+    const foundingSpotsElement = document.getElementById('foundingSpotsRemaining');
+    
+    if (foundingSpotsElement) {
+      const FOUNDING_MEMBER_LIMIT = 10000;
+      const spotsRemaining = Math.max(0, FOUNDING_MEMBER_LIMIT - currentCount);
+      
+      // Format number with commas
+      const formattedSpots = spotsRemaining.toLocaleString();
+      foundingSpotsElement.textContent = formattedSpots;
+    }
+  };
+  
   // Fetch live counts from Google Sheets with better error handling
   fetch(GOOGLE_APPS_SCRIPT_URL, {
     method: 'GET',
@@ -141,6 +155,7 @@
     .then(data => {
       if (data && typeof data.count === 'number') {
         updateWaitlistCount(data.count);
+        updateFoundingSpotsRemaining(data.count);
         // Update countries count if available
         if (typeof data.countries === 'number') {
           updateCountriesCount(data.countries);
@@ -151,12 +166,14 @@
         console.error('Invalid data format:', data);
         updateWaitlistCount(2); // Use last known count
         updateCountriesCount(0);
+        updateFoundingSpotsRemaining(2);
       }
     })
     .catch(error => {
       console.error('Waitlist counter error:', error);
       updateWaitlistCount(2); // Use last known count as fallback
       updateCountriesCount(0);
+      updateFoundingSpotsRemaining(2);
     });
 
 })();
