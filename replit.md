@@ -36,13 +36,22 @@ The design consistently applies HubForge's brand colors and a minimal aesthetic 
 
 ## Recent Changes
 
-### November 3, 2025 - Founding Member Badge Integration
+### November 3, 2025 - Global Reach Map & Founding Member Badge
+- **Added interactive world map** showing countries that have joined the waitlist
+  - **Visual**: Simplified SVG world map with major countries (40+ countries represented)
+  - **Dynamic coloring**: Countries turn pink with subtle pulse animation when members join from that country
+  - **Data integration**: Pulls country list from Google Apps Script API (`countryList` array)
+  - **Country mapping**: Maps full country names to ISO codes (US, GB, IN, BR, etc.)
+  - **Design**: Dark background, minimal aesthetic, responsive on all devices
+  - **Legend**: Shows "Joined" (pink dot) vs "Not Yet Joined" (gray dot)
+  - **Placement**: Between counters and CTA button on EvalAtlas hero section
+  - **Purpose**: Visualize global reach and create social proof as countries join
 - **Added simple Founding Member Badge note** integrated with existing counters
-  - **Placement**: Between counters and CTA button on both hero and bottom sections
+  - **Placement**: Between counters and map on both hero and bottom sections
   - **Text**: "★ First 10,000 members get a Founding Member Badge"
   - **Design**: Pink color, simple, minimal - consistent with SpaceX-inspired aesthetic
   - **Purpose**: Create exclusivity and urgency without overwhelming the page
-  - **Files modified**: evalatlas.html, style.css
+  - **Files modified**: evalatlas.html, style.css, main.js
 
 ### November 3, 2025 - Content Refinement
 - **Removed all em dashes ("—")** across the entire website, replacing with regular hyphens ("-")
