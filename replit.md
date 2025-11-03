@@ -36,19 +36,7 @@ The design consistently applies HubForge's brand colors and a minimal aesthetic 
 
 ## Recent Changes
 
-### November 3, 2025 - Global Reach Map & Founding Member Badge
-- **Added impressive interactive world map** showcasing global reach
-  - **Heading**: "Global Reach" with gradient text, subtitle "Watch the world light up as countries join"
-  - **Visual**: Large, highly visible SVG world map (40+ countries, 800px max width)
-  - **Dynamic coloring**: Countries light up with **pink/purple gradient fill + lime green border + glow effect** when members join
-  - **Pulse animation**: Joined countries pulse with breathing glow effect (3s cycle)
-  - **Data integration**: Pulls country list from Google Apps Script API (`countryList` array)
-  - **Country mapping**: Maps full country names to ISO codes (US, GB, IN, BR, etc.)
-  - **Design**: Pink/purple gradient border, glowing box, drop shadows, premium aesthetic
-  - **Interactive hover**: Countries scale and glow on hover for engagement
-  - **Legend**: Gradient dots showing "Countries Joined" vs "Waiting to Join"
-  - **Placement**: Between founding badge note and CTA button on EvalAtlas hero section
-  - **Purpose**: Create powerful visual social proof as global network grows
+### November 3, 2025 - Founding Member Badge Integration
 - **Added simple Founding Member Badge note** integrated with existing counters
   - **Placement**: Between counters and map on both hero and bottom sections
   - **Text**: "★ First 10,000 members get a Founding Member Badge"
