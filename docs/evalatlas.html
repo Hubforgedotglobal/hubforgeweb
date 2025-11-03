@@ -104,6 +104,72 @@
                         </div>
                     </div>
                     <p class="founding-badge-note">★ First 10,000 members get a Founding Member Badge</p>
+                    
+                    <!-- Global Reach Map -->
+                    <div class="global-map-container">
+                        <p class="map-label">Countries Joined</p>
+                        <svg id="worldMap" viewBox="0 0 960 500" xmlns="http://www.w3.org/2000/svg" class="world-map">
+                            <!-- Simplified world map with major countries -->
+                            <g id="countries">
+                                <!-- Africa -->
+                                <path id="ZA" d="M520,380 L540,380 L545,400 L530,410 L515,400 Z" class="country" data-name="South Africa"/>
+                                <path id="KE" d="M540,340 L555,340 L560,355 L545,360 L535,350 Z" class="country" data-name="Kenya"/>
+                                <path id="NG" d="M490,330 L510,330 L515,345 L500,350 L485,340 Z" class="country" data-name="Nigeria"/>
+                                <path id="EG" d="M520,280 L540,280 L545,300 L530,305 L515,295 Z" class="country" data-name="Egypt"/>
+                                <path id="ET" d="M545,320 L560,320 L565,335 L550,340 L540,330 Z" class="country" data-name="Ethiopia"/>
+                                <path id="TZ" d="M535,355 L550,355 L555,370 L540,375 L530,365 Z" class="country" data-name="Tanzania"/>
+                                <path id="UG" d="M535,345 L545,345 L548,355 L540,358 L533,350 Z" class="country" data-name="Uganda"/>
+                                
+                                <!-- Europe -->
+                                <path id="GB" d="M470,220 L485,220 L490,235 L480,240 L468,230 Z" class="country" data-name="United Kingdom"/>
+                                <path id="FR" d="M480,240 L500,240 L505,260 L490,265 L475,255 Z" class="country" data-name="France"/>
+                                <path id="DE" d="M500,230 L520,230 L525,245 L510,250 L495,240 Z" class="country" data-name="Germany"/>
+                                <path id="ES" d="M465,260 L485,260 L490,275 L475,280 L460,270 Z" class="country" data-name="Spain"/>
+                                <path id="IT" d="M510,255 L525,255 L530,275 L520,282 L505,270 Z" class="country" data-name="Italy"/>
+                                <path id="NL" d="M490,225 L502,225 L505,235 L495,238 L488,230 Z" class="country" data-name="Netherlands"/>
+                                <path id="SE" d="M510,195 L525,195 L530,215 L520,220 L508,210 Z" class="country" data-name="Sweden"/>
+                                <path id="PL" d="M520,220 L535,220 L540,235 L528,240 L518,230 Z" class="country" data-name="Poland"/>
+                                
+                                <!-- Asia -->
+                                <path id="IN" d="M640,310 L670,310 L680,345 L660,355 L635,340 Z" class="country" data-name="India"/>
+                                <path id="CN" d="M700,250 L750,250 L760,290 L735,300 L695,280 Z" class="country" data-name="China"/>
+                                <path id="JP" d="M800,260 L825,260 L830,285 L818,295 L795,280 Z" class="country" data-name="Japan"/>
+                                <path id="ID" d="M720,370 L760,370 L770,390 L750,400 L715,385 Z" class="country" data-name="Indonesia"/>
+                                <path id="PK" d="M620,295 L640,295 L645,315 L630,320 L615,310 Z" class="country" data-name="Pakistan"/>
+                                <path id="BD" d="M665,315 L680,315 L685,330 L673,335 L663,325 Z" class="country" data-name="Bangladesh"/>
+                                <path id="PH" d="M770,340 L790,340 L795,360 L783,368 L768,355 Z" class="country" data-name="Philippines"/>
+                                <path id="VN" d="M710,330 L730,330 L738,355 L725,363 L708,345 Z" class="country" data-name="Vietnam"/>
+                                <path id="TH" d="M690,330 L710,330 L715,350 L703,358 L688,343 Z" class="country" data-name="Thailand"/>
+                                <path id="MY" d="M700,360 L720,360 L725,375 L713,380 L698,370 Z" class="country" data-name="Malaysia"/>
+                                
+                                <!-- Middle East -->
+                                <path id="SA" d="M560,300 L590,300 L595,325 L575,332 L555,318 Z" class="country" data-name="Saudi Arabia"/>
+                                <path id="AE" d="M580,315 L595,315 L598,325 L588,328 L578,322 Z" class="country" data-name="United Arab Emirates"/>
+                                <path id="IL" d="M540,295 L548,295 L550,305 L544,308 L538,302 Z" class="country" data-name="Israel"/>
+                                
+                                <!-- North America -->
+                                <path id="US" d="M120,220 L280,220 L290,300 L250,310 L110,300 Z" class="country" data-name="United States"/>
+                                <path id="CA" d="M120,150 L290,150 L300,210 L280,215 L110,210 Z" class="country" data-name="Canada"/>
+                                <path id="MX" d="M150,310 L250,310 L255,360 L220,370 L145,355 Z" class="country" data-name="Mexico"/>
+                                
+                                <!-- South America -->
+                                <path id="BR" d="M300,360 L380,360 L390,440 L360,455 L290,430 Z" class="country" data-name="Brazil"/>
+                                <path id="AR" d="M280,430 L320,430 L325,480 L305,495 L275,475 Z" class="country" data-name="Argentina"/>
+                                <path id="CO" d="M250,350 L280,350 L285,375 L270,382 L245,368 Z" class="country" data-name="Colombia"/>
+                                <path id="CL" d="M260,430 L280,430 L285,490 L275,498 L258,480 Z" class="country" data-name="Chile"/>
+                                <path id="PE" d="M245,375 L270,375 L275,405 L260,412 L242,395 Z" class="country" data-name="Peru"/>
+                                
+                                <!-- Oceania -->
+                                <path id="AU" d="M780,400 L860,400 L870,460 L835,475 L775,455 Z" class="country" data-name="Australia"/>
+                                <path id="NZ" d="M870,460 L895,460 L900,485 L888,493 L868,480 Z" class="country" data-name="New Zealand"/>
+                            </g>
+                        </svg>
+                        <div class="map-legend">
+                            <span class="legend-item"><span class="legend-dot legend-joined"></span> Joined</span>
+                            <span class="legend-item"><span class="legend-dot legend-pending"></span> Not Yet Joined</span>
+                        </div>
+                    </div>
+                    
                     <a href="https://tally.so/r/nPxxzd" target="_blank" rel="noopener noreferrer" class="btn btn-waitlist">Join the Waitlist →</a>
                 </div>
             </div>

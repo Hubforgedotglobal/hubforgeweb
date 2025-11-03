@@ -140,6 +140,64 @@
     }
   };
   
+  // Update global map with countries that have joined
+  const updateGlobalMap = (countryList) => {
+    if (!countryList || countryList.length === 0) return;
+    
+    // Country name to ISO code mapping
+    const countryMapping = {
+      'United States': 'US',
+      'United Kingdom': 'GB',
+      'Canada': 'CA',
+      'Australia': 'AU',
+      'India': 'IN',
+      'Germany': 'DE',
+      'France': 'FR',
+      'Brazil': 'BR',
+      'Mexico': 'MX',
+      'Spain': 'ES',
+      'Italy': 'IT',
+      'Netherlands': 'NL',
+      'Sweden': 'SE',
+      'Poland': 'PL',
+      'South Africa': 'ZA',
+      'Kenya': 'KE',
+      'Nigeria': 'NG',
+      'Egypt': 'EG',
+      'Ethiopia': 'ET',
+      'Tanzania': 'TZ',
+      'Uganda': 'UG',
+      'China': 'CN',
+      'Japan': 'JP',
+      'Indonesia': 'ID',
+      'Pakistan': 'PK',
+      'Bangladesh': 'BD',
+      'Philippines': 'PH',
+      'Vietnam': 'VN',
+      'Thailand': 'TH',
+      'Malaysia': 'MY',
+      'Saudi Arabia': 'SA',
+      'United Arab Emirates': 'AE',
+      'Israel': 'IL',
+      'Argentina': 'AR',
+      'Colombia': 'CO',
+      'Chile': 'CL',
+      'Peru': 'PE',
+      'New Zealand': 'NZ'
+    };
+    
+    // Color each country that has joined
+    countryList.forEach(countryName => {
+      const isoCode = countryMapping[countryName];
+      if (isoCode) {
+        const countryElement = document.getElementById(isoCode);
+        if (countryElement) {
+          countryElement.classList.add('joined');
+        }
+      }
+    });
+  };
+  
   // Fetch live counts from Google Sheets with better error handling
   fetch(GOOGLE_APPS_SCRIPT_URL, {
     method: 'GET',
@@ -161,6 +219,10 @@
           updateCountriesCount(data.countries);
         } else {
           updateCountriesCount(0); // Fallback until Google Script is updated
+        }
+        // Update global map if country list is available
+        if (data.countryList && Array.isArray(data.countryList)) {
+          updateGlobalMap(data.countryList);
         }
       } else {
         console.error('Invalid data format:', data);
