@@ -36,6 +36,17 @@ The design consistently applies HubForge's brand colors and a minimal aesthetic 
 
 ## Recent Changes
 
+### November 7, 2025 - Resource Hub Filter Compacting
+- **Made category filter chips more compact** in M&E Resource Hub
+  - **Reduced padding**: 0.75rem 1.5rem → 0.4rem 0.85rem (smaller chips)
+  - **Reduced gaps**: 0.75rem → 0.4rem (tighter spacing between chips)
+  - **Smaller font**: 0.875rem → 0.75rem (more compact text)
+  - **Reduced height**: 44px → 32px min-height (less vertical space)
+  - **Reduced margin**: 3rem → 1.5rem bottom margin (less spacing below filters)
+  - **Added max-width**: 900px to contain chips better
+  - **Purpose**: Reduce vertical space taken by filter chips, improve page efficiency
+  - **Files modified**: resource-hub/index.html
+
 ### November 7, 2025 - Not for Profit Organization Footer Mentions
 - **Added subtle "Not for Profit" mentions** in homepage footer only
   - **Footer About Section**: Changed "mission-driven organization" to "not-for-profit organization"
