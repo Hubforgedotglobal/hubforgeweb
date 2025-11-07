@@ -36,6 +36,14 @@ The design consistently applies HubForge's brand colors and a minimal aesthetic 
 
 ## Recent Changes
 
+### November 7, 2025 - Not for Profit Organization Mention
+- **Added subtle "Not for Profit" mentions** in homepage footer
+  - **Footer About Section**: Changed "mission-driven organization" to "not-for-profit organization"
+  - **Footer Legal Section**: Added "(Not for Profit)" before "Section 8 Company" for clarity
+  - **Purpose**: Let visitors know HubForge is a not-for-profit without heavy focus
+  - **Placement**: Only in footer - subtle and credible positioning
+  - **Files modified**: index.html
+
 ### November 3, 2025 - Founding Member Badge Integration
 - **Added simple Founding Member Badge note** integrated with existing counters
   - **Placement**: Between counters and map on both hero and bottom sections
