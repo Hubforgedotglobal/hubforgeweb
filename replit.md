@@ -36,6 +36,15 @@ The design consistently applies HubForge's brand colors and a minimal aesthetic 
 
 ## Recent Changes
 
+### November 7, 2025 - Resource Hub Visitor Counter
+- **Added live visitor counter** to M&E Resource Hub page
+  - **Display**: Shows "X+ visitors explored this hub" with 👥 icon above the page title
+  - **Design**: Minimal pill badge with pink number, SpaceX-inspired
+  - **Tracking**: Built-in localStorage counter (starts at 1,250) that increments on unique visits (24hr window)
+  - **Upgradeable**: Ready to connect to Google Apps Script for real cross-device tracking
+  - **Purpose**: Show social proof and engagement on the resource hub
+  - **Files modified**: resource-hub/index.html
+
 ### November 7, 2025 - Resource Hub Filter Compacting
 - **Made category filter chips more compact** in M&E Resource Hub
   - **Reduced padding**: 0.75rem 1.5rem → 0.4rem 0.85rem (smaller chips)

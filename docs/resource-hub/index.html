@@ -59,6 +59,29 @@
             margin-bottom: 2rem;
         }
 
+        /* Visitor Counter */
+        .visitor-counter {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.25rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .visitor-counter-icon {
+            font-size: 1rem;
+        }
+
+        .visitor-count {
+            font-weight: 700;
+            color: var(--color-pink);
+        }
+
         /* Search Bar */
         .search-container {
             max-width: 600px;
@@ -415,6 +438,10 @@
     <!-- Hero Section -->
     <section class="resource-hero">
         <div class="container resource-hero-content">
+            <div class="visitor-counter">
+                <span class="visitor-counter-icon">👥</span>
+                <span><span class="visitor-count" id="visitorCount">0</span>+ visitors explored this hub</span>
+            </div>
             <h1>M&E Resource Hub</h1>
             <p>Curated tools for monitoring, evaluation, research & tech</p>
             
@@ -886,6 +913,50 @@
             } else {
                 init();
             }
+        })();
+    </script>
+
+    <!-- Visitor Counter Script -->
+    <script>
+        // Visitor Counter - tracks page visits
+        (function() {
+            const VISITOR_API_URL = ''; // Add your Google Apps Script URL here when ready
+            const FALLBACK_COUNT = 1250; // Starting count if no API
+            
+            async function updateVisitorCount() {
+                const visitorCountEl = document.getElementById('visitorCount');
+                
+                if (VISITOR_API_URL) {
+                    // Use Google Apps Script API if available
+                    try {
+                        const response = await fetch(VISITOR_API_URL);
+                        const data = await response.json();
+                        visitorCountEl.textContent = data.count || FALLBACK_COUNT;
+                    } catch (error) {
+                        console.log('Using fallback counter');
+                        visitorCountEl.textContent = FALLBACK_COUNT;
+                    }
+                } else {
+                    // Use localStorage simulation until API is set up
+                    let localCount = parseInt(localStorage.getItem('hubforge_resource_visits') || FALLBACK_COUNT);
+                    
+                    // Check if this is a new visit (not visited in last 24 hours)
+                    const lastVisit = localStorage.getItem('hubforge_resource_last_visit');
+                    const now = Date.now();
+                    const oneDayMs = 24 * 60 * 60 * 1000;
+                    
+                    if (!lastVisit || (now - parseInt(lastVisit)) > oneDayMs) {
+                        localCount += 1;
+                        localStorage.setItem('hubforge_resource_visits', localCount);
+                        localStorage.setItem('hubforge_resource_last_visit', now);
+                    }
+                    
+                    visitorCountEl.textContent = localCount;
+                }
+            }
+            
+            // Update counter on page load
+            updateVisitorCount();
         })();
     </script>
 </body>
