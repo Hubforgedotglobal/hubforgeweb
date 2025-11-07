@@ -3367,30 +3367,3 @@ ul {
     }
 }
 
-/* ===============================================
-   NOT FOR PROFIT BADGE (Hero Section)
-   =============================================== */
-
-.nonprofit-badge {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 0.4rem 1rem;
-    border-radius: 50px;
-    margin-bottom: 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-}
-
-@media screen and (max-width: 768px) {
-    .nonprofit-badge {
-        font-size: 0.65rem;
-        padding: 0.3rem 0.8rem;
-        margin-bottom: 1rem;
-    }
-}
-

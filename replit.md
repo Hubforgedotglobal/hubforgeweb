@@ -36,22 +36,13 @@ The design consistently applies HubForge's brand colors and a minimal aesthetic 
 
 ## Recent Changes
 
-### November 7, 2025 - Not for Profit Badge & "How We Help" Rebranding
-- **Added "Not for Profit Organization" badge** at the top of homepage hero section
-  - **Placement**: Small pill badge above the hero title
-  - **Design**: Subtle white transparent badge with border, uppercase text, minimal SpaceX-inspired style
-  - **Purpose**: Immediate visibility of nonprofit status without heavy emphasis
-- **Footer mentions updated** (from earlier today)
+### November 7, 2025 - Not for Profit Organization Footer Mentions
+- **Added subtle "Not for Profit" mentions** in homepage footer only
   - **Footer About Section**: Changed "mission-driven organization" to "not-for-profit organization"
   - **Footer Legal Section**: Added "Not for Profit organization" before "(Section 8 Company)"
-- **Replaced "Services" with "How We Help"** throughout the site
-  - **Navigation menu**: "Services" → "How We Help"
-  - **Hero CTA button**: "Explore Our Services" → "See How We Help"
-  - **Section heading**: "Our Services" → "How We Help"
-  - **Footer links**: "Services" → "How We Help"
-  - **Rationale**: "Services" felt too commercial for a nonprofit mission-driven organization
-  - **"How We Help" is warmer, mission-focused, and nonprofit-friendly**
-- **Files modified**: index.html, style.css
+  - **Purpose**: Let visitors know HubForge is a not-for-profit without heavy focus
+  - **Placement**: Only in footer - subtle and credible positioning
+  - **Files modified**: index.html
 
 ### November 3, 2025 - Founding Member Badge Integration
 - **Added simple Founding Member Badge note** integrated with existing counters
