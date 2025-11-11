@@ -36,6 +36,15 @@ The design consistently applies HubForge's brand colors and a minimal aesthetic 
 
 ## Recent Changes
 
+### November 11, 2025 - EvalAtlas Live Counter Visual Effects
+- **Added visual cues to make EvalAtlas counters feel dynamic and real-time**
+  - **Pulsing green dot**: Small animated indicator in top-right corner of each counter number (like a "live" recording dot)
+  - **Count-up animation**: Numbers fade in and slide up smoothly when page loads
+  - **Subtle pulse effect**: Creates sense of real-time updates without using the word "live"
+  - **Purpose**: Give visitors the sense that counters are updating dynamically
+  - **Design**: Minimal, SpaceX-inspired - doesn't distract from content
+  - **Files modified**: assets/css/style.css
+
 ### November 7, 2025 - Resource Hub Visitor Counter
 - **Added live visitor counter** to M&E Resource Hub page
   - **Display**: Shows "X+ visitors explored this hub" with 👥 icon above the page title
