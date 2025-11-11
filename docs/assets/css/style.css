@@ -3078,7 +3078,7 @@ ul {
     position: relative;
 }
 
-/* Live indicator dot - pulsing red dot */
+/* Live indicator dot - pulsing white dot */
 .counter-number-wrapper::before {
     content: '';
     position: absolute;
@@ -3086,21 +3086,21 @@ ul {
     right: -8px;
     width: 8px;
     height: 8px;
-    background: #FF4444;
+    background: #FFFFFF;
     border-radius: 50%;
-    box-shadow: 0 0 0 0 rgba(255, 68, 68, 1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
     animation: pulse-dot 2s infinite;
 }
 
 @keyframes pulse-dot {
     0% {
-        box-shadow: 0 0 0 0 rgba(255, 68, 68, 0.7);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
     }
     50% {
-        box-shadow: 0 0 0 6px rgba(255, 68, 68, 0);
+        box-shadow: 0 0 0 6px rgba(255, 255, 255, 0);
     }
     100% {
-        box-shadow: 0 0 0 0 rgba(255, 68, 68, 0);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
     }
 }
 
