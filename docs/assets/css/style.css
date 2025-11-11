@@ -2333,9 +2333,10 @@ ul {
 
 /* --- SECTION LAYOUTS --- */
 .section-dark {
-    background: #000000;
+    background: #0a0a0a;
     color: #ffffff;
     padding: 120px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .section-light {

@@ -36,13 +36,18 @@ The design consistently applies HubForge's brand colors and a minimal aesthetic 
 
 ## Recent Changes
 
-### November 11, 2025 - EvalAtlas Live Counter Visual Effects
-- **Added visual cues to make EvalAtlas counters feel dynamic and real-time**
-  - **Pulsing green dot**: Small animated indicator in top-right corner of each counter number (like a "live" recording dot)
+### November 11, 2025 - EvalAtlas Visual Enhancements
+- **Added live counter visual effects** to make counters feel dynamic and real-time
+  - **Pulsing white dot**: 12px animated indicator in top-right corner of each counter number (grows/shrinks with glow effect)
   - **Count-up animation**: Numbers fade in and slide up smoothly when page loads
-  - **Subtle pulse effect**: Creates sense of real-time updates without using the word "live"
-  - **Purpose**: Give visitors the sense that counters are updating dynamically
+  - **Subtle box glow**: Entire counter card has gentle "breathing" glow animation
+  - **Improved spacing**: Added more breathing room (2.5rem top padding, 1rem gap between number and label)
+  - **Purpose**: Give visitors the sense that counters are updating dynamically without using text
   - **Design**: Minimal, SpaceX-inspired - doesn't distract from content
+- **Distinguished hero and problem sections** on EvalAtlas page
+  - **Hero section**: Pure black background (#000000)
+  - **Problem section**: Slightly lighter background (#0a0a0a) with subtle top border
+  - **Purpose**: Visual separation between sections that previously blended together
   - **Files modified**: assets/css/style.css
 
 ### November 7, 2025 - Resource Hub Visitor Counter
