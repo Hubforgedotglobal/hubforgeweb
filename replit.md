@@ -36,6 +36,20 @@ The design consistently applies HubForge's brand colors and a minimal aesthetic 
 
 ## Recent Changes
 
+### November 11, 2025 - "Who This Is For" Section Improvements
+- **Enhanced tabular design with branded colors**
+  - Pink → Purple gradient borders on all feature boxes
+  - Pink → Lime gradient borders on hover
+  - Light gray background (#fafafa) with rounded corners
+  - Hover effects: lift animation, white background, pink glow shadow
+- **Improved text formatting and content**
+  - Titles now use pink/purple gradient color
+  - Added bold action phrases at start of each description ("Showcase your expertise", "Build your presence", etc.)
+  - Shortened and clarified content for better scannability
+  - Improved line height and spacing for readability
+- **Purpose**: Create structured, table-like appearance with HubForge branding
+- **Files modified**: evalatlas.html, assets/css/style.css
+
 ### November 11, 2025 - EvalAtlas Visual Enhancements
 - **Added live counter visual effects** to make counters feel dynamic and real-time
   - **Pulsing white dot**: 12px animated indicator in top-right corner of each counter number (grows/shrinks with glow effect)
