@@ -51,12 +51,10 @@ The design consistently applies HubForge's brand colors and a minimal aesthetic 
 - **Files modified**: evalatlas.html, assets/css/style.css
 
 ### November 11, 2025 - EvalAtlas Visual Enhancements
-- **Added live counter visual effects** to make counters feel dynamic and real-time
-  - **Pulsing white dot**: 12px animated indicator in top-right corner of each counter number (grows/shrinks with glow effect)
+- **Added subtle counter animations** to enhance visual appeal
   - **Count-up animation**: Numbers fade in and slide up smoothly when page loads
   - **Subtle box glow**: Entire counter card has gentle "breathing" glow animation
   - **Improved spacing**: Added more breathing room (2.5rem top padding, 1rem gap between number and label)
-  - **Purpose**: Give visitors the sense that counters are updating dynamically without using text
   - **Design**: Minimal, SpaceX-inspired - doesn't distract from content
 - **Distinguished hero and problem sections** on EvalAtlas page
   - **Hero section**: Pure black background (#000000)
