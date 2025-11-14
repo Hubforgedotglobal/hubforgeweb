@@ -541,9 +541,164 @@
 
     <script src="../assets/js/main.js"></script>
     <script>
+        // SETUP REQUIRED: Replace these URLs
+        const API_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
         const FORM_URL = 'YOUR_TALLY_FORM_URL_HERE';
         
-        // Dummy data - 10 jobs
+        let allJobs = [];
+        let filters = { location: '', type: '', category: '', remote: '', experience: '', search: '' };
+        
+        document.getElementById('post-btn').onclick = () => window.open(FORM_URL, '_blank');
+        
+        // Filters
+        ['location', 'type', 'category', 'remote', 'experience'].forEach(f => {
+            document.getElementById(`filter-${f}`).onchange = function() {
+                filters[f] = this.value;
+                applyFilters();
+            };
+        });
+        
+        // Search
+        document.getElementById('search').oninput = function(e) {
+            clearTimeout(this.timer);
+            this.timer = setTimeout(() => {
+                filters.search = e.target.value.toLowerCase();
+                applyFilters();
+            }, 300);
+        };
+        
+        // Load jobs from API
+        fetch(API_URL)
+            .then(r => r.json())
+            .then(d => {
+                allJobs = d.jobs || [];
+                populateLocations();
+                updateStats();
+                applyFilters();
+            })
+            .catch(err => {
+                console.error('Error loading jobs:', err);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('empty').style.display = 'block';
+                document.getElementById('empty').innerHTML = '<p>Unable to load jobs. Please check back later.</p>';
+            });
+        
+        function populateLocations() {
+            const countries = [...new Set(allJobs.map(j => {
+                const parts = j.location.split(',');
+                return parts[parts.length - 1].trim();
+            }))].sort();
+            
+            const select = document.getElementById('filter-location');
+            // Keep "All Locations" option
+            select.innerHTML = '<option value="">All Locations</option>';
+            countries.forEach(c => {
+                const opt = document.createElement('option');
+                opt.value = c;
+                opt.textContent = c;
+                select.appendChild(opt);
+            });
+        }
+        
+        function updateStats() {
+            const totalJobs = allJobs.length;
+            const uniqueOrgs = new Set(allJobs.map(j => j.organization)).size;
+            const uniqueCountries = new Set(allJobs.map(j => {
+                const parts = j.location.split(',');
+                return parts[parts.length - 1].trim();
+            })).size;
+            
+            document.getElementById('total-jobs').textContent = totalJobs;
+            document.getElementById('total-orgs').textContent = uniqueOrgs;
+            document.getElementById('total-countries').textContent = uniqueCountries;
+        }
+        
+        function applyFilters() {
+            let jobs = allJobs.filter(j => {
+                if (filters.location && !j.location.includes(filters.location)) return false;
+                if (filters.type && j.type !== filters.type) return false;
+                if (filters.category && j.category !== filters.category) return false;
+                if (filters.remote && j.remotePolicy !== filters.remote) return false;
+                if (filters.experience && j.experienceLevel !== filters.experience) return false;
+                if (filters.search) {
+                    const text = `${j.title} ${j.organization} ${j.description} ${j.location}`.toLowerCase();
+                    if (!text.includes(filters.search)) return false;
+                }
+                return true;
+            });
+            
+            renderJobs(jobs);
+        }
+        
+        function renderJobs(jobs) {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('results').textContent = `${jobs.length} ${jobs.length === 1 ? 'opportunity' : 'opportunities'}`;
+            
+            if (jobs.length === 0) {
+                document.getElementById('jobs').style.display = 'none';
+                document.getElementById('empty').style.display = 'block';
+                return;
+            }
+            
+            document.getElementById('jobs').style.display = 'grid';
+            document.getElementById('empty').style.display = 'none';
+            document.getElementById('jobs').innerHTML = jobs.map(j => {
+                const logo = j.logoUrl ? 
+                    `<img src="${j.logoUrl}" alt="${j.organization}" class="job-logo">` :
+                    `<div class="job-logo-fallback">${j.organization.charAt(0)}</div>`;
+                
+                const org = j.orgWebsite ?
+                    `<a href="${j.orgWebsite}" target="_blank" onclick="event.stopPropagation()">${j.organization}</a>` :
+                    j.organization;
+                
+                const salary = j.salaryMin && j.salaryMax ?
+                    `<span class="detail-tag salary-tag">${j.currency} ${formatNum(j.salaryMin)}-${formatNum(j.salaryMax)}</span>` : '';
+                
+                return `
+                    <div class="job-card" onclick="window.open('${j.applyUrl}', '_blank')">
+                        <div class="card-top">
+                            ${logo}
+                            <div class="job-header">
+                                <div class="job-title">${j.title}</div>
+                                <div class="job-org">${org}</div>
+                            </div>
+                        </div>
+                        
+                        <div class="job-details">
+                            <span class="detail-tag">📍 ${j.location}</span>
+                            <span class="detail-tag">💼 ${j.type}</span>
+                            <span class="detail-tag">🏷️ ${j.category}</span>
+                            ${salary}
+                        </div>
+                        
+                        <div class="job-desc">${j.description}</div>
+                        
+                        <div class="job-footer">
+                            <span class="job-date">${formatDate(j.postedAt)}</span>
+                            <a href="${j.applyUrl}" target="_blank" class="apply-btn" onclick="event.stopPropagation()">
+                                Apply →
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function formatNum(n) {
+            return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+        
+        function formatDate(d) {
+            const date = new Date(d);
+            const diff = Math.floor((new Date() - date) / (1000 * 60 * 60 * 24));
+            if (diff === 0) return 'Today';
+            if (diff === 1) return 'Yesterday';
+            if (diff < 7) return `${diff}d ago`;
+            if (diff < 30) return `${Math.floor(diff / 7)}w ago`;
+            return `${Math.floor(diff / 30)}mo ago`;
+        }
+        
+        // DUMMY DATA FOR PREVIEW (Remove after backend setup)
         const dummyJobs = [
             {
                 title: "Senior M&E Specialist",
