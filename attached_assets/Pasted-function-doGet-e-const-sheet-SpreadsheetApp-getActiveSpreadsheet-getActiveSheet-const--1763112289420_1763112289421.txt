@@ -1,0 +1,185 @@
+function doGet(e) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const params = e.parameter;
+  
+  // If edit_id is provided, return job details for editing
+  if (params.edit_id) {
+    return handleEditRequest(params.edit_id, sheet);
+  }
+  
+  // Otherwise, return all active jobs
+  return handleJobsRequest(sheet);
+}
+
+function doPost(e) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const data = JSON.parse(e.postData.contents);
+  
+  // Handle job update/delete
+  if (data.action === 'update' || data.action === 'delete') {
+    return handleJobUpdate(data, sheet);
+  }
+  
+  return ContentService.createTextOutput(JSON.stringify({ error: 'Invalid action' }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+// Handle new job submission (called by onFormSubmit trigger)
+function onFormSubmit(e) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const row = e.range.getRow();
+  
+  // Generate unique edit ID
+  const editId = Utilities.getUuid();
+  sheet.getRange(row, 21).setValue(editId); // Column U
+  
+  // Send confirmation email with edit link
+  const email = sheet.getRange(row, 18).getValue(); // Column R (Contact Email)
+  const jobTitle = sheet.getRange(row, 2).getValue(); // Column B
+  const organization = sheet.getRange(row, 3).getValue(); // Column C
+  
+  const editUrl = `YOUR_WEB_APP_URL?edit_id=${editId}`;
+  
+  const subject = `✅ Your job posting: "${jobTitle}" is live!`;
+  const body = `
+Hi there,
+
+Your job posting for "${jobTitle}" at ${organization} has been successfully published on the Community Driven Impact Jobs Hub!
+
+🔗 Edit or remove your job anytime:
+${editUrl}
+
+📋 Job Details:
+- Title: ${jobTitle}
+- Organization: ${organization}
+- Posted: ${new Date().toLocaleDateString()}
+
+Keep this email safe - you'll need this link to manage your job posting.
+
+Questions? Reply to this email.
+
+Best regards,
+HubForge Global Impact Network
+  `;
+  
+  try {
+    MailApp.sendEmail(email, subject, body);
+  } catch (error) {
+    Logger.log('Error sending email: ' + error);
+  }
+}
+
+// Return all active jobs
+function handleJobsRequest(sheet) {
+  const data = sheet.getDataRange().getValues();
+  const headers = data[0];
+  const rows = data.slice(1);
+  
+  const jobs = rows
+    .map(row => {
+      const job = {};
+      headers.forEach((header, index) => {
+        job[header] = row[index];
+      });
+      return job;
+    })
+    .filter(job => {
+      if (!job['Job Title']) return false;
+      
+      // Calculate expiration
+      const postedDate = new Date(job['Timestamp']);
+      const expirationMonths = parseInt(job['Expiration']?.split(' ')[0]) || 3;
+      const expiresAt = new Date(postedDate);
+      expiresAt.setMonth(expiresAt.getMonth() + expirationMonths);
+      
+      // Check if still active
+      const now = new Date();
+      if (now > expiresAt) return false;
+      
+      return true;
+    })
+    .map(job => {
+      const postedDate = new Date(job['Timestamp']);
+      const expirationMonths = parseInt(job['Expiration']?.split(' ')[0]) || 3;
+      const expiresAt = new Date(postedDate);
+      expiresAt.setMonth(expiresAt.getMonth() + expirationMonths);
+      
+      return {
+        title: job['Job Title'],
+        organization: job['Organization'],
+        orgWebsite: job['Organization Website'] || '',
+        companySize: job['Company Size'],
+        location: job['Location'],
+        remotePolicy: job['Remote Policy'],
+        type: job['Job Type'],
+        category: job['Category'],
+        experienceLevel: job['Experience Level'],
+        salaryMin: job['Salary Min'] || null,
+        salaryMax: job['Salary Max'] || null,
+        currency: job['Currency'] || '',
+        description: job['Description'],
+        jobDescriptionUrl: job['Job Description URL'] || '',
+        applyUrl: job['Apply URL'],
+        applicationDeadline: job['Application Deadline'] || '',
+        contactEmail: job['Contact Email'],
+        logoUrl: job['Logo URL'] || '',
+        postedAt: postedDate.toISOString(),
+        expiresAt: expiresAt.toISOString()
+      };
+    })
+    .reverse(); // Show newest first
+  
+  return ContentService.createTextOutput(JSON.stringify({ jobs: jobs }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+// Handle edit request
+function handleEditRequest(editId, sheet) {
+  const data = sheet.getDataRange().getValues();
+  const headers = data[0];
+  
+  // Find job by edit ID
+  const rowIndex = data.findIndex(row => row[20] === editId); // Column U
+  
+  if (rowIndex === -1) {
+    return ContentService.createTextOutput(JSON.stringify({ error: 'Job not found' }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+  
+  const job = {};
+  headers.forEach((header, index) => {
+    job[header] = data[rowIndex][index];
+  });
+  
+  return ContentService.createTextOutput(JSON.stringify({ job: job, rowIndex: rowIndex }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+// Handle job update/delete
+function handleJobUpdate(data, sheet) {
+  const editId = data.edit_id;
+  const sheetData = sheet.getDataRange().getValues();
+  
+  // Find job by edit ID
+  const rowIndex = sheetData.findIndex(row => row[20] === editId); // Column U
+  
+  if (rowIndex === -1) {
+    return ContentService.createTextOutput(JSON.stringify({ error: 'Job not found' }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+  
+  if (data.action === 'delete') {
+    sheet.deleteRow(rowIndex + 1);
+    return ContentService.createTextOutput(JSON.stringify({ success: true, message: 'Job deleted' }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+  
+  if (data.action === 'update') {
+    // Update job fields (implement as needed)
+    return ContentService.createTextOutput(JSON.stringify({ success: true, message: 'Job updated' }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+  
+  return ContentService.createTextOutput(JSON.stringify({ error: 'Invalid action' }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
