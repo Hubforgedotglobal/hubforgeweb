@@ -674,65 +674,10 @@
                         <div class="job-desc">${j.description}</div>
                         
                         <div class="job-footer">
-                            <span class="job-date">${formatDate(j.postedAt)}</span>
-                            <a href="${j.applyUrl}" target="_blank" class="apply-btn" onclick="event.stopPropagation()">
-                                Apply →
-                            </a>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
-        
-        function formatNum(n) {
-            return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-        
-        function formatDate(d) {
-            const date = new Date(d);
-            const diff = Math.floor((new Date() - date) / (1000 * 60 * 60 * 24));
-            if (diff === 0) return 'Today';
-            if (diff === 1) return 'Yesterday';
-            if (diff < 7) return `${diff}d ago`;
-            if (diff < 30) return `${Math.floor(diff / 7)}w ago`;
-            return `${Math.floor(diff / 30)}mo ago`;
-        }
-        
-        
-        function renderJobs(jobs) {
-            document.getElementById('jobs').innerHTML = jobs.map(j => {
-                const logo = j.logoUrl ? 
-                    `<img src="${j.logoUrl}" alt="${j.organization}" class="job-logo">` :
-                    `<div class="job-logo-fallback">${j.organization.charAt(0)}</div>`;
-                
-                const org = j.orgWebsite ?
-                    `<a href="${j.orgWebsite}" target="_blank" onclick="event.stopPropagation()">${j.organization}</a>` :
-                    j.organization;
-                
-                const salary = j.salaryMin && j.salaryMax ?
-                    `<span class="detail-tag salary-tag">${j.currency} ${formatNum(j.salaryMin)}-${formatNum(j.salaryMax)}</span>` : '';
-                
-                return `
-                    <div class="job-card" onclick="window.open('${j.applyUrl}', '_blank')">
-                        <div class="card-top">
-                            ${logo}
-                            <div class="job-header">
-                                <div class="job-title">${j.title}</div>
-                                <div class="job-org">${org}</div>
+                            <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                                <span class="job-date">Posted ${formatDate(j.postedAt)}</span>
+                                ${j.deadline ? `<span class="job-date" style="color: rgba(255, 255, 255, 0.5);">📅 Apply by ${formatDeadline(j.deadline)}</span>` : ''}
                             </div>
-                        </div>
-                        
-                        <div class="job-details">
-                            <span class="detail-tag">📍 ${j.location}</span>
-                            <span class="detail-tag">💼 ${j.type}</span>
-                            <span class="detail-tag">🏷️ ${j.category}</span>
-                            ${salary}
-                        </div>
-                        
-                        <div class="job-desc">${j.description}</div>
-                        
-                        <div class="job-footer">
-                            <span class="job-date">${formatDate(j.postedAt)}</span>
                             <a href="${j.applyUrl}" target="_blank" class="apply-btn" onclick="event.stopPropagation()">
                                 Apply →
                             </a>
@@ -755,6 +700,14 @@
             if (diff < 30) return `${Math.floor(diff / 7)}w ago`;
             return `${Math.floor(diff / 30)}mo ago`;
         }
+        
+        function formatDeadline(d) {
+            if (!d) return '';
+            const date = new Date(d);
+            const options = { month: 'short', day: 'numeric', year: 'numeric' };
+            return date.toLocaleDateString('en-US', options);
+        }
+        
     </script>
 </body>
 </html>
