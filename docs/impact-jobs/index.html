@@ -94,31 +94,17 @@
             box-shadow: 0 12px 40px rgba(255, 255, 255, 0.3);
         }
         
-        /* Filters - Compact Row */
+        /* Filters - Compact Futuristic */
         .filters-section {
             background: #000;
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            position: sticky;
-            top: 70px;
-            z-index: 10;
-        }
-        
-        .filters-container {
-            display: grid;
-            grid-template-columns: 2fr repeat(auto-fit, minmax(140px, 1fr));
-            gap: 0.75rem;
-            align-items: center;
-        }
-        
-        @media (max-width: 768px) {
-            .filters-container {
-                grid-template-columns: 1fr;
-            }
         }
         
         .search-wrapper {
             position: relative;
+            max-width: 800px;
+            margin: 0 auto 1rem;
         }
         
         .search-input {
@@ -152,27 +138,42 @@
             color: rgba(255, 255, 255, 0.35);
         }
         
+        .filters-row {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
         .filter-select {
-            padding: 0.875rem 1rem;
-            font-size: 0.9375rem;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 8px;
+            padding: 0.65rem 1rem;
+            font-size: 0.8125rem;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 6px;
             background: rgba(255, 255, 255, 0.03);
-            color: white;
+            color: rgba(255, 255, 255, 0.7);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             font-family: 'Inter', sans-serif;
             appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='rgba(255,255,255,0.5)' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='rgba(255,255,255,0.5)' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
-            background-position: right 1rem center;
-            padding-right: 2.5rem;
+            background-position: right 0.75rem center;
+            padding-right: 2rem;
+            min-width: 130px;
+        }
+        
+        .filter-select:hover {
+            border-color: rgba(255, 255, 255, 0.25);
+            background-color: rgba(255, 255, 255, 0.05);
         }
         
         .filter-select:focus {
             outline: none;
-            border-color: rgba(255, 255, 255, 0.3);
-            background-color: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.4);
+            background-color: rgba(255, 255, 255, 0.06);
         }
         
         .filter-select option {
@@ -246,7 +247,7 @@
             width: 56px;
             height: 56px;
             border-radius: 10px;
-            background: rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -410,15 +411,15 @@
             
             <div class="hero-stats">
                 <div class="stat">
-                    <span class="stat-number" id="total-jobs">0</span>
+                    <span class="stat-number" id="total-jobs">10</span>
                     <span class="stat-label">Active Jobs</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number" id="total-orgs">0</span>
+                    <span class="stat-number" id="total-orgs">8</span>
                     <span class="stat-label">Organizations</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number" id="total-countries">0</span>
+                    <span class="stat-number" id="total-countries">6</span>
                     <span class="stat-label">Countries</span>
                 </div>
             </div>
@@ -430,36 +431,39 @@
     <!-- Filters -->
     <section class="filters-section">
         <div class="container">
-            <div class="filters-container">
-                <div class="search-wrapper">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" class="search-input" id="search" placeholder="Search jobs, organizations, locations...">
-                </div>
-                
+            <div class="search-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" id="search" placeholder="Search jobs, organizations, locations...">
+            </div>
+            
+            <div class="filters-row">
                 <select class="filter-select" id="filter-location">
                     <option value="">All Locations</option>
+                    <option value="Kenya">Kenya</option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                    <option value="Remote">Remote</option>
                 </select>
                 
                 <select class="filter-select" id="filter-type">
-                    <option value="">All Types</option>
+                    <option value="">Job Type</option>
                     <option value="Full-time">Full-time</option>
                     <option value="Part-time">Part-time</option>
                     <option value="Contract">Contract</option>
                     <option value="Volunteer">Volunteer</option>
-                    <option value="Internship">Internship</option>
                 </select>
                 
                 <select class="filter-select" id="filter-category">
-                    <option value="">All Categories</option>
+                    <option value="">Category</option>
                     <option value="M&E">M&E</option>
                     <option value="Research">Research</option>
                     <option value="Tech">Tech</option>
-                    <option value="Program Management">Program Mgmt</option>
-                    <option value="Other">Other</option>
+                    <option value="Program Management">Program</option>
                 </select>
                 
                 <select class="filter-select" id="filter-remote">
-                    <option value="">Remote Policy</option>
+                    <option value="">Remote</option>
                     <option value="Fully Remote">Fully Remote</option>
                     <option value="Hybrid">Hybrid</option>
                     <option value="On-site">On-site</option>
@@ -467,10 +471,9 @@
                 
                 <select class="filter-select" id="filter-experience">
                     <option value="">Experience</option>
-                    <option value="Entry Level">Entry Level</option>
-                    <option value="Mid Level">Mid Level</option>
-                    <option value="Senior Level">Senior Level</option>
-                    <option value="Executive">Executive</option>
+                    <option value="Entry Level">Entry</option>
+                    <option value="Mid Level">Mid</option>
+                    <option value="Senior Level">Senior</option>
                 </select>
             </div>
         </div>
@@ -478,21 +481,14 @@
 
     <!-- Results -->
     <div class="container">
-        <div id="results" class="results-bar"></div>
+        <div id="results" class="results-bar">10 opportunities</div>
     </div>
 
     <!-- Jobs -->
     <section class="jobs-section">
         <div class="container">
-            <div id="loading" class="loading">
-                <div class="spinner"></div>
-                <p>Loading opportunities...</p>
-            </div>
-            
-            <div id="jobs" class="jobs-grid" style="display:none;"></div>
-            
-            <div id="empty" class="empty" style="display:none;">
-                <p>No jobs found. Try adjusting your filters.</p>
+            <div id="jobs" class="jobs-grid">
+                <!-- Dummy jobs will be rendered here -->
             </div>
         </div>
     </section>
@@ -531,99 +527,176 @@
 
     <script src="../assets/js/main.js"></script>
     <script>
-        const API_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
         const FORM_URL = 'YOUR_TALLY_FORM_URL_HERE';
         
-        let allJobs = [];
-        let filters = { location: '', type: '', category: '', remote: '', experience: '', search: '' };
+        // Dummy data - 10 jobs
+        const dummyJobs = [
+            {
+                title: "Senior M&E Specialist",
+                organization: "CARE International",
+                orgWebsite: "https://care.org",
+                location: "Nairobi, Kenya",
+                type: "Full-time",
+                category: "M&E",
+                remotePolicy: "Hybrid",
+                experienceLevel: "Senior Level",
+                description: "Lead monitoring and evaluation efforts for health programs across East Africa. Design frameworks, build capacity, and ensure data quality.",
+                salaryMin: 60000,
+                salaryMax: 80000,
+                currency: "USD",
+                applyUrl: "#",
+                postedAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
+                logoUrl: ""
+            },
+            {
+                title: "Research Analyst",
+                organization: "Oxford Policy Management",
+                location: "London, UK",
+                type: "Full-time",
+                category: "Research",
+                remotePolicy: "On-site",
+                experienceLevel: "Mid Level",
+                description: "Conduct quantitative and qualitative research on education policy interventions. Collaborate with government partners.",
+                salaryMin: 35000,
+                salaryMax: 45000,
+                currency: "GBP",
+                applyUrl: "#",
+                postedAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
+                logoUrl: ""
+            },
+            {
+                title: "Full Stack Developer",
+                organization: "TechSoup Global",
+                location: "Remote",
+                type: "Contract",
+                category: "Tech",
+                remotePolicy: "Fully Remote",
+                experienceLevel: "Mid Level",
+                description: "Build web applications for nonprofits. React, Node.js, PostgreSQL. Work with impact-driven teams worldwide.",
+                salaryMin: 50000,
+                salaryMax: 70000,
+                currency: "USD",
+                applyUrl: "#",
+                postedAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000),
+                logoUrl: ""
+            },
+            {
+                title: "Impact Measurement Coordinator",
+                organization: "Acumen Fund",
+                location: "Mumbai, India",
+                type: "Full-time",
+                category: "M&E",
+                remotePolicy: "Hybrid",
+                experienceLevel: "Entry Level",
+                description: "Support impact measurement across social enterprise portfolio. Collect data, analyze metrics, and create dashboards.",
+                salaryMin: 800000,
+                salaryMax: 1200000,
+                currency: "INR",
+                applyUrl: "#",
+                postedAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
+                logoUrl: ""
+            },
+            {
+                title: "Data Scientist - Social Impact",
+                organization: "Gates Foundation",
+                location: "Seattle, USA",
+                type: "Full-time",
+                category: "Research",
+                remotePolicy: "Hybrid",
+                experienceLevel: "Senior Level",
+                description: "Apply machine learning to global health data. Predict intervention outcomes and optimize resource allocation.",
+                salaryMin: 120000,
+                salaryMax: 160000,
+                currency: "USD",
+                applyUrl: "#",
+                postedAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000),
+                logoUrl: ""
+            },
+            {
+                title: "Evaluation Consultant",
+                organization: "Independent",
+                location: "Remote",
+                type: "Part-time",
+                category: "M&E",
+                remotePolicy: "Fully Remote",
+                experienceLevel: "Senior Level",
+                description: "Conduct outcome evaluations for education NGOs. Flexible hours, remote work. Strong qualitative skills required.",
+                salaryMin: 30,
+                salaryMax: 50,
+                currency: "USD",
+                applyUrl: "#",
+                postedAt: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000),
+                logoUrl: ""
+            },
+            {
+                title: "Program Manager - Climate Action",
+                organization: "Greenpeace",
+                location: "Amsterdam, Netherlands",
+                type: "Full-time",
+                category: "Program Management",
+                remotePolicy: "On-site",
+                experienceLevel: "Mid Level",
+                description: "Manage climate campaigns across Europe. Coordinate teams, track progress, and report to stakeholders.",
+                salaryMin: 45000,
+                salaryMax: 60000,
+                currency: "EUR",
+                applyUrl: "#",
+                postedAt: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000),
+                logoUrl: ""
+            },
+            {
+                title: "Mobile App Developer",
+                organization: "Ushahidi",
+                location: "Nairobi, Kenya",
+                type: "Contract",
+                category: "Tech",
+                remotePolicy: "Hybrid",
+                experienceLevel: "Mid Level",
+                description: "Build crisis mapping mobile apps. Flutter/React Native experience. Work on tools used during emergencies worldwide.",
+                salaryMin: 40000,
+                salaryMax: 55000,
+                currency: "USD",
+                applyUrl: "#",
+                postedAt: new Date(Date.now() - 6 * 24 * 60 * 60 * 1000),
+                logoUrl: ""
+            },
+            {
+                title: "Learning & Evaluation Intern",
+                organization: "Mercy Corps",
+                location: "Portland, USA",
+                type: "Volunteer",
+                category: "M&E",
+                remotePolicy: "Hybrid",
+                experienceLevel: "Entry Level",
+                description: "Support M&E team with data collection and reporting. Great opportunity for recent graduates. Stipend provided.",
+                applyUrl: "#",
+                postedAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000),
+                logoUrl: ""
+            },
+            {
+                title: "Qualitative Research Lead",
+                organization: "IDinsight",
+                location: "Remote",
+                type: "Full-time",
+                category: "Research",
+                remotePolicy: "Fully Remote",
+                experienceLevel: "Senior Level",
+                description: "Design and lead qualitative studies for development programs. Train researchers, analyze data, write reports.",
+                salaryMin: 70000,
+                salaryMax: 95000,
+                currency: "USD",
+                applyUrl: "#",
+                postedAt: new Date(Date.now() - 12 * 24 * 60 * 60 * 1000),
+                logoUrl: ""
+            }
+        ];
         
         document.getElementById('post-btn').onclick = () => window.open(FORM_URL, '_blank');
         
-        // Filters
-        ['location', 'type', 'category', 'remote', 'experience'].forEach(f => {
-            document.getElementById(`filter-${f}`).onchange = function() {
-                filters[f] = this.value;
-                applyFilters();
-            };
-        });
-        
-        // Search
-        document.getElementById('search').oninput = function(e) {
-            clearTimeout(this.timer);
-            this.timer = setTimeout(() => {
-                filters.search = e.target.value.toLowerCase();
-                applyFilters();
-            }, 300);
-        };
-        
-        // Load
-        fetch(API_URL)
-            .then(r => r.json())
-            .then(d => {
-                allJobs = d.jobs || [];
-                populateLocations();
-                updateStats();
-                applyFilters();
-            })
-            .catch(() => {
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('empty').style.display = 'block';
-                document.getElementById('empty').innerHTML = '<p>Unable to load jobs. Please try again.</p>';
-            });
-        
-        function populateLocations() {
-            const countries = [...new Set(allJobs.map(j => {
-                const parts = j.location.split(',');
-                return parts[parts.length - 1].trim();
-            }))].sort();
-            
-            const select = document.getElementById('filter-location');
-            countries.forEach(c => {
-                const opt = document.createElement('option');
-                opt.value = c;
-                opt.textContent = c;
-                select.appendChild(opt);
-            });
-        }
-        
-        function updateStats() {
-            document.getElementById('total-jobs').textContent = allJobs.length;
-            document.getElementById('total-orgs').textContent = new Set(allJobs.map(j => j.organization)).size;
-            document.getElementById('total-countries').textContent = new Set(allJobs.map(j => {
-                const parts = j.location.split(',');
-                return parts[parts.length - 1].trim();
-            })).size;
-        }
-        
-        function applyFilters() {
-            let jobs = allJobs.filter(j => {
-                if (filters.location && !j.location.includes(filters.location)) return false;
-                if (filters.type && j.type !== filters.type) return false;
-                if (filters.category && j.category !== filters.category) return false;
-                if (filters.remote && j.remotePolicy !== filters.remote) return false;
-                if (filters.experience && j.experienceLevel !== filters.experience) return false;
-                if (filters.search) {
-                    const text = `${j.title} ${j.organization} ${j.description} ${j.location}`.toLowerCase();
-                    if (!text.includes(filters.search)) return false;
-                }
-                return true;
-            });
-            
-            renderJobs(jobs);
-        }
+        // Render dummy jobs
+        renderJobs(dummyJobs);
         
         function renderJobs(jobs) {
-            document.getElementById('loading').style.display = 'none';
-            document.getElementById('results').textContent = `${jobs.length} ${jobs.length === 1 ? 'opportunity' : 'opportunities'}`;
-            
-            if (jobs.length === 0) {
-                document.getElementById('jobs').style.display = 'none';
-                document.getElementById('empty').style.display = 'block';
-                return;
-            }
-            
-            document.getElementById('jobs').style.display = 'grid';
-            document.getElementById('empty').style.display = 'none';
             document.getElementById('jobs').innerHTML = jobs.map(j => {
                 const logo = j.logoUrl ? 
                     `<img src="${j.logoUrl}" alt="${j.organization}" class="job-logo">` :
