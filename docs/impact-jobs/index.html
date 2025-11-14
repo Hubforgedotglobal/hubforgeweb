@@ -3,87 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community Driven Impact Jobs - HubForge</title>
-    <meta name="description" content="Community job board for M&E, research, tech, and social impact roles. Post jobs free.">
+    <title>Impact Jobs - HubForge</title>
+    <meta name="description" content="M&E, research, tech, and social impact jobs worldwide">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        body { background: #000; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        /* Simple Hero */
-        .jobs-hero {
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
             background: #000;
-            padding: 100px 0 40px;
+            color: #fff;
+            line-height: 1.5;
+        }
+        
+        /* Minimal Header */
+        .header {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: rgba(255,255,255,0.5);
+            font-weight: 400;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        
+        .nav a:hover {
+            color: #fff;
+        }
+        
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+        }
+        
+        /* Hero - Search First */
+        .hero {
+            padding: 5rem 0 3rem;
             text-align: center;
         }
         
-        .hero-title {
-            font-size: clamp(1.75rem, 4vw, 2.5rem);
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 700;
-            color: white;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
         }
         
-        .hero-subtitle {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 1.5rem;
+        .hero p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 2.5rem;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
         
-        .post-job-btn {
-            display: inline-block;
-            padding: 0.75rem 2rem;
-            background: linear-gradient(135deg, #e94bc4, #7b68ee);
-            color: white;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-decoration: none;
-            transition: transform 0.2s;
-        }
-        
-        .post-job-btn:hover {
-            transform: translateY(-2px);
-        }
-        
-        /* Search Section */
-        .search-section {
-            background: #0a0a0a;
-            padding: 2rem 0 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .search-box {
-            max-width: 600px;
-            margin: 0 auto 1.5rem;
+        .search-wrapper {
+            max-width: 650px;
+            margin: 0 auto 2rem;
             position: relative;
         }
         
-        .search-input {
+        .search {
             width: 100%;
-            padding: 0.85rem 1rem 0.85rem 2.75rem;
-            font-size: 0.95rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.03);
-            color: white;
+            padding: 1rem 1.25rem 1rem 3rem;
+            font-size: 1.05rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 12px;
+            color: #fff;
+            font-family: inherit;
+            transition: all 0.2s;
         }
         
-        .search-input:focus {
+        .search:focus {
             outline: none;
-            border-color: #e94bc4;
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(255,255,255,0.25);
         }
         
-        .search-input::placeholder {
-            color: rgba(255, 255, 255, 0.4);
+        .search::placeholder {
+            color: rgba(255,255,255,0.35);
         }
         
         .search-icon {
@@ -91,123 +128,121 @@
             left: 1.1rem;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.4);
+            font-size: 1.2rem;
+            opacity: 0.4;
         }
         
-        /* Filters - Compact */
-        .filters {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .filter-row {
-            margin-bottom: 1rem;
-        }
-        
-        .filter-label {
-            font-size: 0.7rem;
-            color: rgba(255, 255, 255, 0.5);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.5rem;
-            display: block;
+        .post-btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background: #fff;
+            color: #000;
+            border-radius: 8px;
             font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
         }
         
-        .filter-chips {
+        .post-btn:hover {
+            background: rgba(255,255,255,0.9);
+            transform: translateY(-1px);
+        }
+        
+        /* Filters - Minimal Pills */
+        .filters {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        
+        .filter-pills {
             display: flex;
+            gap: 0.5rem;
             flex-wrap: wrap;
-            gap: 0.4rem;
+            justify-content: center;
         }
         
-        .filter-chip {
-            padding: 0.4rem 0.9rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .pill {
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.12);
             border-radius: 50px;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.2s;
+            font-family: inherit;
         }
         
-        .filter-chip:hover {
-            background: rgba(255, 255, 255, 0.08);
+        .pill:hover {
+            background: rgba(255,255,255,0.08);
+            color: #fff;
         }
         
-        .filter-chip.active {
-            background: linear-gradient(135deg, #e94bc4, #7b68ee);
-            border-color: transparent;
-            color: white;
+        .pill.active {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
         }
         
-        /* Jobs Section */
-        .jobs-section {
-            background: #000;
-            padding: 2rem 0 4rem;
+        /* Jobs Grid - Ultra Clean */
+        .jobs {
+            padding: 3rem 0 5rem;
         }
         
-        .results-info {
-            color: rgba(255, 255, 255, 0.5);
+        .jobs-count {
             font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 2rem;
         }
         
-        /* Job Cards - Compact */
         .jobs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 1.25rem;
+            gap: 1rem;
         }
         
-        @media (max-width: 640px) {
-            .jobs-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .job-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            padding: 1.25rem;
+        .job {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 1.5rem;
             transition: all 0.2s;
+            cursor: pointer;
         }
         
-        .job-card:hover {
-            border-color: #e94bc4;
-            transform: translateY(-2px);
+        .job:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.15);
         }
         
-        .job-header {
+        .job-top {
             display: flex;
-            gap: 0.85rem;
-            margin-bottom: 0.85rem;
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
         
         .job-logo {
             width: 48px;
             height: 48px;
-            border-radius: 6px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.06);
             object-fit: cover;
-            background: rgba(255, 255, 255, 0.05);
             flex-shrink: 0;
         }
         
-        .job-logo-placeholder {
+        .job-logo-text {
             width: 48px;
             height: 48px;
-            border-radius: 6px;
+            border-radius: 8px;
             background: linear-gradient(135deg, #e94bc4, #7b68ee);
-            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1.25rem;
-            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
         }
         
         .job-info {
@@ -216,225 +251,213 @@
         }
         
         .job-title {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 600;
-            color: white;
-            margin-bottom: 0.25rem;
-            line-height: 1.3;
+            margin-bottom: 0.35rem;
+            color: #fff;
         }
         
         .job-org {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.5);
         }
         
         .job-org a {
-            color: #e94bc4;
+            color: rgba(255,255,255,0.5);
             text-decoration: none;
         }
         
         .job-org a:hover {
-            text-decoration: underline;
+            color: #fff;
         }
         
         .job-meta {
             display: flex;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 1rem;
             flex-wrap: wrap;
-            gap: 0.75rem;
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.5);
-            margin-bottom: 0.75rem;
-        }
-        
-        .job-meta span {
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-        
-        .job-salary {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #bae637;
-            margin-bottom: 0.75rem;
         }
         
         .job-desc {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-            line-height: 1.5;
-            margin-bottom: 0.85rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+            margin-bottom: 1rem;
         }
         
         .job-tags {
             display: flex;
+            gap: 0.5rem;
             flex-wrap: wrap;
-            gap: 0.4rem;
-            margin-bottom: 0.85rem;
+            margin-bottom: 1rem;
         }
         
-        .job-tag {
-            padding: 0.25rem 0.65rem;
-            background: rgba(233, 75, 196, 0.1);
-            border: 1px solid rgba(233, 75, 196, 0.3);
-            border-radius: 12px;
-            font-size: 0.75rem;
-            color: #e94bc4;
-        }
-        
-        .job-tag.remote {
-            background: rgba(186, 230, 55, 0.1);
-            border-color: rgba(186, 230, 55, 0.3);
-            color: #bae637;
+        .tag {
+            padding: 0.3rem 0.75rem;
+            background: rgba(255,255,255,0.06);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
         }
         
         .job-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-top: 0.85rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
         }
         
         .job-date {
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.4);
-        }
-        
-        .job-btn {
-            padding: 0.5rem 1.25rem;
-            background: linear-gradient(135deg, #e94bc4, #7b68ee);
-            color: white;
-            border-radius: 50px;
-            font-weight: 600;
             font-size: 0.85rem;
+            color: rgba(255,255,255,0.35);
+        }
+        
+        .apply-btn {
+            padding: 0.6rem 1.5rem;
+            background: #fff;
+            color: #000;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
             text-decoration: none;
-            transition: transform 0.2s;
+            transition: all 0.2s;
         }
         
-        .job-btn:hover {
-            transform: translateY(-1px);
+        .apply-btn:hover {
+            background: rgba(255,255,255,0.9);
         }
         
-        /* Empty/Loading States */
+        /* States */
         .loading, .empty {
             text-align: center;
-            padding: 3rem 1rem;
-            color: rgba(255, 255, 255, 0.5);
+            padding: 4rem 2rem;
+            color: rgba(255,255,255,0.4);
         }
         
         .spinner {
             width: 40px;
             height: 40px;
-            border: 3px solid rgba(255, 255, 255, 0.1);
-            border-top-color: #e94bc4;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-top-color: #fff;
             border-radius: 50%;
-            animation: spin 0.8s linear infinite;
+            animation: spin 0.7s linear infinite;
             margin: 0 auto 1rem;
         }
         
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+        
+        /* Footer - Minimal */
+        .footer {
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .footer a {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .footer a:hover {
+            color: #fff;
+        }
+        
+        .footer-text {
+            color: rgba(255,255,255,0.3);
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Nav -->
-    <nav class="navbar">
+    <!-- Header -->
+    <header class="header">
         <div class="container">
-            <a href="../index.html" class="logo">
-                <img src="../assets/images/logo.png" alt="HubForge">
-                <span>HubForge Global Impact Network</span>
-            </a>
-            <ul class="nav-menu">
-                <li><a href="../index.html#about">About</a></li>
-                <li><a href="../index.html#services">Services</a></li>
-                <li><a href="../index.html#programs">Programs</a></li>
-                <li><a href="../index.html#resources">Resources</a></li>
-                <li><a href="https://blog.hubforgeglobal.com" target="_blank">Blog</a></li>
-                <li><a href="../index.html#contact" class="cta-button">Get Involved</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="header-inner">
+                <a href="../index.html" class="logo">HubForge <span>/ Jobs</span></a>
+                <nav class="nav">
+                    <a href="../index.html">Home</a>
+                    <a href="../index.html#programs">Programs</a>
+                    <a href="../resource-hub/">Resources</a>
+                </nav>
             </div>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero -->
-    <section class="jobs-hero">
+    <section class="hero">
         <div class="container">
-            <h1 class="hero-title">Community Driven Impact Jobs</h1>
-            <p class="hero-subtitle">M&E, research, tech, and social impact opportunities worldwide. Post and find jobs for free.</p>
-            <button class="post-job-btn" id="post-btn">Post a Job (Free)</button>
+            <h1>Impact Jobs</h1>
+            <p>M&E, research, tech, and social impact opportunities worldwide</p>
+            
+            <div class="search-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search" id="search" placeholder="Search jobs...">
+            </div>
+            
+            <button class="post-btn" id="post">Post a Job</button>
         </div>
     </section>
 
-    <!-- Search & Filters -->
-    <section class="search-section">
+    <!-- Filters -->
+    <section class="filters">
         <div class="container">
-            <div class="search-box">
-                <span class="search-icon">🔍</span>
-                <input type="text" class="search-input" id="search" placeholder="Search jobs...">
-            </div>
-            
-            <div class="filters">
-                <div class="filter-row">
-                    <label class="filter-label">Type</label>
-                    <div class="filter-chips" id="type-filter">
-                        <button class="filter-chip active" data-v="all">All</button>
-                        <button class="filter-chip" data-v="Full-time">Full-time</button>
-                        <button class="filter-chip" data-v="Part-time">Part-time</button>
-                        <button class="filter-chip" data-v="Contract">Contract</button>
-                        <button class="filter-chip" data-v="Volunteer">Volunteer</button>
-                        <button class="filter-chip" data-v="Internship">Internship</button>
-                    </div>
-                </div>
-                
-                <div class="filter-row">
-                    <label class="filter-label">Category</label>
-                    <div class="filter-chips" id="cat-filter">
-                        <button class="filter-chip active" data-v="all">All</button>
-                        <button class="filter-chip" data-v="M&E">M&E</button>
-                        <button class="filter-chip" data-v="Research">Research</button>
-                        <button class="filter-chip" data-v="Tech">Tech</button>
-                        <button class="filter-chip" data-v="Program Management">Program Mgmt</button>
-                        <button class="filter-chip" data-v="Other">Other</button>
-                    </div>
-                </div>
-                
-                <div class="filter-row">
-                    <label class="filter-label">Remote</label>
-                    <div class="filter-chips" id="remote-filter">
-                        <button class="filter-chip active" data-v="all">All</button>
-                        <button class="filter-chip" data-v="Fully Remote">Remote</button>
-                        <button class="filter-chip" data-v="Hybrid">Hybrid</button>
-                        <button class="filter-chip" data-v="On-site">On-site</button>
-                    </div>
-                </div>
+            <div class="filter-pills">
+                <button class="pill active" data-f="type" data-v="all">All</button>
+                <button class="pill" data-f="type" data-v="Full-time">Full-time</button>
+                <button class="pill" data-f="type" data-v="Part-time">Part-time</button>
+                <button class="pill" data-f="type" data-v="Contract">Contract</button>
+                <button class="pill" data-f="remote" data-v="Fully Remote">Remote</button>
+                <button class="pill" data-f="cat" data-v="M&E">M&E</button>
+                <button class="pill" data-f="cat" data-v="Research">Research</button>
+                <button class="pill" data-f="cat" data-v="Tech">Tech</button>
             </div>
         </div>
     </section>
 
     <!-- Jobs -->
-    <section class="jobs-section">
+    <section class="jobs">
         <div class="container">
-            <div id="results" class="results-info"></div>
+            <div id="count" class="jobs-count"></div>
             
             <div id="loading" class="loading">
                 <div class="spinner"></div>
-                <p>Loading jobs...</p>
+                <p>Loading...</p>
             </div>
             
-            <div id="jobs" class="jobs-grid" style="display:none;"></div>
+            <div id="jobs" class="jobs-grid" style="display:none"></div>
             
-            <div id="empty" class="empty" style="display:none;">
-                <p>No jobs found. Try different filters or be the first to post!</p>
+            <div id="empty" class="empty" style="display:none">
+                <p>No jobs found</p>
             </div>
         </div>
     </section>
@@ -442,98 +465,82 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>About HubForge</h4>
-                    <p>A not-for-profit organization democratizing access to evidence, tools, and networks for social impact.</p>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="../index.html">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                    <a href="https://www.linkedin.com/company/hubforge" target="_blank">LinkedIn</a>
                 </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../index.html#about">About</a></li>
-                        <li><a href="../index.html#programs">Programs</a></li>
-                        <li><a href="../resource-hub/">Resources</a></li>
-                        <li><a href="./">Jobs</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href="https://www.linkedin.com/company/hubforge" target="_blank">LinkedIn</a></li>
-                        <li><a href="https://blog.hubforgeglobal.com" target="_blank">Blog</a></li>
-                        <li><a href="../index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 HubForge Global Impact Network. Not for Profit organization. All rights reserved.</p>
+                <p class="footer-text">&copy; 2025 HubForge</p>
             </div>
         </div>
     </footer>
 
-    <script src="../assets/js/main.js"></script>
     <script>
-        const API_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
-        const FORM_URL = 'YOUR_TALLY_FORM_URL_HERE';
+        const API = 'YOUR_APPS_SCRIPT_URL_HERE';
+        const FORM = 'YOUR_TALLY_FORM_URL_HERE';
         
-        let allJobs = [];
-        let filters = { type: 'all', cat: 'all', remote: 'all', search: '' };
+        let all = [];
+        let f = { type: 'all', cat: 'all', remote: 'all', q: '' };
         
-        document.getElementById('post-btn').onclick = () => window.open(FORM_URL, '_blank');
+        document.getElementById('post').onclick = () => window.open(FORM, '_blank');
         
-        // Init filters
-        ['type-filter', 'cat-filter', 'remote-filter'].forEach(id => {
-            document.getElementById(id).querySelectorAll('.filter-chip').forEach(chip => {
-                chip.onclick = function() {
-                    this.parentElement.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+        // Filters
+        document.querySelectorAll('.pill').forEach(p => {
+            p.onclick = function() {
+                const filter = this.dataset.f;
+                const val = this.dataset.v;
+                
+                if (filter) {
+                    document.querySelectorAll(`[data-f="${filter}"]`).forEach(x => x.classList.remove('active'));
                     this.classList.add('active');
-                    const key = id.split('-')[0];
-                    filters[key] = this.dataset.v;
-                    applyFilters();
-                };
-            });
+                    f[filter] = val;
+                } else {
+                    document.querySelectorAll('.pill').forEach(x => x.classList.remove('active'));
+                    this.classList.add('active');
+                    f = { type: 'all', cat: 'all', remote: 'all', q: '' };
+                }
+                
+                render();
+            };
         });
         
         // Search
         document.getElementById('search').oninput = function(e) {
-            clearTimeout(this.timer);
-            this.timer = setTimeout(() => {
-                filters.search = e.target.value.toLowerCase();
-                applyFilters();
-            }, 300);
+            clearTimeout(this.t);
+            this.t = setTimeout(() => {
+                f.q = e.target.value.toLowerCase();
+                render();
+            }, 200);
         };
         
-        // Load jobs
-        fetch(API_URL)
+        // Load
+        fetch(API)
             .then(r => r.json())
             .then(d => {
-                allJobs = d.jobs || [];
-                applyFilters();
+                all = d.jobs || [];
+                render();
             })
             .catch(() => {
                 document.getElementById('loading').style.display = 'none';
+                document.getElementById('empty').innerHTML = '<p>Unable to load jobs</p>';
                 document.getElementById('empty').style.display = 'block';
-                document.getElementById('empty').innerHTML = '<p>Unable to load jobs. Please try again later.</p>';
             });
         
-        function applyFilters() {
-            let jobs = allJobs.filter(j => {
-                if (filters.type !== 'all' && j.type !== filters.type) return false;
-                if (filters.cat !== 'all' && j.category !== filters.cat) return false;
-                if (filters.remote !== 'all' && j.remotePolicy !== filters.remote) return false;
-                if (filters.search) {
-                    const text = `${j.title} ${j.organization} ${j.description} ${j.location}`.toLowerCase();
-                    if (!text.includes(filters.search)) return false;
+        function render() {
+            let jobs = all.filter(j => {
+                if (f.type !== 'all' && j.type !== f.type) return false;
+                if (f.cat !== 'all' && j.category !== f.cat) return false;
+                if (f.remote !== 'all' && j.remotePolicy !== f.remote) return false;
+                if (f.q) {
+                    const txt = `${j.title} ${j.organization} ${j.description} ${j.location}`.toLowerCase();
+                    if (!txt.includes(f.q)) return false;
                 }
                 return true;
             });
             
-            renderJobs(jobs);
-        }
-        
-        function renderJobs(jobs) {
             document.getElementById('loading').style.display = 'none';
-            document.getElementById('results').textContent = `${jobs.length} ${jobs.length === 1 ? 'opportunity' : 'opportunities'}`;
+            document.getElementById('count').textContent = `${jobs.length} ${jobs.length === 1 ? 'job' : 'jobs'}`;
             
             if (jobs.length === 0) {
                 document.getElementById('jobs').style.display = 'none';
@@ -546,20 +553,15 @@
             document.getElementById('jobs').innerHTML = jobs.map(j => {
                 const logo = j.logoUrl ? 
                     `<img src="${j.logoUrl}" alt="${j.organization}" class="job-logo">` :
-                    `<div class="job-logo-placeholder">${j.organization.charAt(0)}</div>`;
+                    `<div class="job-logo-text">${j.organization.charAt(0)}</div>`;
                 
                 const org = j.orgWebsite ?
                     `<a href="${j.orgWebsite}" target="_blank">${j.organization}</a>` :
                     j.organization;
                 
-                const salary = j.salaryMin && j.salaryMax ?
-                    `<div class="job-salary">${j.currency} ${formatNum(j.salaryMin)} - ${formatNum(j.salaryMax)}</div>` : '';
-                
-                const isRemote = j.remotePolicy === 'Fully Remote';
-                
                 return `
-                    <div class="job-card">
-                        <div class="job-header">
+                    <div class="job" onclick="window.open('${j.applyUrl}', '_blank')">
+                        <div class="job-top">
                             ${logo}
                             <div class="job-info">
                                 <div class="job-title">${j.title}</div>
@@ -567,34 +569,32 @@
                             </div>
                         </div>
                         <div class="job-meta">
-                            <span>📍 ${j.location}</span>
-                            <span>💼 ${j.type}</span>
-                            <span>🎯 ${j.experienceLevel}</span>
+                            <span>${j.location}</span>
+                            <span>${j.type}</span>
+                            <span>${j.remotePolicy}</span>
                         </div>
-                        ${salary}
                         <div class="job-desc">${j.description}</div>
                         <div class="job-tags">
-                            <span class="job-tag">${j.category}</span>
-                            ${isRemote ? '<span class="job-tag remote">Remote</span>' : ''}
+                            <span class="tag">${j.category}</span>
+                            ${j.salaryMin ? `<span class="tag">${j.currency} ${fmt(j.salaryMin)}-${fmt(j.salaryMax)}</span>` : ''}
                         </div>
                         <div class="job-footer">
-                            <span class="job-date">${formatDate(j.postedAt)}</span>
-                            <a href="${j.applyUrl}" target="_blank" class="job-btn">Apply →</a>
+                            <span class="job-date">${date(j.postedAt)}</span>
+                            <a href="${j.applyUrl}" target="_blank" class="apply-btn" onclick="event.stopPropagation()">Apply</a>
                         </div>
                     </div>
                 `;
             }).join('');
         }
         
-        function formatNum(n) {
+        function fmt(n) {
             return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
         
-        function formatDate(d) {
-            const date = new Date(d);
-            const diff = Math.floor((new Date() - date) / (1000 * 60 * 60 * 24));
-            if (diff === 0) return 'today';
-            if (diff === 1) return 'yesterday';
+        function date(d) {
+            const diff = Math.floor((new Date() - new Date(d)) / 86400000);
+            if (diff === 0) return 'Today';
+            if (diff === 1) return 'Yesterday';
             if (diff < 7) return `${diff}d ago`;
             if (diff < 30) return `${Math.floor(diff / 7)}w ago`;
             return `${Math.floor(diff / 30)}mo ago`;
