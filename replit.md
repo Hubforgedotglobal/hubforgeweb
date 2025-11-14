@@ -15,7 +15,7 @@ HubForge Global Impact Network is a static website showcasing an organization de
 The website is built with pure HTML5, CSS3, and Vanilla JavaScript, ensuring maximum performance and easy maintenance without frameworks or build tools. It follows a static site architecture with a mobile-first responsive design, emphasizing a SpaceX-inspired minimal aesthetic, bold typography, and ample whitespace. CSS utilizes custom properties, mobile-first media queries, and BEM-like naming. JavaScript employs IIFE patterns, event delegation, and progressive enhancement. Accessibility is a core focus, adhering to WCAG 2.1 AA compliance targets with semantic HTML5 and ARIA labels. Performance optimizations include preconnect hints, font display swap, lazy loading, and debounced scroll events.
 
 ### Content Structure
-The site includes sections such as Hero, Vision, Mission, "Why HubForge," Values, Programs (HubForge Impact Lab, EvalAtlas, Glocal Impact Awards), Contact, and Footer. Program pages feature a distinct SpaceX-style redesign with dark backgrounds and modular, responsive components. A dedicated M&E Resource Hub provides curated tools with filtering and cost transparency.
+The site includes sections such as Hero, Vision, Mission, "Why HubForge," Values, Programs (HubForge Impact Lab, EvalAtlas, Glocal Impact Awards), Contact, and Footer. Program pages feature a distinct SpaceX-style redesign with dark backgrounds and modular, responsive components. A dedicated M&E Resource Hub provides curated tools with filtering and cost transparency. The Impact Jobs Hub provides a crowdsourced job board for M&E, research, tech, and social impact opportunities with auto-publishing and expiration.
 
 ### Deployment
 The platform leverages GitHub Pages for static hosting, enabling zero cost, automatic HTTPS, and a simple Git-based workflow. Deployment occurs automatically from the `main` branch's `docs/` folder, supporting custom domains via a CNAME file.
@@ -35,6 +35,38 @@ The design consistently applies HubForge's brand colors and a minimal aesthetic 
 - **jsPDF library**: Used for client-side generation of professional PDF exports of the M&E Resource Hub.
 
 ## Recent Changes
+
+### November 14, 2025 - Impact Jobs Hub Launch
+- **Created standalone Impact Jobs Hub** (`docs/impact-jobs/`) - separate from main site like Resource Hub
+  - **Auto-publishing**: Jobs submitted via Tally.so form instantly appear on the website (no manual work)
+  - **Auto-expiration**: Jobs automatically hide after expiration date (default 3 months, customizable 1/2/3/6 months)
+  - **Job submission form**: Tally.so form with fields: Title, Organization, Location, Type, Category, Description, Apply URL, Contact Email, Logo Upload, Expiration dropdown
+  - **Backend**: Google Sheets receives submissions, Apps Script filters expired jobs and returns active jobs as JSON
+  - **Frontend features**: Search bar, filter chips (Type, Category, Location), job cards with organization logos, gradient borders, responsive design
+  - **SpaceX-inspired design**: Pure black background, pink/purple gradients, minimal aesthetic
+  - **Categories**: M&E, Research, Tech, Program Management, Other
+  - **Job types**: Full-time, Part-time, Contract, Volunteer, Internship
+  - **Logo display**: Organizations can upload logos (auto-hosted by Tally → Google Drive), fallback to initials
+  - **Navigation**: Added "Jobs" link to all pages (opens in new tab)
+  - **SEO**: Added to sitemap.xml with daily changefreq, high priority (0.9)
+- **Setup documentation**: Complete guide in `docs/impact-jobs/SETUP.md` with Google Sheets template, Apps Script code, Tally form setup instructions
+- **Purpose**: Enable organizations and individuals to post M&E/research/tech/impact jobs freely, creating a crowdsourced jobs ecosystem with zero maintenance
+- **Files created**: impact-jobs/index.html, impact-jobs/SETUP.md
+- **Files modified**: index.html, evalatlas.html, impact-lab.html, gia-mande.html, sitemap.xml
+
+### November 11, 2025 - EvalAtlas "Who This Is For" Value-Driven Content Update
+- **Rewrote all stakeholder descriptions** to focus on concrete benefits and outcomes
+  - **Evaluators**: "Get discovered globally" - emphasizes attracting worldwide opportunities and reputation growth
+  - **Enumerators**: "Access better opportunities" - highlights getting hired, earning recognition, building track record
+  - **NGOs**: "Find evaluators who get it" - stresses saving time and getting insights that drive impact
+  - **Funders**: "Fund smarter, not harder" - focuses on accessing diverse talent and authentic ground insights
+  - **Agencies**: "Win more contracts" - showcases building credibility and attracting clients
+  - **Institutions**: "Grow your community" - emphasizes connecting students with practitioners
+  - **Emerging professionals**: "Jumpstart your career" - highlights getting noticed and landing opportunities
+  - **Tech professionals**: "Scale your impact" - focuses on connecting tools with practitioners
+- **Content approach**: Outcome-focused headlines, tangible benefits, action verbs, answers "What's in it for me?"
+- **Purpose**: Make value proposition crystal clear for each stakeholder group
+- **Files modified**: evalatlas.html
 
 ### November 11, 2025 - "Who This Is For" Section Improvements
 - **Enhanced tabular design with branded colors**
