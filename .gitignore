@@ -34,6 +34,7 @@ build/
 tmp/
 temp/
 *.tmp
+attached_assets/
 
 # Python cache
 __pycache__/
