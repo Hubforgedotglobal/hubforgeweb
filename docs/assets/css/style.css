@@ -283,26 +283,21 @@ ul {
   z-index: 1;
 }
 
-.hero-title {
-  font-size: clamp(2rem, 4vw, 3.5rem);
+.hero .hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.15;
   margin-bottom: var(--spacing-md);
-  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-gray) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-dark);
   animation: fadeInUp 0.8s ease-out;
 }
 
-.hero-subtitle {
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  font-weight: 500;
+.hero .hero-subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-weight: 400;
   margin-bottom: var(--spacing-lg);
-  color: #555;
+  color: #666;
   line-height: 1.6;
-  text-transform: none;
-  letter-spacing: normal;
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
@@ -1146,16 +1141,12 @@ ul {
   }
   
   /* Hero section */
-  .hero-title {
+  .hero .hero-title {
     font-size: 2rem;
     line-height: 1.2;
   }
   
-  .hero-tagline {
-    font-size: 1.25rem;
-  }
-  
-  .hero-description {
+  .hero .hero-subtitle {
     font-size: 1rem;
   }
   
@@ -1255,12 +1246,12 @@ ul {
 
 /* Extra small devices (phones in portrait) */
 @media (max-width: 480px) {
-  .hero-title {
+  .hero .hero-title {
     font-size: 1.75rem;
   }
   
-  .hero-tagline {
-    font-size: 1.1rem;
+  .hero .hero-subtitle {
+    font-size: 0.95rem;
   }
   
   .section-title {
@@ -1278,7 +1269,6 @@ ul {
   .why-title {
     font-size: 1.75rem;
   }
-  
 }
 
 /* Landscape orientation fixes */
@@ -2317,19 +2307,20 @@ ul {
     align-items: center;
 }
 
-.hero-content {
+.page-hero .hero-content {
     max-width: 900px;
 }
 
-.hero-title {
+.page-hero .hero-title {
     font-size: 5rem;
     font-weight: 800;
     line-height: 1;
     margin-bottom: 1.5rem;
     letter-spacing: -2px;
+    color: #ffffff;
 }
 
-.hero-subtitle {
+.page-hero .hero-subtitle {
     font-size: 1.75rem;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.8);
@@ -2605,11 +2596,11 @@ ul {
         min-height: 50vh;
     }
     
-    .hero-title {
+    .page-hero .hero-title {
         font-size: 3rem;
     }
     
-    .hero-subtitle {
+    .page-hero .hero-subtitle {
         font-size: 1.25rem;
     }
     
@@ -2683,11 +2674,11 @@ ul {
 }
 
 @media screen and (max-width: 480px) {
-    .hero-title {
+    .page-hero .hero-title {
         font-size: 2.25rem;
     }
     
-    .hero-subtitle {
+    .page-hero .hero-subtitle {
         font-size: 1.125rem;
     }
     
@@ -2743,17 +2734,13 @@ ul {
     }
     
     /* Hero */
-    .hero-title {
+    .hero .hero-title {
         font-size: 1.75rem;
         line-height: 1.3;
     }
     
-    .hero-subtitle {
+    .hero .hero-subtitle {
         font-size: 0.95rem;
-    }
-    
-    .hero-description {
-        font-size: 0.9rem;
     }
     
     /* Page Hero */
@@ -2761,7 +2748,7 @@ ul {
         padding: 120px 0 60px;
     }
     
-    .hero-title {
+    .page-hero .hero-title {
         font-size: 2rem;
     }
     
@@ -2832,7 +2819,7 @@ ul {
 
 /* Small Phones - 375px to 425px */
 @media screen and (min-width: 361px) and (max-width: 425px) {
-    .hero-title {
+    .hero .hero-title {
         font-size: 2rem;
     }
     
@@ -2852,7 +2839,7 @@ ul {
 
 /* Tablets and larger phones (426px to 768px) - refine existing styles */
 @media screen and (min-width: 426px) and (max-width: 768px) {
-    .hero-title {
+    .hero .hero-title {
         font-size: 2.5rem;
     }
     
