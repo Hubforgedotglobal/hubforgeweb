@@ -160,4 +160,52 @@
       updateFoundingSpotsRemaining(2);
     });
 
+  // Typing Effect for Hero Headline
+  const typedTextElement = document.querySelector('.typed-text');
+  const cursorElement = document.querySelector('.cursor');
+  
+  if (typedTextElement) {
+    const textLines = ['Build evidence.', 'Drive change.'];
+    let lineIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let currentText = '';
+    const typingSpeed = 80;
+    const deletingSpeed = 40;
+    const pauseBetweenLines = 1500;
+    const pauseAfterComplete = 3000;
+    
+    function type() {
+      const currentLine = textLines[lineIndex];
+      
+      if (!isDeleting) {
+        currentText = currentLine.substring(0, charIndex + 1);
+        charIndex++;
+        
+        if (lineIndex === 0) {
+          typedTextElement.innerHTML = currentText;
+        } else {
+          typedTextElement.innerHTML = textLines[0] + '<br>' + currentText;
+        }
+        
+        if (charIndex === currentLine.length) {
+          if (lineIndex < textLines.length - 1) {
+            setTimeout(() => {
+              lineIndex++;
+              charIndex = 0;
+              type();
+            }, pauseBetweenLines);
+          } else {
+            cursorElement.style.animation = 'blink 1s infinite';
+          }
+          return;
+        }
+      }
+      
+      setTimeout(type, typingSpeed);
+    }
+    
+    setTimeout(type, 500);
+  }
+
 })();

@@ -12,6 +12,8 @@ HubForge Global Impact Network is a static website that aims to empower communit
 **Hero Design**: Communicate value in 5 seconds, single CTA only
 
 ## Recent Changes (Jan 2026)
+- **Typing Effect**: Added animated typing effect to hero headline - text types out letter-by-letter with blinking cursor
+- **CSS Architecture Cleanup**: Properly scoped all hero styles (.hero vs .page-hero) to prevent conflicts across breakpoints
 - **YC-Style Homepage Revamp**: Simplified hero headline to "Build evidence. Drive change." (4 words)
 - **Single CTA**: Reduced from 3 buttons to 1 "Explore Programs" button
 - **Social Proof**: Removed from hero for cleaner design (kept on EvalAtlas page)
