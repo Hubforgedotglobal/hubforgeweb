@@ -8,6 +8,15 @@ HubForge Global Impact Network is a static website that aims to empower communit
 **Design Preference**: SpaceX-inspired minimal aesthetic - clean, modern, globally credible
 **Tone**: Trustworthy, inclusive, action-oriented
 **Performance**: Fast, lightweight, no heavy libraries
+**Navigation Philosophy**: Keep to 5 items max (YC principles - reduce cognitive load)
+**Hero Design**: Communicate value in 5 seconds, single CTA only
+
+## Recent Changes (Jan 2026)
+- **YC-Style Homepage Revamp**: Simplified hero headline to "Evidence tools for changemakers" (4 words)
+- **Single CTA**: Reduced from 3 buttons to 1 "Explore Programs" button
+- **Social Proof**: Added member count and countries count above the fold
+- **Streamlined Navigation**: Reduced from 8 to 5 items (About, Programs, Resources, EvalQR, Get Involved)
+- **Removed from Nav**: Services, Values, Blog links moved off main nav for cleaner experience
 
 ## System Architecture
 
