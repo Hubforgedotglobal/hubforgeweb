@@ -1,22 +1,6 @@
 /* HubForge Global Impact Network - Custom Styles */
 /* SpaceX-inspired minimal aesthetic with HubForge brand colors */
 
-/* Typing Effect Cursor */
-.cursor {
-  display: inline-block;
-  margin-left: 3px;
-  font-weight: 400;
-  animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
-
-.typed-text {
-  display: inline;
-}
 
 :root {
   /* Brand Colors */

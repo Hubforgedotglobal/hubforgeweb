@@ -160,26 +160,5 @@
       updateFoundingSpotsRemaining(2);
     });
 
-  // Typing Effect for Hero Headline
-  const typedTextElement = document.querySelector('.typed-text');
-  const cursorElement = document.querySelector('.cursor');
-  
-  if (typedTextElement) {
-    const text = 'Build evidence.\nDrive change.';
-    let i = 0;
-    
-    function type() {
-      if (i < text.length) {
-        const char = text[i] === '\n' ? '<br>' : text[i];
-        typedTextElement.innerHTML += char;
-        i++;
-        setTimeout(type, 60);
-      } else {
-        cursorElement.style.display = 'none';
-      }
-    }
-    
-    setTimeout(type, 300);
-  }
-
 })();
+
