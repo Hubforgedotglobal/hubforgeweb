@@ -284,9 +284,9 @@ ul {
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.2;
   margin-bottom: var(--spacing-md);
   background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-gray) 100%);
   -webkit-background-clip: text;
