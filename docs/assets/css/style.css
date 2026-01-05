@@ -316,6 +316,36 @@ ul {
   animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
+.hero-stats-inline {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: var(--spacing-lg);
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color-pink), var(--color-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-stat-label {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--color-gray);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.25rem;
+}
+
 .hero-cta {
   display: flex;
   gap: var(--spacing-md);

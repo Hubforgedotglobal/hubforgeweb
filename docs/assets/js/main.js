@@ -90,40 +90,24 @@
   
   // Update all member counters on the page
   const updateWaitlistCount = (count) => {
-    const evalatlasCounter = document.getElementById('waitlistCount');
-    const homeCounter = document.getElementById('waitlistCountHome');
-    const bottomCounter = document.getElementById('waitlistCountBottom');
-    
-    if (evalatlasCounter) {
-      evalatlasCounter.textContent = count;
-    }
-    
-    if (homeCounter) {
-      homeCounter.textContent = count;
-    }
-    
-    if (bottomCounter) {
-      bottomCounter.textContent = count;
-    }
+    const counters = [
+      'waitlistCount', 'waitlistCountHome', 'waitlistCountBottom', 'waitlistCountHero'
+    ];
+    counters.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = count;
+    });
   };
   
   // Update all country counters on the page
   const updateCountriesCount = (count) => {
-    const evalatlasCountriesCounter = document.getElementById('countriesCount');
-    const bottomCountriesCounter = document.getElementById('countriesCountBottom');
-    const homeCountriesCounter = document.getElementById('countriesCountHome');
-    
-    if (evalatlasCountriesCounter) {
-      evalatlasCountriesCounter.textContent = count;
-    }
-    
-    if (bottomCountriesCounter) {
-      bottomCountriesCounter.textContent = count;
-    }
-    
-    if (homeCountriesCounter) {
-      homeCountriesCounter.textContent = count;
-    }
+    const counters = [
+      'countriesCount', 'countriesCountBottom', 'countriesCountHome', 'countriesCountHero'
+    ];
+    counters.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = count;
+    });
   };
   
   // Update founding member spots remaining (10,000 - current count)
