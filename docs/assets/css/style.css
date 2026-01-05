@@ -337,32 +337,9 @@ ul {
 }
 
 .scroll-indicator {
-  position: absolute;
-  bottom: var(--spacing-md);
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 50px;
-  border: 2px solid var(--color-gray);
-  border-radius: 25px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 8px;
+  display: none;
 }
 
-.scroll-indicator span {
-  width: 6px;
-  height: 10px;
-  background: var(--color-pink);
-  border-radius: 3px;
-  animation: scroll 2s infinite;
-}
-
-@keyframes scroll {
-  0%, 100% { transform: translateY(0); opacity: 1; }
-  50% { transform: translateY(15px); opacity: 0.5; }
-}
 
 /* Buttons */
 .btn {
