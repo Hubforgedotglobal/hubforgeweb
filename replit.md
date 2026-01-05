@@ -14,7 +14,7 @@ HubForge Global Impact Network is a static website that aims to empower communit
 ## Recent Changes (Jan 2026)
 - **YC-Style Homepage Revamp**: Simplified hero headline to "Evidence tools for changemakers" (4 words)
 - **Single CTA**: Reduced from 3 buttons to 1 "Explore Programs" button
-- **Social Proof**: Added member count and countries count above the fold
+- **Social Proof**: Removed from hero for cleaner design (kept on EvalAtlas page)
 - **Streamlined Navigation**: Reduced from 8 to 5 items (About, Programs, Resources, EvalQR, Get Involved)
 - **Removed from Nav**: Services, Values, Blog links moved off main nav for cleaner experience
 
