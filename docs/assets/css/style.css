@@ -296,15 +296,13 @@ ul {
 }
 
 .hero-subtitle {
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-  font-weight: 600;
-  margin-bottom: var(--spacing-md);
-  background: linear-gradient(135deg, var(--color-pink), var(--color-purple));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 500;
+  margin-bottom: var(--spacing-lg);
+  color: #555;
+  line-height: 1.6;
+  text-transform: none;
+  letter-spacing: normal;
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
