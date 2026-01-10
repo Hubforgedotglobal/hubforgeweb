@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://www.hubforgeglobal.com/">
     <meta property="og:title" content="HubForge | Build Evidence. Drive Change.">
     <meta property="og:description" content="Helping communities measure what matters and act on it. Free tools, training, and networks for social impact.">
-    <meta property="og:image" content="https://www.hubforgeglobal.com/assets/images/banner.png">
+    <meta property="og:image" content="https://www.hubforgeglobal.com/assets/images/banner-optimized.jpg">
     <meta property="og:site_name" content="HubForge Global Impact Network">
 
     <!-- Twitter -->
@@ -24,19 +24,37 @@
     <meta name="twitter:url" content="https://www.hubforgeglobal.com/">
     <meta name="twitter:title" content="HubForge | Build Evidence. Drive Change.">
     <meta name="twitter:description" content="Helping communities measure what matters and act on it. Free tools for social impact.">
-    <meta name="twitter:image" content="https://www.hubforgeglobal.com/assets/images/banner.png">
+    <meta name="twitter:image" content="https://www.hubforgeglobal.com/assets/images/banner-optimized.jpg">
 
     <title>HubForge | Build Evidence. Drive Change.</title>
     
-    <!-- Preconnect for fonts -->
+    <!-- Performance: Preconnect for fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./assets/images/logo.png">
+    <link rel="icon" type="image/png" href="./assets/images/logo-small.png">
     
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+        :root{--color-pink:#ec4899;--color-purple:#8b5cf6;--color-dark:#1a1a2e;--color-light:#fafafa;--font-main:'Inter',system-ui,-apple-system,sans-serif}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:var(--font-main);background:var(--color-light);color:#333;line-height:1.6}
+        .nav{position:fixed;top:0;left:0;right:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);z-index:1000;padding:1rem 0;border-bottom:1px solid rgba(0,0,0,0.05)}
+        .container{max-width:1200px;margin:0 auto;padding:0 2rem}
+        .nav-container{display:flex;justify-content:space-between;align-items:center}
+        .nav-logo{display:flex;align-items:center;gap:0.75rem;text-decoration:none}
+        .nav-brand{font-weight:600;font-size:1.1rem;color:var(--color-pink)}
+        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem;background:linear-gradient(135deg,#fdf2f8 0%,#faf5ff 50%,#f0fdf4 100%)}
+        .hero-title{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;line-height:1.1;color:var(--color-dark);margin-bottom:1.5rem}
+        .hero-subtitle{font-size:clamp(1rem,2vw,1.25rem);color:#666;max-width:600px;margin:0 auto 2rem}
+    </style>
+    
+    <!-- Main CSS (non-blocking) -->
+    <link rel="stylesheet" href="./assets/css/style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="./assets/css/style.css"></noscript>
     
     <!-- JSON-LD Structured Data for NGO -->
     <script type="application/ld+json">
