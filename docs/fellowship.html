@@ -32,22 +32,32 @@
     <link rel="icon" type="image/png" href="./assets/images/logo-small.png">
     <link rel="stylesheet" href="./assets/css/style.css">
     
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "EducationalOccupationalProgram",
-        "name": "HubForge x EvalAtlas Fellowship",
-        "description": "A hands-on program exploring how decisions get made and how they could be better",
-        "provider": {
-            "@type": "NGO",
-            "name": "HubForge Global Impact Network",
-            "url": "https://www.hubforgeglobal.com"
-        },
-        "url": "https://www.hubforgeglobal.com/fellowship.html",
-        "applicationDeadline": "2026-02-12",
-        "timeToComplete": "P12W"
-    }
-    </script>
+    <style>
+        .fellowship-section { padding: 3rem 0; }
+        .fellowship-hero { padding: 4rem 0 3rem; background: #0a0a0a; text-align: center; }
+        .fellowship-hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .fellowship-hero .subtitle { opacity: 0.7; font-size: 1.2rem; }
+        .fellowship-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        .fellowship-card { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 1.5rem; }
+        .fellowship-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--color-pink); }
+        .fellowship-card p { opacity: 0.8; font-size: 0.95rem; margin: 0; }
+        .fellowship-list { list-style: none; padding: 0; margin: 0; }
+        .fellowship-list li { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; font-size: 1rem; }
+        .fellowship-list li::before { content: "→"; color: var(--color-pink); font-weight: 600; }
+        .fellowship-check li::before { content: "✓"; }
+        .fellowship-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; text-align: center; }
+        .fellowship-stat-value { font-size: 1.25rem; font-weight: 700; }
+        .fellowship-stat-label { font-size: 0.8rem; opacity: 0.6; }
+        .fellowship-cta { background: linear-gradient(135deg, var(--color-pink), var(--color-purple)); padding: 3rem 0; text-align: center; }
+        .fellowship-cta h2 { margin-bottom: 0.5rem; }
+        .fellowship-cta .deadline { opacity: 0.9; margin-bottom: 1.5rem; }
+        .fellowship-cta .btn { background: #fff; color: #333; padding: 1rem 2.5rem; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block; }
+        .fellowship-cta .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+        @media (max-width: 768px) {
+            .fellowship-grid, .fellowship-stats { grid-template-columns: 1fr; }
+            .fellowship-stats { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
 </head>
 <body>
     <nav class="nav" id="navbar" role="navigation">
@@ -56,13 +66,9 @@
                 <img src="./assets/images/logo.png" alt="HubForge Logo" width="50" height="50">
                 <span class="nav-brand">HubForge Global Impact Network</span>
             </a>
-            
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
-            
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html#about" class="nav-link">About</a></li>
                 <li><a href="index.html#programs" class="nav-link">Programs</a></li>
@@ -73,146 +79,86 @@
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="page-hero">
+    <section class="fellowship-hero">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">The Fellowship</h1>
-                <p class="hero-subtitle">Foundations for better decisions</p>
+            <h1>The Fellowship</h1>
+            <p class="subtitle">Foundations for better decisions</p>
+        </div>
+    </section>
+
+    <section class="fellowship-section section-dark">
+        <div class="container" style="max-width: 900px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+                <div>
+                    <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">What is this?</h2>
+                    <p style="opacity: 0.85; line-height: 1.7;">A learning-by-building program exploring one question: How do decisions actually get made, and how could they be better? You'll work on real problems in technology, research, programs, and organizations.</p>
+                </div>
+                <div>
+                    <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">What you'll do</h2>
+                    <ul class="fellowship-list">
+                        <li>Work on real, unresolved problems</li>
+                        <li>Test ideas, refine them, sometimes drop them</li>
+                        <li>Think critically and take ownership</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- What -->
-    <section class="section-dark">
-        <div class="container-narrow">
-            <h2 class="section-heading">What is this?</h2>
-            <p class="large-text">A learning-by-building program exploring one question: How do decisions actually get made, and how could they be better?</p>
-            <p class="large-text">The fellowship focuses on the thinking, framing, and systems behind decisions in technology, research, programs, and organizations.</p>
-        </div>
-    </section>
-
-    <!-- What You'll Do -->
-    <section class="section-light">
-        <div class="container-narrow">
-            <h2 class="section-heading-center">What you'll do</h2>
-            <div style="max-width: 600px; margin: 0 auto;">
-                <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
-                    <span style="color: var(--color-pink); font-size: 1.5rem;">→</span>
-                    <p style="margin: 0; font-size: 1.1rem;">Work on real, unresolved problems</p>
+    <section class="fellowship-section section-light">
+        <div class="container" style="max-width: 900px;">
+            <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">Roles</h2>
+            <div class="fellowship-grid">
+                <div class="fellowship-card">
+                    <h3>Research & Insights</h3>
+                    <p>Understand contexts, users, and decision environments. Turn ambiguity into insight.</p>
                 </div>
-                <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
-                    <span style="color: var(--color-pink); font-size: 1.5rem;">→</span>
-                    <p style="margin: 0; font-size: 1.1rem;">Test ideas, refine them, sometimes drop them</p>
+                <div class="fellowship-card">
+                    <h3>Design & Strategy</h3>
+                    <p>Shape narratives, design clear content, build a thoughtful public voice.</p>
                 </div>
-                <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
-                    <span style="color: var(--color-pink); font-size: 1.5rem;">→</span>
-                    <p style="margin: 0; font-size: 1.1rem;">Think critically, ask questions, take ownership</p>
+                <div class="fellowship-card">
+                    <h3>Program Management</h3>
+                    <p>Coordinate people and systems. Turn intent into execution.</p>
                 </div>
-                <p style="margin-top: 2rem; opacity: 0.8; font-style: italic;">This is not a traditional internship with predefined tasks.</p>
+                <div class="fellowship-card">
+                    <h3>AI & Technology</h3>
+                    <p>Design and experiment with tools that support human judgment.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Roles -->
-    <section class="section-dark">
+    <section class="fellowship-section section-dark">
+        <div class="container" style="max-width: 900px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+                <div>
+                    <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Who should apply?</h2>
+                    <ul class="fellowship-list fellowship-check">
+                        <li>Early career, want depth over exposure</li>
+                        <li>Comfortable with ambiguity</li>
+                        <li>Curious about evidence and judgment</li>
+                        <li>Entrepreneur mindset</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Details</h2>
+                    <div class="fellowship-stats" style="grid-template-columns: repeat(2, 1fr);">
+                        <div><div class="fellowship-stat-value">8-12 wks</div><div class="fellowship-stat-label">Duration</div></div>
+                        <div><div class="fellowship-stat-value">6-10 hrs</div><div class="fellowship-stat-label">Per week</div></div>
+                        <div><div class="fellowship-stat-value">Remote</div><div class="fellowship-stat-label">Location</div></div>
+                        <div><div class="fellowship-stat-value">Voluntary</div><div class="fellowship-stat-label">Unpaid</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fellowship-cta">
         <div class="container">
-            <h2 class="section-heading-center">Roles</h2>
-            <p class="text-center" style="opacity: 0.7; margin-bottom: 2rem;">Apply to one or two based on how you think and work.</p>
-            <div class="grid-2">
-                <div class="card-modern">
-                    <h3 class="card-title">Research & Insights</h3>
-                    <p class="card-text">Understand contexts, users, and decision environments. Turn ambiguity into insight.</p>
-                </div>
-                
-                <div class="card-modern">
-                    <h3 class="card-title">Design & Strategy</h3>
-                    <p class="card-text">Shape narratives, design clear content, and build a thoughtful public voice.</p>
-                </div>
-                
-                <div class="card-modern">
-                    <h3 class="card-title">Program Management</h3>
-                    <p class="card-text">Coordinate people and systems. Turn intent into execution.</p>
-                </div>
-                
-                <div class="card-modern">
-                    <h3 class="card-title">AI & Technology</h3>
-                    <p class="card-text">Design and experiment with tools that support human judgment.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Who Should Apply -->
-    <section class="section-light">
-        <div class="container-narrow">
-            <h2 class="section-heading-center">Who should apply?</h2>
-            <div style="max-width: 600px; margin: 0 auto;">
-                <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
-                    <span style="color: var(--color-pink); font-size: 1.2rem; font-weight: 700;">✓</span>
-                    <p style="margin: 0; font-size: 1.1rem;">Early in your career and want depth, not just exposure</p>
-                </div>
-                <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
-                    <span style="color: var(--color-pink); font-size: 1.2rem; font-weight: 700;">✓</span>
-                    <p style="margin: 0; font-size: 1.1rem;">Comfortable working with ambiguity</p>
-                </div>
-                <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
-                    <span style="color: var(--color-pink); font-size: 1.2rem; font-weight: 700;">✓</span>
-                    <p style="margin: 0; font-size: 1.1rem;">Care about how evidence, insight, and judgment come together</p>
-                </div>
-                <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
-                    <span style="color: var(--color-pink); font-size: 1.2rem; font-weight: 700;">✓</span>
-                    <p style="margin: 0; font-size: 1.1rem;">Want skills that stay useful across roles and sectors</p>
-                </div>
-                <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
-                    <span style="color: var(--color-pink); font-size: 1.2rem; font-weight: 700;">✓</span>
-                    <p style="margin: 0; font-size: 1.1rem;">Entrepreneur mindset</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Details -->
-    <section class="section-dark">
-        <div class="container-narrow">
-            <h2 class="section-heading-center">Practical details</h2>
-            <div class="grid-2" style="gap: 2rem; max-width: 500px; margin: 0 auto;">
-                <div style="text-align: center;">
-                    <p style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem;">8-12 weeks</p>
-                    <p style="opacity: 0.6; font-size: 0.9rem;">Duration</p>
-                </div>
-                <div style="text-align: center;">
-                    <p style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem;">6-10 hrs/week</p>
-                    <p style="opacity: 0.6; font-size: 0.9rem;">Commitment</p>
-                </div>
-                <div style="text-align: center;">
-                    <p style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem;">Remote</p>
-                    <p style="opacity: 0.6; font-size: 0.9rem;">Location</p>
-                </div>
-                <div style="text-align: center;">
-                    <p style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem;">Voluntary</p>
-                    <p style="opacity: 0.6; font-size: 0.9rem;">Unpaid</p>
-                </div>
-            </div>
-            <p class="text-center" style="margin-top: 2rem; opacity: 0.7;">Small cohort for focused learning. Selection based on curiosity, clarity of thought, and willingness to engage deeply.</p>
-        </div>
-    </section>
-
-    <!-- Why -->
-    <section class="section-light">
-        <div class="container-narrow">
-            <h2 class="section-heading">Why does this exist?</h2>
-            <p class="large-text">Better decisions don't come from better intentions alone. They come from clearer thinking, stronger foundations, and respect for complexity.</p>
-            <p class="large-text">This fellowship helps people build those foundations early.</p>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section-cta-dark">
-        <div class="container-narrow text-center">
-            <h2 class="cta-heading">Ready to apply?</h2>
-            <p class="cta-text" style="margin-bottom: 2rem;">Application deadline: February 12, 2026</p>
-            <a href="https://tally.so/r/dW0byV" target="_blank" rel="noopener noreferrer" class="btn-primary-large">Apply Now</a>
+            <h2>Ready to apply?</h2>
+            <p class="deadline">Deadline: February 12, 2026</p>
+            <a href="https://tally.so/r/dW0byV" target="_blank" rel="noopener noreferrer" class="btn">Apply Now</a>
         </div>
     </section>
 
