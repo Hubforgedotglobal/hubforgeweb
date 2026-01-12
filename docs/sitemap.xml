@@ -38,6 +38,14 @@
         <priority>0.8</priority>
     </url>
     
+    <!-- Fellowship -->
+    <url>
+        <loc>https://www.hubforgeglobal.com/fellowship.html</loc>
+        <lastmod>2026-01-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
     <!-- M&E Resource Hub -->
     <url>
         <loc>https://www.hubforgeglobal.com/resource-hub/</loc>
