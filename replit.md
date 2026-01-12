@@ -12,6 +12,7 @@ HubForge Global Impact Network is a static website that aims to empower communit
 **Hero Design**: Communicate value in 5 seconds, single CTA only
 
 ## Recent Changes (Jan 2026)
+- **Counter Caching**: EvalAtlas counters now use localStorage - shows last known values instantly, only animates when data changes
 - **Performance Optimization**: Compressed banner image from 468KB to 21KB (95% reduction), added critical CSS inlining, deferred JS loading, optimized font loading with preload
 - **Removed Typing Effect**: Reverted to static hero headline for cleaner, faster-loading experience
 - **CSS Architecture Cleanup**: Properly scoped all hero styles (.hero vs .page-hero) to prevent conflicts across breakpoints
