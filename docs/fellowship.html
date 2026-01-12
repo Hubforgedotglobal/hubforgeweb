@@ -53,9 +53,13 @@
         .fellowship-cta .deadline { opacity: 0.9; margin-bottom: 1.5rem; }
         .fellowship-cta .btn { background: #fff; color: #333; padding: 1rem 2.5rem; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block; }
         .fellowship-cta .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+        .gain-card { background: linear-gradient(135deg, rgba(233,89,182,0.1), rgba(89,89,233,0.1)); border: 1px solid rgba(233,89,182,0.2); border-radius: 12px; padding: 1.25rem; text-align: center; }
+        .gain-card h4 { color: var(--color-pink); font-size: 1rem; margin-bottom: 0.5rem; }
+        .gain-card p { font-size: 0.9rem; opacity: 0.8; margin: 0; }
         @media (max-width: 768px) {
             .fellowship-grid, .fellowship-stats { grid-template-columns: 1fr; }
             .fellowship-stats { grid-template-columns: repeat(2, 1fr); }
+            .two-col { grid-template-columns: 1fr !important; }
         }
     </style>
 </head>
@@ -88,10 +92,11 @@
 
     <section class="fellowship-section section-dark">
         <div class="container" style="max-width: 900px;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+            <div class="two-col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
                 <div>
                     <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">What is this?</h2>
-                    <p style="opacity: 0.85; line-height: 1.7;">A learning-by-building program exploring one question: How do decisions actually get made, and how could they be better? You'll work on real problems in technology, research, programs, and organizations.</p>
+                    <p style="opacity: 0.85; line-height: 1.7; margin-bottom: 1rem;">A learning-by-building program exploring one question: How do decisions actually get made, and how could they be better?</p>
+                    <p style="opacity: 0.85; line-height: 1.7;">The fellowship focuses on the thinking, framing, and systems behind decisions in technology, research, programs, and organizations. This is not a traditional internship with predefined tasks.</p>
                 </div>
                 <div>
                     <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">What you'll do</h2>
@@ -99,6 +104,8 @@
                         <li>Work on real, unresolved problems</li>
                         <li>Test ideas, refine them, sometimes drop them</li>
                         <li>Think critically and take ownership</li>
+                        <li>Collaborate with a small, focused cohort</li>
+                        <li>Learn from practitioners building real systems</li>
                     </ul>
                 </div>
             </div>
@@ -107,7 +114,41 @@
 
     <section class="fellowship-section section-light">
         <div class="container" style="max-width: 900px;">
+            <h2 style="font-size: 1.5rem; margin-bottom: 1rem; text-align: center;">What you'll gain</h2>
+            <p style="text-align: center; opacity: 0.7; margin-bottom: 1.5rem;">Skills and experience that stay useful across roles and sectors</p>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                <div class="gain-card">
+                    <h4>Real Experience</h4>
+                    <p>Work on actual projects, not simulations or case studies</p>
+                </div>
+                <div class="gain-card">
+                    <h4>Critical Thinking</h4>
+                    <p>Build foundations for clearer thinking and better judgment</p>
+                </div>
+                <div class="gain-card">
+                    <h4>Portfolio Work</h4>
+                    <p>Create tangible outputs you can showcase</p>
+                </div>
+                <div class="gain-card">
+                    <h4>Network</h4>
+                    <p>Connect with practitioners in the social impact space</p>
+                </div>
+                <div class="gain-card">
+                    <h4>Mentorship</h4>
+                    <p>Learn directly from people building real systems</p>
+                </div>
+                <div class="gain-card">
+                    <h4>Certificate</h4>
+                    <p>Recognition of your contribution and learning</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fellowship-section section-dark">
+        <div class="container" style="max-width: 900px;">
             <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">Roles</h2>
+            <p style="text-align: center; opacity: 0.7; margin-bottom: 1.5rem;">Apply to one or two based on your skills and interests</p>
             <div class="fellowship-grid">
                 <div class="fellowship-card">
                     <h3>Research & Insights</h3>
@@ -129,26 +170,28 @@
         </div>
     </section>
 
-    <section class="fellowship-section section-dark">
+    <section class="fellowship-section section-light">
         <div class="container" style="max-width: 900px;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+            <div class="two-col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
                 <div>
                     <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Who should apply?</h2>
                     <ul class="fellowship-list fellowship-check">
-                        <li>Early career, want depth over exposure</li>
-                        <li>Comfortable with ambiguity</li>
-                        <li>Curious about evidence and judgment</li>
-                        <li>Entrepreneur mindset</li>
+                        <li>Early in your career, want depth over exposure</li>
+                        <li>Comfortable working with ambiguity</li>
+                        <li>Curious about how evidence and judgment come together</li>
+                        <li>Want skills that stay useful across roles and sectors</li>
+                        <li>Entrepreneur mindset, ready to build</li>
                     </ul>
                 </div>
                 <div>
-                    <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Details</h2>
-                    <div class="fellowship-stats" style="grid-template-columns: repeat(2, 1fr);">
+                    <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Practical details</h2>
+                    <div class="fellowship-stats" style="grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
                         <div><div class="fellowship-stat-value">8-12 wks</div><div class="fellowship-stat-label">Duration</div></div>
                         <div><div class="fellowship-stat-value">6-10 hrs</div><div class="fellowship-stat-label">Per week</div></div>
                         <div><div class="fellowship-stat-value">Remote</div><div class="fellowship-stat-label">Location</div></div>
                         <div><div class="fellowship-stat-value">Voluntary</div><div class="fellowship-stat-label">Unpaid</div></div>
                     </div>
+                    <p style="margin-top: 1.5rem; opacity: 0.7; font-size: 0.9rem;">Small cohort for focused learning. Selection based on curiosity, clarity of thought, and willingness to engage deeply.</p>
                 </div>
             </div>
         </div>
