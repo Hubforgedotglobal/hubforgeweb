@@ -85,10 +85,29 @@
     });
   });
 
-  // Waitlist Counter - Auto-Update from Google Sheets
+  // Waitlist Counter - Auto-Update from Google Sheets with localStorage caching
   const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxnq81-qln_Ec4-jTOaoZCI13v-DcDCua_NoFR2Ic3y4ueQIOLYnSOdl5VkLbJ3MDUq/exec';
+  const CACHE_KEY = 'hubforge_waitlist_cache';
   
-  // Update all member counters on the page
+  // Get cached values from localStorage
+  const getCachedCounts = () => {
+    try {
+      const cached = localStorage.getItem(CACHE_KEY);
+      if (cached) {
+        return JSON.parse(cached);
+      }
+    } catch (e) {}
+    return { count: 0, countries: 0 };
+  };
+  
+  // Save values to localStorage
+  const saveCachedCounts = (count, countries) => {
+    try {
+      localStorage.setItem(CACHE_KEY, JSON.stringify({ count, countries }));
+    } catch (e) {}
+  };
+  
+  // Update all member counters on the page (instant, no animation)
   const updateWaitlistCount = (count) => {
     const counters = [
       'waitlistCount', 'waitlistCountHome', 'waitlistCountBottom', 'waitlistCountHero'
@@ -99,7 +118,7 @@
     });
   };
   
-  // Update all country counters on the page
+  // Update all country counters on the page (instant, no animation)
   const updateCountriesCount = (count) => {
     const counters = [
       'countriesCount', 'countriesCountBottom', 'countriesCountHome', 'countriesCountHero'
@@ -110,54 +129,78 @@
     });
   };
   
+  // Animate counter from current value to new value
+  const animateCounter = (elementIds, startVal, endVal, duration = 800) => {
+    if (startVal === endVal) return;
+    const startTime = performance.now();
+    const update = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const currentVal = Math.floor(startVal + (endVal - startVal) * eased);
+      elementIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = currentVal;
+      });
+      if (progress < 1) requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+  };
+  
   // Update founding member spots remaining (10,000 - current count)
   const updateFoundingSpotsRemaining = (currentCount) => {
     const foundingSpotsElement = document.getElementById('foundingSpotsRemaining');
-    
     if (foundingSpotsElement) {
       const FOUNDING_MEMBER_LIMIT = 10000;
       const spotsRemaining = Math.max(0, FOUNDING_MEMBER_LIMIT - currentCount);
-      
-      // Format number with commas
-      const formattedSpots = spotsRemaining.toLocaleString();
-      foundingSpotsElement.textContent = formattedSpots;
+      foundingSpotsElement.textContent = spotsRemaining.toLocaleString();
     }
   };
   
-  // Fetch live counts from Google Sheets with better error handling
+  // Load cached values instantly on page load
+  const cached = getCachedCounts();
+  if (cached.count > 0) {
+    updateWaitlistCount(cached.count);
+    updateCountriesCount(cached.countries);
+    updateFoundingSpotsRemaining(cached.count);
+  }
+  
+  // Fetch live counts from Google Sheets
   fetch(GOOGLE_APPS_SCRIPT_URL, {
     method: 'GET',
     redirect: 'follow',
     mode: 'cors'
   })
     .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok: ' + response.status);
-      }
+      if (!response.ok) throw new Error('Network error: ' + response.status);
       return response.json();
     })
     .then(data => {
       if (data && typeof data.count === 'number') {
-        updateWaitlistCount(data.count);
-        updateFoundingSpotsRemaining(data.count);
-        // Update countries count if available
-        if (typeof data.countries === 'number') {
-          updateCountriesCount(data.countries);
-        } else {
-          updateCountriesCount(0); // Fallback until Google Script is updated
+        const newCount = data.count;
+        const newCountries = typeof data.countries === 'number' ? data.countries : 0;
+        
+        // Only animate if values changed from cache
+        if (newCount !== cached.count) {
+          animateCounter(
+            ['waitlistCount', 'waitlistCountHome', 'waitlistCountBottom', 'waitlistCountHero'],
+            cached.count, newCount
+          );
         }
-      } else {
-        console.error('Invalid data format:', data);
-        updateWaitlistCount(2); // Use last known count
-        updateCountriesCount(0);
-        updateFoundingSpotsRemaining(2);
+        if (newCountries !== cached.countries) {
+          animateCounter(
+            ['countriesCount', 'countriesCountBottom', 'countriesCountHome', 'countriesCountHero'],
+            cached.countries, newCountries
+          );
+        }
+        
+        updateFoundingSpotsRemaining(newCount);
+        saveCachedCounts(newCount, newCountries);
       }
     })
     .catch(error => {
       console.error('Waitlist counter error:', error);
-      updateWaitlistCount(2); // Use last known count as fallback
-      updateCountriesCount(0);
-      updateFoundingSpotsRemaining(2);
+      // Keep showing cached values, no fallback needed
     });
 
 })();
