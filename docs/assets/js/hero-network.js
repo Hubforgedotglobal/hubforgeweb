@@ -114,7 +114,7 @@
   if (!reduceMotion) {
     start();
 
-    var hero = canvas.closest('.hero');
+    var hero = canvas.closest('.hero, .page-hero');
     if ('IntersectionObserver' in window && hero) {
       var io = new IntersectionObserver(function (entries) {
         if (entries[0].isIntersecting) start();
