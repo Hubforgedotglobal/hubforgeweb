@@ -87,8 +87,11 @@
 
     <!-- ═══════════ HERO ═══════════ -->
     <section class="hero" id="home">
+        <canvas class="hero-network" id="heroNetwork" aria-hidden="true"></canvas>
+        <div class="hero-glow" aria-hidden="true"></div>
         <div class="container hero-content">
-            <h1 class="hero-title">Build evidence.<br>Drive change.</h1>
+            <span class="hero-eyebrow"><span class="hero-eyebrow-dot"></span>A global ecosystem for social impact</span>
+            <h1 class="hero-title">Build evidence.<br><span class="hero-title-grad">Drive change.</span></h1>
             <p class="hero-subtitle">Helping communities measure what matters and act&nbsp;on&nbsp;it.</p>
             <a href="#programs" class="btn btn-primary btn-large">Explore Programs</a>
             <div class="hero-pills">
@@ -298,58 +301,33 @@
     </section>
 
     <!-- ═══════════ FOOTER ═══════════ -->
-    <footer class="footer">
+    <footer class="footer footer-compact">
         <div class="container">
-            <div class="footer-about-section">
-                <p>HubForge is a not-for-profit organization strengthening how the world builds and shares evidence for change. We support organizations and communities from grassroots to global.</p>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-brand-link" aria-label="HubForge home">
+                        <img src="./assets/images/logo.png" alt="HubForge Logo" width="40" height="40" loading="lazy">
+                        <span class="footer-brand-name">HubForge</span>
+                    </a>
+                    <p class="footer-tagline">Build evidence. Drive change.</p>
+                </div>
+                <nav class="footer-links" aria-label="Footer navigation">
+                    <a href="#programs">Programs</a>
+                    <a href="resource-hub/">Resources</a>
+                    <a href="https://evalcanvas.com/" target="_blank" rel="noopener noreferrer">EvalCanvas&nbsp;↗</a>
+                    <a href="https://evalqrapp.com/" target="_blank" rel="noopener noreferrer">EvalQR&nbsp;↗</a>
+                    <a href="https://www.linkedin.com/company/hubforge" target="_blank" rel="noopener noreferrer">LinkedIn&nbsp;↗</a>
+                    <a href="#contact" class="footer-link-cta">Get Involved</a>
+                </nav>
             </div>
-            <div class="footer-nav footer-nav-4col">
-                <div class="footer-nav-column">
-                    <h4>Programs</h4>
-                    <ul>
-                        <li><a href="impact-lab.html">Impact Lab</a></li>
-                        <li><a href="evalatlas.html">EvalAtlas</a></li>
-                        <li><a href="gia-mande.html">GIA 2026</a></li>
-                        <li><a href="fellowship.html">Fellowship</a></li>
-                    </ul>
-                </div>
-                <div class="footer-nav-column">
-                    <h4>Free Tools</h4>
-                    <ul>
-                        <li><a href="https://evalcanvas.com/" target="_blank" rel="noopener noreferrer">EvalCanvas ↗</a></li>
-                        <li><a href="https://samplingshala.pages.dev/" target="_blank" rel="noopener noreferrer">SamplingShala ↗</a></li>
-                        <li><a href="https://evalqrapp.com/" target="_blank" rel="noopener noreferrer">EvalQR ↗</a></li>
-                        <li><a href="resource-hub/">Resource Hub</a></li>
-                    </ul>
-                </div>
-                <div class="footer-nav-column">
-                    <h4>Navigate</h4>
-                    <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#programs">Programs</a></li>
-                        <li><a href="#tools">Tools</a></li>
-                        <li><a href="#values">Values</a></li>
-                    </ul>
-                </div>
-                <div class="footer-nav-column">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href="mailto:hubforgeglobal@gmail.com">Email Us</a></li>
-                        <li><a href="https://www.linkedin.com/company/hubforge" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                        <li><a href="#contact">Get Involved</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-legal">
-                <p><strong>HubForge Global Impact Network Foundation</strong> is a Not for Profit organization (Section 8 Company) registered in India under the Companies Act, 2013.</p>
-                <p class="legal-details">Darpan ID: KAR/2025/0843199 | Udyam Registration No.: UDYAM-KR-25-0089899 | Registered Office: Madhugiri, Karnataka – 572132, India</p>
-            </div>
-            <div class="footer-copyright">
-                <p>&copy; 2025 HubForge Global Impact Network Foundation. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HubForge Global Impact Network Foundation · Section&nbsp;8 Not-for-Profit, India</p>
+                <p class="footer-reg">Darpan&nbsp;ID KAR/2025/0843199 · Udyam&nbsp;UDYAM-KR-25-0089899 · Madhugiri, Karnataka&nbsp;572132</p>
             </div>
         </div>
     </footer>
 
+    <script src="./assets/js/hero-network.js?v=1" defer></script>
     <script src="./assets/js/main.js?v=5" defer></script>
 </body>
 </html>
