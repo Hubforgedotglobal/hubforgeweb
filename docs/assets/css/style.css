@@ -2515,7 +2515,14 @@ ul {
 .feature-text {
     font-size: 1.125rem;
     line-height: 1.7;
-    opacity: 0.85;
+    color: #3a3a3a;
+    opacity: 1;
+}
+
+.section-dark .feature-text,
+.section-cta-dark .feature-text,
+.section-light .feature-text {
+    color: #3a3a3a;
 }
 
 /* --- PROCESS/TIMELINE COMPONENTS --- */
