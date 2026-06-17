@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Build evidence. Drive change. HubForge helps communities measure what matters and act on it. Free tools, training, and networks for social impact.">
     <meta name="keywords" content="social impact, monitoring evaluation, MERL, evidence-based change, community development, EvalAtlas, nonprofit tools, evaluation, impact measurement">
     <meta name="author" content="HubForge Global Impact Network">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.hubforgeglobal.com/">
     
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.hubforgeglobal.com/">
     <meta property="og:title" content="HubForge | Build Evidence. Drive Change.">
@@ -19,7 +17,6 @@
     <meta property="og:image" content="https://www.hubforgeglobal.com/assets/images/banner-optimized.jpg">
     <meta property="og:site_name" content="HubForge Global Impact Network">
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.hubforgeglobal.com/">
     <meta name="twitter:title" content="HubForge | Build Evidence. Drive Change.">
@@ -28,35 +25,30 @@
 
     <title>HubForge | Build Evidence. Drive Change.</title>
     
-    <!-- Performance: Preconnect for fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet"></noscript>
     
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="./assets/images/logo-small.png">
     
-    <!-- Critical CSS for above-the-fold content -->
     <style>
-        :root{--color-pink:#ec4899;--color-purple:#8b5cf6;--color-dark:#1a1a2e;--color-light:#fafafa;--font-main:'Inter',system-ui,-apple-system,sans-serif}
+        :root{--color-pink:#E94BC4;--color-purple:#7B68EE;--color-dark:#111111;--color-light:#ffffff;--font-main:'Inter',system-ui,-apple-system,sans-serif}
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:var(--font-main);background:var(--color-light);color:#333;line-height:1.6}
-        .nav{position:fixed;top:0;left:0;right:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);z-index:1000;padding:1rem 0;border-bottom:1px solid rgba(0,0,0,0.05)}
+        body{font-family:var(--font-main);background:#fff;color:#111;line-height:1.6;-webkit-font-smoothing:antialiased}
+        .nav{position:fixed;top:0;left:0;right:0;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:1000;border-bottom:1px solid rgba(0,0,0,0.07)}
         .container{max-width:1200px;margin:0 auto;padding:0 2rem}
-        .nav-container{display:flex;justify-content:space-between;align-items:center}
+        .nav-container{display:flex;justify-content:space-between;align-items:center;min-height:72px;padding:0 2rem}
         .nav-logo{display:flex;align-items:center;gap:0.75rem;text-decoration:none}
-        .nav-brand{font-weight:600;font-size:1.1rem;color:var(--color-pink)}
-        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem;background:linear-gradient(135deg,#fdf2f8 0%,#faf5ff 50%,#f0fdf4 100%)}
-        .hero-title{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;line-height:1.1;color:var(--color-dark);margin-bottom:1.5rem}
-        .hero-subtitle{font-size:clamp(1rem,2vw,1.25rem);color:#666;max-width:600px;margin:0 auto 2rem}
+        .nav-brand{font-weight:700;font-size:1rem;background:linear-gradient(135deg,var(--color-pink),var(--color-purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 6rem;background:#fff}
+        .hero-title{font-size:clamp(3.5rem,8vw,6.5rem);font-weight:800;line-height:1.05;color:#111;letter-spacing:-0.03em;margin-bottom:1.5rem}
+        .hero-subtitle{font-size:clamp(1.1rem,2vw,1.35rem);color:#555;max-width:520px;margin:0 auto 2.5rem;line-height:1.6;font-weight:400}
     </style>
     
-    <!-- Main CSS (non-blocking) -->
     <link rel="stylesheet" href="./assets/css/style.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="./assets/css/style.css"></noscript>
     
-    <!-- JSON-LD Structured Data for NGO -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -69,65 +61,20 @@
         "slogan": "Build evidence. Drive change.",
         "email": "hubforgeglobal@gmail.com",
         "foundingDate": "2023",
-        "areaServed": {
-            "@type": "Place",
-            "name": "Global"
-        },
-        "sameAs": [
-            "https://www.hubforgeglobal.com"
-        ],
-        "knowsAbout": [
-            "Monitoring and Evaluation",
-            "Impact Measurement",
-            "Evidence-based Decision Making",
-            "Community Development",
-            "Social Impact",
-            "Nonprofit Tools"
-        ],
-        "makesOffer": [
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "HubForge Impact Lab",
-                    "description": "Free training and support for organizations building their evidence practice"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "EvalAtlas",
-                    "description": "Global networking platform connecting evaluation professionals worldwide"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Glocal Impact Awards 2026",
-                    "description": "Recognizing grassroots leaders driving evidence-based change in their communities"
-                }
-            }
-        ]
+        "areaServed": {"@type": "Place","name": "Global"}
     }
     </script>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="nav" id="navbar" role="navigation" aria-label="Main navigation">
-        <div class="container nav-container">
-            <a href="index.html" class="nav-logo" aria-label="HubForge Global Impact Network Home">
-                <img src="./assets/images/logo.png" alt="HubForge Logo" width="50" height="50">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo" aria-label="HubForge home">
+                <img src="./assets/images/logo.png" alt="HubForge Logo" width="44" height="44">
                 <span class="nav-brand">HubForge Global Impact Network</span>
             </a>
-            
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
             </button>
-            
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#programs" class="nav-link">Programs</a></li>
@@ -138,441 +85,231 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- ═══════════ HERO ═══════════ -->
     <section class="hero" id="home">
-        <div class="hero-background"></div>
         <div class="container hero-content">
             <h1 class="hero-title">Build evidence.<br>Drive change.</h1>
-            <p class="hero-subtitle">
-                Helping communities measure what matters and act on it.
-            </p>
-            <div class="hero-cta">
-                <a href="#programs" class="btn btn-primary btn-large">Explore Programs</a>
+            <p class="hero-subtitle">Helping communities measure what matters and act on it.</p>
+            <a href="#programs" class="btn btn-primary btn-large">Explore Programs</a>
+            <div class="hero-pills">
+                <span>Impact Lab</span>
+                <span class="dot">·</span>
+                <span>EvalAtlas</span>
+                <span class="dot">·</span>
+                <span>GIA 2026</span>
+                <span class="dot">·</span>
+                <span>Fellowship</span>
             </div>
         </div>
     </section>
 
-    <!-- Vision Section -->
-    <section class="section section-dark" id="about">
+    <!-- ═══════════ ABOUT ═══════════ -->
+    <section class="hf-about" id="about">
         <div class="container">
-            <div class="section-header">
-                <span class="section-label">Our Vision</span>
-                <h2 class="section-title">A just and thriving world</h2>
-            </div>
-            <div class="vision-content">
-                <p class="vision-text">
-                    We envision a just and thriving world where communities, youth, and grassroots changemakers have the <strong>ecosystem strength</strong> to build and share evidence, uniting local wisdom and global knowledge to drive lasting, transformative change.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mission Section -->
-    <section class="section">
-        <div class="container">
-            <div class="mission-grid">
-                <div class="mission-content">
-                    <span class="section-label">Our Mission</span>
-                    <h2 class="section-title">Nurturing globally connected, locally rooted ecosystems</h2>
-                    <p class="mission-text">
-                        We're nurturing a globally connected, locally rooted ecosystem where changemakers-from village leaders to global institutions-can collaborate, learn, and thrive.
-                    </p>
-                    <p class="mission-text">
-                        By strengthening networks, sharing knowledge, and unlocking tools and opportunities, we help communities take ownership of their evidence and scale what truly works.
-                    </p>
-                    <p class="mission-text">
-                        We stay <strong>practical, hands-on, and real-world focused</strong>, ensuring every action leads to meaningful, lasting change.
-                    </p>
+            <p class="hf-about-label">Who we are</p>
+            <h2 class="hf-about-statement">We exist to make evidence-based change accessible to everyone — not just the well-resourced.</h2>
+            <div class="hf-pillars">
+                <div class="hf-pillar">
+                    <div class="hf-pillar-num">01</div>
+                    <h3>Free tools</h3>
+                    <p>Open platforms anyone can use to plan, measure, and learn — no budget required.</p>
                 </div>
-                <div class="mission-image">
-                    <div class="stat-card">
-                        <div class="stat-number">Every</div>
-                        <div class="stat-label">changemaker & community deserves the knowledge, tools, and network to lead with evidence and change the world on their own terms.</div>
-                    </div>
+                <div class="hf-pillar">
+                    <div class="hf-pillar-num">02</div>
+                    <h3>Global network</h3>
+                    <p>Connecting evaluators, NGOs, youth, and practitioners across borders and sectors.</p>
+                </div>
+                <div class="hf-pillar">
+                    <div class="hf-pillar-num">03</div>
+                    <h3>Real capacity</h3>
+                    <p>Hands-on training and support so communities own their evidence — not just consume it.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why HubForge Section -->
-    <section class="section section-why">
+    <!-- ═══════════ PROGRAMS ═══════════ -->
+    <section class="hf-programs" id="programs">
         <div class="container">
-            <div class="why-content">
-                <div class="why-badge">Our Purpose</div>
-                <h2 class="why-title">Impact shouldn't depend on privilege</h2>
-                <p class="why-lead">
-                    The best solutions often come from those closest to the challenges. Yet too many changemakers-especially at the grassroots-lack access to the evidence, tools, and networks that could amplify their work.
-                </p>
-                <div class="why-grid">
-                    <div class="why-point">
-                        <div class="why-icon">💡</div>
-                        <h3>Local knowledge meets global evidence</h3>
-                        <p>We bridge the gap between community-led solutions and proven frameworks that strengthen impact.</p>
-                    </div>
-                    <div class="why-point">
-                        <div class="why-icon">🌍</div>
-                        <h3>Resources for everyone, not just the well-connected</h3>
-                        <p>We make practical M&E support accessible to organizations of all sizes, everywhere.</p>
-                    </div>
-                    <div class="why-point">
-                        <div class="why-icon">🤝</div>
-                        <h3>Building ecosystems, not extracting value</h3>
-                        <p>We create lasting capacity so communities can own their evidence and drive their own change.</p>
-                    </div>
-                </div>
-                <p class="why-footer">
-                    HubForge exists to democratize access to evidence-based practice-because every changemaker deserves the chance to learn, adapt, and thrive.
-                </p>
+            <div class="hf-section-top">
+                <p class="hf-label">Programs</p>
+                <h2 class="hf-section-heading">What we build</h2>
             </div>
-        </div>
-    </section>
+            <div class="hf-prog-grid">
 
-    <!-- Values Section -->
-    <section class="section" id="values">
-        <div class="container">
-            <div class="section-header centered">
-                <span class="section-label">Our Values</span>
-                <h2 class="section-title">What Guides Us</h2>
-            </div>
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon" style="background: linear-gradient(135deg, #FF6B6B, #FF8E8E);">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                <a href="impact-lab.html" class="hf-prog-card">
+                    <span class="hf-prog-num">01</span>
+                    <div class="hf-prog-body">
+                        <h3>HubForge Impact Lab</h3>
+                        <p class="hf-prog-line">Free MERL support for grassroots organizations</p>
+                        <p class="hf-prog-desc">Volunteer-driven training, tools, and hands-on support for nonprofits building their evidence practice from the ground up.</p>
+                        <span class="hf-prog-link">Learn more →</span>
                     </div>
-                    <h3 class="value-title">Evidence with Heart</h3>
-                    <p class="value-description">Data should serve people, not the other way around.</p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon" style="background: linear-gradient(135deg, #A8E86D, #C0F088);">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <div class="hf-prog-tags">
+                        <span>MERL Training</span><span>Volunteer Support</span><span>Grassroots</span>
                     </div>
-                    <h3 class="value-title">Local Wisdom First</h3>
-                    <p class="value-description">Communities know their context best-we listen and co-create.</p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon" style="background: linear-gradient(135deg, #E94BC4, #FF69B4);">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                    </div>
-                    <h3 class="value-title">Global Connections, Shared Growth</h3>
-                    <p class="value-description">Knowledge is collective power; we share it freely.</p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon" style="background: linear-gradient(135deg, #FFD93D, #FFE66D);">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-                    </div>
-                    <h3 class="value-title">Practical over Perfect</h3>
-                    <p class="value-description">Solutions must work on the ground, not just on paper.</p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon" style="background: linear-gradient(135deg, #7B68EE, #9B88FF);">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
-                    </div>
-                    <h3 class="value-title">Youth as Catalysts</h3>
-                    <p class="value-description">The future of evidence belongs to the next generation.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                </a>
 
-    <!-- Programs Section -->
-    <section class="section section-dark" id="programs">
-        <div class="container">
-            <div class="section-header centered">
-                <span class="section-label">Our Programs</span>
-                <h2 class="section-title">Building the Evidence Ecosystem</h2>
-            </div>
-            
-            <div class="programs-grid">
-                <!-- Program 1: Impact Lab -->
-                <div class="program-card">
-                    <div class="program-header">
-                        <div class="program-number">01</div>
-                        <h3 class="program-title">HubForge Impact Lab</h3>
+                <a href="evalatlas.html" class="hf-prog-card">
+                    <span class="hf-prog-num">02</span>
+                    <div class="hf-prog-body">
+                        <h3>EvalAtlas</h3>
+                        <p class="hf-prog-line">The global networking platform for social impact</p>
+                        <p class="hf-prog-desc">Connecting evaluators, NGOs, funders, youth, and field researchers in one inclusive space. Building the ecosystem the field has always needed.</p>
+                        <div class="hf-waitlist-inline">
+                            <span class="waitlist-stat-number" id="waitlistCountHome">—</span>+ members · <span class="waitlist-stat-number" id="countriesCountHome">—</span>+ countries
+                        </div>
+                        <span class="hf-prog-link">Learn more →</span>
                     </div>
-                    <p class="program-description">
-                        Our first initiative, the Impact Lab, strengthens the Monitoring, Evaluation, Research, and Learning (MERL) ecosystem at the grassroots. It provides volunteer-driven support to nonprofits and community-based organisations.
-                    </p>
-                    <p class="program-description">
-                        By equipping these organisations with essential MERL skills, tools, and resources, the Impact Lab empowers them to generate data-driven insights, improve decision-making, and enhance program effectiveness.
-                    </p>
-                    <div class="program-features">
-                        <span class="feature-tag">MERL Training</span>
-                        <span class="feature-tag">Volunteer Support</span>
-                        <span class="feature-tag">Grassroots Focus</span>
+                    <div class="hf-prog-tags">
+                        <span>Ecosystem</span><span>Open Access</span><span>Global</span>
                     </div>
-                    <a href="impact-lab.html" class="btn btn-secondary program-btn">Learn More →</a>
-                </div>
+                </a>
 
-                <!-- Program 2: EvalAtlas -->
-                <div class="program-card">
-                    <div class="program-header">
-                        <div class="program-number">02</div>
-                        <h3 class="program-title">EvalAtlas</h3>
+                <a href="gia-mande.html" class="hf-prog-card">
+                    <span class="hf-prog-num">03</span>
+                    <div class="hf-prog-body">
+                        <h3>Glocal Impact Awards 2026</h3>
+                        <p class="hf-prog-line">Recognizing everyone building evidence for good</p>
+                        <p class="hf-prog-desc">From community organizers to field researchers — we celebrate real champions using data and learning, regardless of title or affiliation.</p>
+                        <span class="hf-prog-link">Learn more →</span>
                     </div>
-                    <p class="program-description">
-                        The evaluation ecosystem is fragmented-talented practitioners work in isolation, organizations struggle to find expertise, and networks remain invisible to each other. EvalAtlas is changing that.
-                    </p>
-                    <p class="program-description">
-                        A global ecosystem & networking platform connecting evaluators, NGOs, tech vendors, youth, enumerators, field researchers, agencies, funders, educational institutions, VOPEs, and emerging M&E professionals in one inclusive space. Join us in building an evaluation ecosystem that connects people, ideas, and action.
-                    </p>
-                    <div class="program-features">
-                        <span class="feature-tag">Ecosystem Mapping</span>
-                        <span class="feature-tag">Open Access</span>
-                        <span class="feature-tag">Global Connections</span>
+                    <div class="hf-prog-tags">
+                        <span>Awards</span><span>Inclusive</span><span>Global + Local</span>
                     </div>
-                    <div class="waitlist-stats">
-                        <div class="waitlist-stat">
-                            <span class="waitlist-stat-number" id="waitlistCountHome">0</span>+ members joined waitlist
-                        </div>
-                        <div class="waitlist-stat">
-                            <span class="waitlist-stat-number" id="countriesCountHome">0</span>+ countries joined waitlist
-                        </div>
-                    </div>
-                    <div class="program-actions">
-                        <a href="evalatlas.html" class="btn btn-secondary program-btn">Learn More →</a>
-                        <a href="https://tally.so/r/nPxxzd" target="_blank" rel="noopener noreferrer" class="btn btn-waitlist-small">Join Waitlist</a>
-                    </div>
-                </div>
+                </a>
 
-                <!-- Program 3: Glocal Impact Awards 2026 -->
-                <div class="program-card">
-                    <div class="program-header">
-                        <div class="program-number">03</div>
-                        <h3 class="program-title">Glocal Impact Awards 2026</h3>
+                <a href="fellowship.html" class="hf-prog-card">
+                    <span class="hf-prog-num">04</span>
+                    <div class="hf-prog-body">
+                        <h3>The Fellowship</h3>
+                        <p class="hf-prog-line">Learn by building, not by observing</p>
+                        <p class="hf-prog-desc">Early-career program exploring how decisions get made. Work on real problems in research, design, program management, or AI. Remote, 8–12 weeks.</p>
+                        <span class="hf-prog-link">Learn more →</span>
                     </div>
-                    <p class="program-description">
-                        Evidence doesn't belong to experts with fancy degrees-it belongs to everyone. The Glocal Impact Awards 2026 celebrate anyone building, innovating, or using evidence for good, regardless of their designation, affiliation, or background.
-                    </p>
-                    <p class="program-description">
-                        From community organizers to field researchers, youth innovators to frontline practitioners-we're recognizing the real champions creating better programs, stronger voices, and smarter policies through data and learning. We're inviting partners to help co-create this vision for 2026.
-                    </p>
-                    <div class="program-features">
-                        <span class="feature-tag">Inclusive Recognition</span>
-                        <span class="feature-tag">Global + Local</span>
-                        <span class="feature-tag">Co-Created</span>
+                    <div class="hf-prog-tags">
+                        <span>8–12 Weeks</span><span>Remote</span><span>Certificate</span>
                     </div>
-                    <a href="gia-mande.html" class="btn btn-secondary program-btn">Learn More →</a>
-                </div>
-
-                <!-- Program 4: Fellowship -->
-                <div class="program-card">
-                    <div class="program-header">
-                        <div class="program-number">04</div>
-                        <h3 class="program-title">The Fellowship</h3>
-                    </div>
-                    <p class="program-description">
-                        A learning-by-building program for early-career changemakers. Work on real problems in research, design, program management, or AI. Gain hands-on experience, build your portfolio, and develop skills that stay useful across roles and sectors.
-                    </p>
-                    <p class="program-description">
-                        <strong>What you'll gain:</strong> Real project experience, mentorship from practitioners, a professional network in social impact, and a certificate of completion.
-                    </p>
-                    <div class="program-features">
-                        <span class="feature-tag">8-12 Weeks</span>
-                        <span class="feature-tag">Remote</span>
-                        <span class="feature-tag">Certificate</span>
-                    </div>
-                    <a href="fellowship.html" class="btn btn-secondary program-btn">Learn More →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Free Tools Section -->
-    <section class="section section-tools" id="tools">
-        <div class="container">
-            <div class="section-header centered">
-                <span class="section-label">Free Tools</span>
-                <h2 class="section-title">Built for people doing the work</h2>
-                <p class="section-description">Open, free, and made for programme teams — no account needed.</p>
-            </div>
-            <div class="tools-grid">
-
-                <!-- Tool 1: EvalCanvas -->
-                <div class="tool-card">
-                    <div class="tool-card-top">
-                        <div class="tool-badge">MEL Platform</div>
-                        <h3 class="tool-name">EvalCanvas</h3>
-                        <p class="tool-tagline">Your M&E strategy, step by step</p>
-                        <p class="tool-desc">Built for everyone on a programme team — from first-time coordinators to seasoned evaluators. Design your M&E strategy, find the right partners, and learn along the way.</p>
-                    </div>
-                    <div class="tool-pillars">
-                        <div class="tool-pillar">
-                            <span class="pillar-label">🤖 AI</span>
-                            <span class="pillar-text">MELSA — your conversational MEL assistant. Build logframes, theories of change, and evaluation strategies through real back-and-forth.</span>
-                        </div>
-                        <div class="tool-pillar">
-                            <span class="pillar-label">🔨 Build</span>
-                            <span class="pillar-text">Design your evaluation strategy, pick from 106 sector indicators, and generate a downloadable Terms of Reference.</span>
-                        </div>
-                        <div class="tool-pillar">
-                            <span class="pillar-label">📚 Learn</span>
-                            <span class="pillar-text">Plain-language M&E library, 12 interactive learning games, and a glossary of 60+ concepts.</span>
-                        </div>
-                        <div class="tool-pillar">
-                            <span class="pillar-label">🤝 Connect</span>
-                            <span class="pillar-text">Find vetted evaluation consultants and agencies to carry out your plan.</span>
-                        </div>
-                    </div>
-                    <div class="tool-footer">
-                        <span class="tool-tag">Free</span>
-                        <span class="tool-tag">No account needed</span>
-                        <span class="tool-tag">All sectors</span>
-                        <a href="https://evalcanvas.com/" target="_blank" rel="noopener noreferrer" class="btn btn-tool">Visit EvalCanvas →</a>
-                    </div>
-                </div>
-
-                <!-- Tool 2: SamplingShala -->
-                <div class="tool-card">
-                    <div class="tool-card-top">
-                        <div class="tool-badge">Sampling Tool</div>
-                        <h3 class="tool-name">SamplingShala</h3>
-                        <p class="tool-tagline">The A-Z sampling companion for education programmes</p>
-                        <p class="tool-desc">A free planning aid for designing defensible sampling strategies. Learn the concepts, run the numbers, and build a plan you can hand to an expert for final sign-off.</p>
-                    </div>
-                    <div class="tool-pillars">
-                        <div class="tool-pillar">
-                            <span class="pillar-label">🏗️ Build</span>
-                            <span class="pillar-text">5-step wizard covering question, scale, who, precision, and strategy — across 8 evaluation designs including RCT and LQAS.</span>
-                        </div>
-                        <div class="tool-pillar">
-                            <span class="pillar-label">🎮 Learn</span>
-                            <span class="pillar-text">Interactive playgrounds and a 42-concept library to understand what you're building, not just generate numbers.</span>
-                        </div>
-                        <div class="tool-pillar">
-                            <span class="pillar-label">📋 Plan</span>
-                            <span class="pillar-text">Multi-stakeholder sampling with sample size, margin of error, power, and design effect in one integrated field plan.</span>
-                        </div>
-                        <div class="tool-pillar">
-                            <span class="pillar-label">⚠️ Note</span>
-                            <span class="pillar-text">A planning aid, not a replacement for a qualified statistician. Always confirm your design with a domain expert.</span>
-                        </div>
-                    </div>
-                    <div class="tool-footer">
-                        <span class="tool-tag">Free</span>
-                        <span class="tool-tag">Mobile-first</span>
-                        <span class="tool-tag">Education M&E</span>
-                        <a href="https://samplingshala.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn btn-tool">Visit SamplingShala →</a>
-                    </div>
-                </div>
+                </a>
 
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="section section-dark" id="services">
+    <!-- ═══════════ FREE TOOLS ═══════════ -->
+    <section class="hf-tools" id="tools">
         <div class="container">
-            <div class="section-header centered">
-                <span class="section-label">Our Services</span>
-                <h2 class="section-title">Expert Support for Evidence-Based Impact</h2>
-                <p class="section-description">From strategy to implementation, we work alongside you to strengthen your evidence ecosystem-practical, affordable, and built for the communities you serve.</p>
+            <div class="hf-section-top">
+                <p class="hf-label">Free Tools</p>
+                <h2 class="hf-section-heading">Built for people doing the work</h2>
+                <p class="hf-section-sub">Open, free, no account needed.</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            <div class="hf-tools-grid">
+
+                <div class="hf-tool-card">
+                    <div class="hf-tool-header">
+                        <span class="hf-tool-badge">MEL Platform</span>
+                        <h3>EvalCanvas</h3>
+                        <p class="hf-tool-tagline">Your M&amp;E strategy, step by step</p>
+                        <p class="hf-tool-desc">For everyone on a programme team — from first-time coordinators to seasoned evaluators. Design your M&amp;E strategy, get AI support, and find the right partners.</p>
                     </div>
-                    <h3 class="service-title">M&E Consulting</h3>
-                    <p class="service-description">
-                        We help organizations design and implement M&E frameworks that actually work-grounded in your context, realistic for your team, and built to strengthen decision-making from day one.
-                    </p>
-                    <ul class="service-features">
-                        <li>Theory of Change & Frameworks</li>
-                        <li>Indicator & Data System Design</li>
-                        <li>Impact Measurement Strategy</li>
-                        <li>Context-Driven M&E Solutions</li>
+                    <ul class="hf-tool-features">
+                        <li><span>🤖</span> MELSA — conversational MEL AI for logframes, ToC, and TORs</li>
+                        <li><span>🔨</span> 106 sector indicators + downloadable Terms of Reference</li>
+                        <li><span>📚</span> M&amp;E library, 12 learning games, 60+ glossary terms</li>
+                        <li><span>🤝</span> Find vetted evaluation consultants for South Asia</li>
                     </ul>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    <div class="hf-tool-footer">
+                        <div class="hf-tool-tags"><span>Free</span><span>No account needed</span><span>All sectors</span></div>
+                        <a href="https://evalcanvas.com/" target="_blank" rel="noopener noreferrer" class="hf-tool-btn">Visit EvalCanvas →</a>
                     </div>
-                    <h3 class="service-title">Evaluations</h3>
-                    <p class="service-description">
-                        Whether it's a formative assessment or impact evaluation, we generate insights that matter-actionable, clear, and focused on helping you learn, adapt, and scale what works.
-                    </p>
-                    <ul class="service-features">
-                        <li>Program & Impact Evaluations</li>
-                        <li>Baseline & Endline Assessments</li>
-                        <li>Learning-Focused Evaluations</li>
-                        <li>Participatory & Inclusive Methods</li>
-                    </ul>
                 </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+
+                <div class="hf-tool-card">
+                    <div class="hf-tool-header">
+                        <span class="hf-tool-badge">Sampling Tool</span>
+                        <h3>SamplingShala</h3>
+                        <p class="hf-tool-tagline">The A-Z sampling companion for education programmes</p>
+                        <p class="hf-tool-desc">A free planning aid for designing defensible sampling strategies. Learn the concepts, run the numbers, and build a plan you can hand to an expert for final sign-off.</p>
                     </div>
-                    <h3 class="service-title">Capacity Building</h3>
-                    <p class="service-description">
-                        We train teams to own their M&E-through hands-on workshops, peer learning, and tools designed for real-world use. Build skills that stick and systems that scale.
-                    </p>
-                    <ul class="service-features">
-                        <li>M&E Fundamentals & Advanced Training</li>
-                        <li>Data Collection & Analysis Workshops</li>
-                        <li>Custom Learning for Your Context</li>
-                        <li>Peer Learning & Mentorship</li>
+                    <ul class="hf-tool-features">
+                        <li><span>🏗️</span> 5-step wizard across 8 evaluation designs (RCT, LQAS, quasi-exp…)</li>
+                        <li><span>🎮</span> Interactive playgrounds + 42-concept statistics library</li>
+                        <li><span>📋</span> Multi-stakeholder sampling with integrated field plan output</li>
+                        <li><span>⚠️</span> Planning aid — always confirm your design with a domain expert</li>
                     </ul>
+                    <div class="hf-tool-footer">
+                        <div class="hf-tool-tags"><span>Free</span><span>Mobile-first</span><span>Education M&amp;E</span></div>
+                        <a href="https://samplingshala.pages.dev/" target="_blank" rel="noopener noreferrer" class="hf-tool-btn">Visit SamplingShala →</a>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Contact & About Section -->
-    <section class="section section-cta" id="contact">
+    <!-- ═══════════ VALUES STRIP ═══════════ -->
+    <section class="hf-values" id="values">
         <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">Join us in forging a future where evidence-driven decision-making empowers changemakers to thrive</h2>
-                <p class="cta-description">
-                    Interested in working or learning with us? Let's connect and explore how HubForge can support your impact goals.
-                </p>
-                <div class="cta-buttons">
-                    <a href="mailto:hubforgeglobal@gmail.com" class="btn btn-primary btn-large">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        Contact Us
-                    </a>
+            <div class="hf-values-grid">
+                <div class="hf-value">
+                    <h4>Evidence with Heart</h4>
+                    <p>Data should serve people, not the other way around.</p>
                 </div>
-                <p class="contact-email">hubforgeglobal@gmail.com</p>
+                <div class="hf-value">
+                    <h4>Local Wisdom First</h4>
+                    <p>Communities know their context best — we listen and co-create.</p>
+                </div>
+                <div class="hf-value">
+                    <h4>Practical over Perfect</h4>
+                    <p>Solutions must work on the ground, not just on paper.</p>
+                </div>
+                <div class="hf-value">
+                    <h4>Shared Growth</h4>
+                    <p>Knowledge is collective power — we share it freely.</p>
+                </div>
+                <div class="hf-value">
+                    <h4>Youth as Catalysts</h4>
+                    <p>The future of evidence belongs to the next generation.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="section section-newsletter">
+    <!-- ═══════════ CTA ═══════════ -->
+    <section class="hf-cta" id="contact">
         <div class="container">
-            <div class="newsletter-content">
-                <h2 class="newsletter-title">Stay Connected with HubForge</h2>
-                <p class="newsletter-description">
-                    Get monthly M&E insights, new resource updates, and stories from changemakers around the world-delivered straight to your inbox.
-                </p>
-                <div class="newsletter-embed">
-                    <iframe src="https://hubforgeglobal.substack.com/embed" width="100%" height="320" style="border:1px solid #EEE; background:white; max-width: 600px; border-radius: 8px;" frameborder="0" scrolling="no"></iframe>
-                </div>
+            <h2>Ready to work together?</h2>
+            <p>Whether you're a changemaker, evaluator, funder, or student — there's a place for you here.</p>
+            <a href="mailto:hubforgeglobal@gmail.com" class="hf-cta-btn">Get in touch →</a>
+            <p class="hf-cta-email">hubforgeglobal@gmail.com</p>
+        </div>
+    </section>
+
+    <!-- ═══════════ NEWSLETTER ═══════════ -->
+    <section class="hf-newsletter">
+        <div class="container">
+            <h3>Stay connected</h3>
+            <p>Monthly M&amp;E insights and stories from changemakers around the world.</p>
+            <div class="hf-newsletter-embed">
+                <iframe src="https://hubforgeglobal.substack.com/embed" width="100%" height="280" style="border:1px solid #e5e5e5;background:white;max-width:520px;border-radius:10px;" frameborder="0" scrolling="no"></iframe>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ═══════════ FOOTER ═══════════ -->
     <footer class="footer">
         <div class="container">
-            <!-- About Section -->
             <div class="footer-about-section">
-                <p>HubForge is a not-for-profit organization strengthening how the world builds and shares evidence for change. We support organizations and communities from grassroots to global through accessible, practical evaluation.</p>
+                <p>HubForge is a not-for-profit organization strengthening how the world builds and shares evidence for change. We support organizations and communities from grassroots to global.</p>
             </div>
-            
-            <!-- Navigation Links -->
-            <div class="footer-nav">
+            <div class="footer-nav" style="grid-template-columns: repeat(4, 1fr); max-width: 900px;">
                 <div class="footer-nav-column">
                     <h4>Programs</h4>
                     <ul>
                         <li><a href="impact-lab.html">Impact Lab</a></li>
                         <li><a href="evalatlas.html">EvalAtlas</a></li>
-                        <li><a href="gia-mande.html">GIA-M&E Awards</a></li>
+                        <li><a href="gia-mande.html">GIA 2026</a></li>
                         <li><a href="fellowship.html">Fellowship</a></li>
                     </ul>
                 </div>
@@ -603,27 +340,16 @@
                     </ul>
                 </div>
             </div>
-            
-            <!-- Legal Info -->
             <div class="footer-legal">
                 <p><strong>HubForge Global Impact Network Foundation</strong> is a Not for Profit organization (Section 8 Company) registered in India under the Companies Act, 2013.</p>
                 <p class="legal-details">Darpan ID: KAR/2025/0843199 | Udyam Registration No.: UDYAM-KR-25-0089899 | Registered Office: Madhugiri, Karnataka – 572132, India</p>
             </div>
-            
-            <!-- Copyright -->
             <div class="footer-copyright">
                 <p>&copy; 2025 HubForge Global Impact Network Foundation. All rights reserved.</p>
-                <p class="ssl-badge">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline; vertical-align: middle; margin-right: 4px;">
-                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                    </svg>
-                    Secured by GitHub Pages (SSL Certified)
-                </p>
             </div>
         </div>
     </footer>
 
-    <script src="./assets/js/main.js?v=4" defer></script>
+    <script src="./assets/js/main.js?v=5" defer></script>
 </body>
 </html>
