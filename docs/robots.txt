@@ -1,11 +1,45 @@
-# HubForge Global Impact Network - Robots Configuration
-# Allow all search engines to crawl the entire site
+# HubForge Global Impact Network - robots.txt
+# We welcome search engines and AI answer engines.
 
 User-agent: *
 Allow: /
 
+# AI / answer-engine crawlers (explicitly allowed for citation)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 # Sitemap location
 Sitemap: https://www.hubforgeglobal.com/sitemap.xml
-
-# Crawl-delay (optional, helps prevent overload)
-Crawl-delay: 1

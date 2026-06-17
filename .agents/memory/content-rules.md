@@ -20,3 +20,10 @@ Use `–` (or `&ndash;`) for numeric/alphabetical ranges.
 
 ## Never use double/spaced hyphen
 - ❌ "--" or " - " as a sentence break.
+
+## No inflated or unverified statistics in copy
+Never claim numbers the site can't back up. EvalAtlas had a stale "10,000+ professionals" line while live counters showed only a few hundred members; it was removed. State counts only when they match the real (often counter-driven) data, otherwise describe the offering qualitatively.
+**Why:** Inflated stats hurt credibility and AI-search (GEO) trust; AI engines deprioritize sources that contradict observable facts.
+
+## SEO/GEO keyword focus: "MEL"
+Primary keyword family is MEL (Monitoring, Evaluation and Learning), alongside M&E and MERL. Titles, descriptions, and FAQ schema target MEL-intent queries. Homepage carries FAQPage + WebSite + NGO JSON-LD; keep visible FAQ text and FAQPage schema in sync (Google requires them to match).
