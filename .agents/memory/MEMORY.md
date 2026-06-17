@@ -1,2 +1,2 @@
-- [Content & typography rules](content-rules.md) — em dash (—) for parenthetical breaks; en dash (–) for ranges (A–Z, 8–12 weeks); never double-hyphen
+- [Content & typography rules](content-rules.md) — AVOID em dashes in visible copy (reword w/ comma/period/colon); en dash (–) only for ranges (A–Z, 8–12 weeks); never double-hyphen
 - [Device-friendly rules](device-rules.md) — all pages must be fully responsive: 960px tablet, 600px mobile, 380px small; no inline grid styles; touch targets ≥44px

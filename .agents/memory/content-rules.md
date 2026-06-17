@@ -3,16 +3,20 @@ name: Content & typography rules
 description: Standing rules for dash usage and copy style on the HubForge site
 ---
 
-## Em dash (—)
-Use the actual `—` character (or `&mdash;`) for parenthetical breaks and interruptions in prose.
-- ✅ "accessible to everyone — not just the well-resourced"
-- ❌ "--" or " - " (double hyphen or spaced hyphen)
+## Em dash (—) — AVOID in visible content
+Do NOT use em dashes in visible body copy/prose. The user dislikes them in content and flags them on sight. Reword instead:
+- comma for a parenthetical break: "accessible to everyone, not just the well-resourced"
+- period to split: "plan, measure, and learn. No budget required."
+- colon for a label/definition: "MELSA: conversational MEL AI for logframes"
+- "so"/"and" to join clauses: "Knowledge is collective power, so we share it freely."
 
-## En dash (–)
+**Why:** User explicitly objected to em dashes appearing throughout the site copy (they read as an AI tell). This supersedes the earlier rule that allowed em dashes for parenthetical breaks.
+**How to apply:** Before finishing any content edit, `grep -rn "—" --include="*.html" docs | grep -v css` and reword every hit in visible text.
+
+## En dash (–) — use for ranges
 Use `–` (or `&ndash;`) for numeric/alphabetical ranges.
 - ✅ "8–12 weeks", "A–Z sampling companion"
 - ❌ "8-12 weeks", "A-Z"
 
-**Why:** User explicitly flagged this as a standing rule. Apply on every page, every edit.
-
-**How to apply:** Before finishing any content edit, grep for ` - `, `--`, and literal `A-Z` / digit-hyphen-digit patterns and correct them.
+## Never use double/spaced hyphen
+- ❌ "--" or " - " as a sentence break.
