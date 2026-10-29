@@ -22,12 +22,12 @@
         <priority>0.8</priority>
     </url>
     
-    <!-- EvalAtlas -->
+    <!-- EvalAtlas (programme paused; page kept so existing links resolve) -->
     <url>
         <loc>https://www.hubforgeglobal.com/evalatlas.html</loc>
-        <lastmod>2026-06-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.2</priority>
     </url>
     
     <!-- Glocal Impact Awards 2026 -->
@@ -38,12 +38,12 @@
         <priority>0.8</priority>
     </url>
     
-    <!-- Fellowship -->
+    <!-- Fellowship (programme paused; page kept so existing links resolve) -->
     <url>
         <loc>https://www.hubforgeglobal.com/fellowship.html</loc>
-        <lastmod>2026-06-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.2</priority>
     </url>
     
     <!-- M&E Resource Hub -->
