@@ -383,31 +383,30 @@
             margin-top: 4rem;
         }
     </style>
+    <link rel="stylesheet" href="/assets/css/site.css?v=1">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="nav" id="navbar">
-        <div class="container nav-container">
-            <a href="../index.html" class="nav-logo">
-                <img src="../assets/images/logo.png" alt="HubForge" width="50" height="50">
-                <span class="nav-brand">HubForge Global Impact Network</span>
+    <header class="site-header">
+        <div class="brand-stripe" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="site-header-inner">
+            <a class="brand" href="/" aria-label="HubForge home">
+                <img src="/assets/images/logo.png" alt="" width="44" height="44">
+                <span class="brand-text"><span class="brand-name">HubForge</span><span class="brand-sub">Global Impact Network</span></span>
             </a>
-            
-            <button class="nav-toggle" id="navToggle" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="../index.html#about" class="nav-link">About</a></li>
-                <li><a href="../index.html#programs" class="nav-link">Programs</a></li>
-                <li><a href="../resource-hub/" class="nav-link">Resources</a></li>
-                <li><a href="https://evalqrapp.com/" class="nav-link" target="_blank" rel="noopener noreferrer">↗EvalQR</a></li>
-                <li><a href="../index.html#contact" class="nav-link nav-cta">Get Involved</a></li>
-            </ul>
+            <button class="site-toggle" id="siteNavToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNavMenu"><span></span><span></span><span></span></button>
+            <nav class="site-menu" id="siteNavMenu" aria-label="Main">
+                <ul>
+                    <li><a href="/tools/">Tools</a></li>
+                    <li><a href="/playbooks/">Playbooks</a></li>
+                    <li><a href="/community/">Community</a></li>
+                    <li><a href="/advisory/">Advisory</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a class="nav-contact" href="mailto:hubforgeglobal@gmail.com">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero -->
     <section class="jobs-hero">
@@ -500,42 +499,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <!-- About Section -->
-            <div class="footer-about-section">
-                <p>HubForge is a not-for-profit organization strengthening how the world builds and shares evidence for change. We support organizations and communities from grassroots to global through accessible, practical evaluation.</p>
-            </div>
-            
-            <!-- Navigation Links -->
-            <div class="footer-nav">
-                <div class="footer-nav-column">
-                    <h4>Programs</h4>
-                    <ul>
-                        <li><a href="../eval-corps.html">Eval Corps</a></li>
-                        <li><a href="../gia-mande.html">GIA-M&E Awards</a></li>
-                    </ul>
-                </div>
-                <div class="footer-nav-column">
-                    <h4>Navigate</h4>
-                    <ul>
-                        <li><a href="../index.html#about">About</a></li>
-                        <li><a href="../index.html#programs">Programs</a></li>
-                        <li><a href="../resource-hub/">Resources</a></li>
-                        <li><a href="./">Jobs</a></li>
-                    </ul>
-                </div>
-                <div class="footer-nav-column">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href="mailto:hubforgeglobal@gmail.com">Email Us</a></li>
-                        <li><a href="https://www.linkedin.com/company/hubforge" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                        <li><a href="../index.html#contact">Get Involved</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+    
 
     <script src="../assets/js/main.js"></script>
     <script>
@@ -707,5 +671,49 @@
         }
         
     </script>
+<footer class="site-footer">
+        <div class="wrap footer-grid">
+            <div>
+                <a class="brand brand-footer" href="/">
+                    <img src="/assets/images/logo.png" alt="" width="44" height="44">
+                    <span class="brand-text"><span class="brand-name">HubForge</span><span class="brand-sub">Global Impact Network</span></span>
+                </a>
+                <p class="footer-tag">Build evidence. Drive change.</p>
+                <p class="footer-promise">Practical MEL: free to start, fair-priced to scale.</p>
+            </div>
+            <nav aria-label="Explore">
+                <h2 class="footer-heading">Explore</h2>
+                <ul>
+                    <li><a href="/tools/">Tools</a></li>
+                    <li><a href="/playbooks/">Playbooks</a></li>
+                    <li><a href="/community/">Community</a></li>
+                    <li><a href="/advisory/">Advisory</a></li>
+                    <li><a href="/about/">About</a></li>
+                </ul>
+            </nav>
+            <nav aria-label="Also on the site">
+                <h2 class="footer-heading">Also on the site</h2>
+                <ul>
+                    <li><a href="/resource-hub/">Resource Hub</a></li>
+                    <li><a href="/impact-jobs/">Impact Jobs</a></li>
+                    <li><a href="/eval-corps.html">Eval Corps</a></li>
+                    <li><a href="/gia-mande.html">Glocal Impact Awards</a></li>
+                </ul>
+            </nav>
+            <div>
+                <h2 class="footer-heading">Contact</h2>
+                <ul>
+                    <li><a href="mailto:hubforgeglobal@gmail.com">hubforgeglobal@gmail.com</a></li>
+                    <li><a href="https://www.linkedin.com/company/hubforge" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="https://hubforgeglobal.substack.com" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrap footer-legal">
+            <p>HubForge Global Impact Network Foundation is a Section 8 not-for-profit registered in India. Darpan ID KAR/2025/0843199. Udyam UDYAM-KR-25-0089899. Madhugiri, Karnataka 572132.</p>
+            <p>&copy; 2026 HubForge Global Impact Network Foundation.</p>
+        </div>
+    </footer>
+    <script src="/assets/js/site.js" defer></script>
 </body>
 </html>
