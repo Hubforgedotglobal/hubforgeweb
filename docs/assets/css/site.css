@@ -1176,3 +1176,39 @@ a.inline,
     display: none;
   }
 }
+
+
+/* ===== v2: living hero, proof strip, Eval Corps feature, keep-up ===== */
+.hero { position: relative; overflow: hidden; isolation: isolate; }
+.hero-network { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(90deg, rgba(243,239,230,0.92) 0%, rgba(243,239,230,0.7) 40%, rgba(243,239,230,0) 75%); }
+
+.proof { border-block: 1px solid var(--line); background: var(--paper-raised); }
+.proof-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; }
+.proof-list li { display: flex; align-items: baseline; gap: 0.6rem; padding: 0.9rem 0; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 0.98rem; }
+.proof-list li:last-child { border-bottom: 0; }
+.proof-list strong { font-family: var(--font-serif); font-weight: 560; font-size: 1.35rem; color: var(--red-text); line-height: 1; }
+@media (min-width: 600px) {
+  .proof-list { grid-template-columns: repeat(2, 1fr); column-gap: 2rem; }
+  .proof-list li:nth-last-child(-n+2) { border-bottom: 0; }
+}
+@media (min-width: 961px) {
+  .proof-list { grid-template-columns: repeat(4, 1fr); }
+  .proof-list li { border-bottom: 0; padding: 1.15rem 0; }
+  .proof-list li + li { border-left: 1px solid var(--line); padding-left: 1.5rem; }
+}
+
+.feature-grid { display: grid; gap: 2rem; }
+.feature-grid h2 { margin-bottom: 1rem; }
+.feature-who { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; }
+.feature-who li { border: 1px solid rgba(255,255,255,0.16); border-radius: 1rem; padding: 1rem 1.1rem; }
+.feature-who strong { display: block; color: #fff; margin-bottom: 0.2rem; }
+.feature-who span { color: #e7e0d4; font-size: 0.97rem; }
+.feature-status { display: inline-flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0 1.25rem; font-weight: 600; color: #fff; }
+.feature-status::before { content: ""; width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--yellow); }
+@media (min-width: 961px) { .feature-grid { grid-template-columns: 1.15fr 0.85fr; gap: 3rem; align-items: center; } }
+
+.keep-card .when { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+body.site .band-ink h2, body.site .band-ink h3 { color: #fff; }
+.proof-list li { flex-direction: column; gap: 0.25rem; }

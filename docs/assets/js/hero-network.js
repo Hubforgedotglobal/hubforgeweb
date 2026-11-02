@@ -14,6 +14,17 @@
 
   var PINK = [233, 75, 196];
   var PURPLE = [123, 104, 238];
+  var LINE = PURPLE;
+  var PALETTE = [PINK, PURPLE];
+  var NODE_ALPHA = 0.55;
+  var LINE_ALPHA = 0.22;
+  // data-palette="brand": HubForge logo colours on warm paper, ink links
+  if (canvas.getAttribute('data-palette') === 'brand') {
+    PALETTE = [[255, 87, 87], [203, 108, 230], [255, 102, 196], [126, 217, 87], [255, 222, 89]];
+    LINE = [39, 39, 39];
+    NODE_ALPHA = 0.9;
+    LINE_ALPHA = 0.2;
+  }
 
   var nodes = [];
   var width = 0;
@@ -21,7 +32,7 @@
   var dpr = Math.min(window.devicePixelRatio || 1, 2);
   var rafId = null;
   var running = false;
-  var LINK_DIST = 150;
+  var LINK_DIST = canvas.getAttribute('data-palette') === 'brand' ? 170 : 150;
 
   function rgba(c, a) {
     return 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + a + ')';
@@ -47,8 +58,8 @@
         y: Math.random() * height,
         vx: (Math.random() - 0.5) * 0.25,
         vy: (Math.random() - 0.5) * 0.25,
-        r: 1.2 + Math.random() * 1.8,
-        c: Math.random() > 0.5 ? PINK : PURPLE
+        r: (canvas.getAttribute('data-palette') === 'brand' ? 2 : 1.2) + Math.random() * 1.8,
+        c: PALETTE[Math.floor(Math.random() * PALETTE.length)]
       });
     }
   }
@@ -64,8 +75,8 @@
         var dy = a.y - b.y;
         var dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < LINK_DIST) {
-          var alpha = (1 - dist / LINK_DIST) * 0.22;
-          ctx.strokeStyle = rgba(PURPLE, alpha);
+          var alpha = (1 - dist / LINK_DIST) * LINE_ALPHA;
+          ctx.strokeStyle = rgba(LINE, alpha);
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
@@ -79,7 +90,7 @@
       var n = nodes[k];
       ctx.beginPath();
       ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-      ctx.fillStyle = rgba(n.c, 0.55);
+      ctx.fillStyle = rgba(n.c, NODE_ALPHA);
       ctx.fill();
     }
   }

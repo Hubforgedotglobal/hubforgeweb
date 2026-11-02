@@ -155,6 +155,7 @@
 
     <main id="main">
         <section class="hero" id="home">
+            <canvas class="hero-network" id="heroNetwork" data-palette="brand" aria-hidden="true"></canvas>
             <div class="wrap hero-grid">
                 <div>
                     <p class="kicker">HubForge Global Impact Network</p>
@@ -191,12 +192,23 @@
             </div>
         </section>
 
-        <section class="section band" id="programs" aria-labelledby="pillars-title">
+        <section class="proof" aria-label="HubForge today">
+            <div class="wrap">
+                <ul class="proof-list">
+                    <li><strong>4</strong> free tools, live today</li>
+                    <li><strong>5</strong> free playbooks to read and use</li>
+                    <li><strong>Fridays</strong> MERL Jobs of the Week on LinkedIn</li>
+                    <li><strong>Since 2023</strong> a registered Section 8 not-for-profit</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="programs" aria-labelledby="pillars-title">
             <div class="wrap">
                 <div class="section-head">
                     <p class="kicker">One HubForge</p>
                     <h2 id="pillars-title">Four ways to work with evidence</h2>
-                    <p>Every product is by HubForge. The name on the door is the same, whether you open a free tool or ask for support.</p>
+                    <p>One name on the door, whether you open a free tool, read a playbook, join a programme, or ask for support.</p>
                 </div>
                 <div class="pillar-grid">
                     <a class="pillar tone-tools" href="/tools/">
@@ -214,7 +226,7 @@
                     <a class="pillar tone-community" href="/community/">
                         <span class="pillar-index">03</span>
                         <h3>Community</h3>
-                        <p>Eval Corps, the Glocal Impact Awards, and a coming Practical MEL series. Rounds are not open. Join the list.</p>
+                        <p>Eval Corps, the Glocal Impact Awards, and a coming Practical MEL series. Get notified when each one opens.</p>
                         <span class="text-link">See what is coming</span>
                     </a>
                     <a class="pillar tone-advisory" href="/advisory/">
@@ -227,7 +239,7 @@
             </div>
         </section>
 
-        <section class="section" id="tools" aria-labelledby="tools-title">
+        <section class="section band" id="tools" aria-labelledby="tools-title">
             <div class="wrap">
                 <div class="section-head">
                     <p class="kicker">Free to start</p>
@@ -238,7 +250,6 @@
                     <article class="card" id="evalcanvas">
                         <div class="card-top">
                             <span class="badge">Free</span>
-                            <span class="byline">by HubForge</span>
                         </div>
                         <h3>EvalCanvas</h3>
                         <p>An M&amp;E planning platform. Build a plan, learn the ideas, connect with others, and play your way through the work.</p>
@@ -247,7 +258,6 @@
                     <article class="card" id="samplingshala">
                         <div class="card-top">
                             <span class="badge">Free</span>
-                            <span class="byline">by HubForge</span>
                         </div>
                         <h3>SamplingShala</h3>
                         <p>A sampling hub with a wizard, calculators, and a statistics library. Plan a sample you can explain.</p>
@@ -256,7 +266,6 @@
                     <article class="card" id="evalstudio">
                         <div class="card-top">
                             <span class="badge">Free</span>
-                            <span class="byline">by HubForge</span>
                         </div>
                         <h3>EvalStudio</h3>
                         <p>A creative studio with MEL cards, stickers, memes, and workshop activities for sessions that people remember.</p>
@@ -265,11 +274,66 @@
                     <article class="card" id="evalqr">
                         <div class="card-top">
                             <span class="badge">Free</span>
-                            <span class="byline">by HubForge</span>
                         </div>
                         <h3>EvalQR</h3>
                         <p>QR codes and short-link analytics, so you can see what people actually open.</p>
                         <a class="text-link" href="https://evalqrapp.com" target="_blank" rel="noopener noreferrer">Open EvalQR<span class="sr-only"> (opens in a new tab)</span></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section band-ink" id="eval-corps" aria-labelledby="ec-title">
+            <div class="wrap feature-grid">
+                <div>
+                    <p class="kicker">An initiative of HubForge</p>
+                    <h2 id="ec-title">Eval Corps: MERL skills, given where they count</h2>
+                    <p>A glocal volunteer movement of evaluators and first-time explorers. Volunteers give monitoring, evaluation, research and learning (MERL) skills pro bono to organisations the world is not measuring. Newcomers get a mentored way into the field. Formerly HubForge Impact Lab.</p>
+                    <p class="feature-status">Next round expected January 2027</p>
+                    <div class="btn-row">
+                        <a class="btn btn-light" href="mailto:evalcorps@gmail.com?subject=Notify%20me%3A%20Eval%20Corps">Get notified</a>
+                        <a class="btn btn-on-dark" href="/eval-corps.html">Read about Eval Corps</a>
+                    </div>
+                </div>
+                <ul class="feature-who">
+                    <li><strong>Organisations</strong><span>Nonprofits, grassroots groups and social enterprises who need MERL support.</span></li>
+                    <li><strong>Evaluators</strong><span>Experienced practitioners who want to give time and skills.</span></li>
+                    <li><strong>Newcomers</strong><span>Students and career changers who want a mentored start.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="keep-up" aria-labelledby="keep-title">
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="kicker">Every week</p>
+                    <h2 id="keep-title">Keep up with MERL</h2>
+                    <p>Roles, reading and resources from across monitoring, evaluation, research and learning.</p>
+                </div>
+                <div class="card-grid">
+                    <article class="card keep-card">
+                        <span class="when">Every Friday</span>
+                        <h3>MERL Jobs of the Week</h3>
+                        <p>A short list of monitoring, evaluation and research roles, shared on the HubForge LinkedIn page.</p>
+                        <a class="text-link" href="https://www.linkedin.com/company/hubforge" target="_blank" rel="noopener noreferrer">Follow on LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+                    </article>
+                    <article class="card keep-card">
+                        <span class="when">Fortnightly</span>
+                        <h3>The MERL Brief</h3>
+                        <p>What is worth knowing in the field, in a few minutes of reading, on LinkedIn.</p>
+                        <a class="text-link" href="https://www.linkedin.com/company/hubforge" target="_blank" rel="noopener noreferrer">Read The MERL Brief<span class="sr-only"> (opens in a new tab)</span></a>
+                    </article>
+                    <article class="card keep-card">
+                        <span class="when">Board</span>
+                        <h3>Impact Jobs</h3>
+                        <p>Roles in monitoring, evaluation, research, tech and social impact, with filters for location and level.</p>
+                        <a class="text-link" href="/impact-jobs/">See the jobs board</a>
+                    </article>
+                    <article class="card keep-card">
+                        <span class="when">Library</span>
+                        <h3>Resource Hub</h3>
+                        <p>A curated list of M&amp;E guides, toolkits and other people's tools, sorted so you can find one fast.</p>
+                        <a class="text-link" href="/resource-hub/">Browse resources</a>
                     </article>
                 </div>
             </div>
@@ -322,7 +386,7 @@
           </section>
         -->
 
-        <section class="section band" id="faq" aria-labelledby="faq-title">
+        <section class="section" id="faq" aria-labelledby="faq-title">
             <div class="wrap">
                 <div class="section-head">
                     <p class="kicker">Questions</p>
@@ -357,7 +421,7 @@
             </div>
         </section>
 
-        <section class="section" id="contact" aria-labelledby="notify-title">
+        <section class="section band" id="contact" aria-labelledby="notify-title">
             <div class="wrap newsletter-layout">
                 <div>
                     <p class="kicker">Stay in the loop</p>
@@ -420,5 +484,6 @@
         </div>
     </footer>
     <script src="/assets/js/site.js" defer></script>
+    <script src="/assets/js/hero-network.js?v=2" defer></script>
 </body>
 </html>
