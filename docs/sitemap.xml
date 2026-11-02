@@ -62,12 +62,12 @@
         <priority>0.5</priority>
     </url>
 
-    <!-- EvalAtlas is paused. The URL stays so older links still resolve. -->
+    <!-- EvalAtlas: waitlist open -->
     <url>
         <loc>https://www.hubforgeglobal.com/evalatlas.html</loc>
-        <lastmod>2026-10-29</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.2</priority>
+        <lastmod>2026-11-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 
     <!-- Fellowship is paused. The URL stays so older links still resolve. -->
