@@ -47,6 +47,7 @@
             font-weight: 400;
         }
         
+        .hero-stats[hidden] { display: none; }
         .hero-stats {
             display: flex;
             gap: 4rem;
@@ -403,7 +404,8 @@
                 <li><a href="../index.html#about" class="nav-link">About</a></li>
                 <li><a href="../index.html#programs" class="nav-link">Programs</a></li>
                 <li><a href="../resource-hub/" class="nav-link">Resources</a></li>
-                <li><a href="https://evalqrapp.com/" class="nav-link" target="_blank" rel="noopener noreferrer">↗EvalQR</a></li>
+                <li><a href="../impact-jobs/" class="nav-link">Jobs</a></li>
+                <li><a href="https://evalqrapp.com/" class="nav-link" target="_blank" rel="noopener noreferrer">EvalQR</a></li>
                 <li><a href="../index.html#contact" class="nav-link nav-cta">Get Involved</a></li>
             </ul>
         </div>
@@ -415,7 +417,7 @@
             <h1 class="jobs-title">Global Impact Jobs</h1>
             <p class="jobs-subtitle">M&E, research, tech, and social impact opportunities worldwide</p>
             
-            <div class="hero-stats">
+            <div class="hero-stats" id="hero-stats" hidden>
                 <div class="stat">
                     <span class="stat-number" id="total-jobs">0</span>
                     <span class="stat-label">Active Jobs</span>
@@ -487,15 +489,15 @@
 
     <!-- Results -->
     <div class="container">
-        <div id="results" class="results-bar">10 opportunities</div>
+        <div id="results" class="results-bar" aria-live="polite">Loading opportunities…</div>
     </div>
 
     <!-- Jobs -->
     <section class="jobs-section">
         <div class="container">
-            <div id="jobs" class="jobs-grid">
-                <!-- Dummy jobs will be rendered here -->
-            </div>
+            <div id="loading" class="loading"><div class="spinner" aria-hidden="true"></div><p>Loading opportunities…</p></div>
+            <div id="empty" class="empty" style="display:none"><p>No opportunities match these filters. Try clearing a filter or searching another term.</p></div>
+            <div id="jobs" class="jobs-grid" style="display:none"></div>
         </div>
     </section>
 
@@ -578,7 +580,8 @@
                 console.error('Error loading jobs:', err);
                 document.getElementById('loading').style.display = 'none';
                 document.getElementById('empty').style.display = 'block';
-                document.getElementById('empty').innerHTML = '<p>Unable to load jobs. Please check back later.</p>';
+                document.getElementById('empty').innerHTML = '<p>Unable to load jobs right now. Please check back later, or see the weekly MERL Jobs roundup on <a href="https://www.linkedin.com/company/hubforge" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:underline">LinkedIn</a>.</p>';
+                document.getElementById('results').textContent = '';
             });
         
         function populateLocations() {
@@ -606,6 +609,7 @@
                 return parts[parts.length - 1].trim();
             })).size;
             
+            document.getElementById('hero-stats').hidden = totalJobs === 0;
             document.getElementById('total-jobs').textContent = totalJobs;
             document.getElementById('total-orgs').textContent = uniqueOrgs;
             document.getElementById('total-countries').textContent = uniqueCountries;
@@ -634,7 +638,12 @@
             
             if (jobs.length === 0) {
                 document.getElementById('jobs').style.display = 'none';
-                document.getElementById('empty').style.display = 'block';
+                const empty = document.getElementById('empty');
+                empty.style.display = 'block';
+                empty.innerHTML = allJobs.length === 0
+                    ? '<p>No roles are listed on the board right now. Every Friday we share MERL roles on <a href="https://www.linkedin.com/company/hubforge" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:underline">HubForge on LinkedIn</a>.</p>'
+                    : '<p>No opportunities match these filters. Try clearing a filter or searching another term.</p>';
+                if (allJobs.length === 0) document.getElementById('results').textContent = '';
                 return;
             }
             
