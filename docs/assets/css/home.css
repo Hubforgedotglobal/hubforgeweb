@@ -114,3 +114,9 @@ a.hf-pillar:hover .hf-pillar-go { color: #E94BC4; }
 
 .hf-prog-platform-link { font-size: 0.85rem; font-weight: 700; color: #7B68EE; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; padding: 0 0.4rem; }
 .hf-prog-platform-link:hover { color: #E94BC4; text-decoration: underline; }
+
+/* Three programme cards */
+@media (min-width: 961px) { .hf-prog-grid-3 { grid-template-columns: repeat(3, 1fr); } .hf-prog-grid-3 .hf-prog-card { padding: 2.1rem; } }
+@media (max-width: 960px) { .hf-prog-grid-3 { grid-template-columns: 1fr; } }
+.hf-prog-grid-3 .hf-prog-card:nth-child(3)::before { background: linear-gradient(90deg, #7B68EE, #A8E86D); }
+.hf-prog-body .hf-prog-platform-link { padding: 0; margin-top: 0.35rem; }
