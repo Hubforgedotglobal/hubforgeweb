@@ -1,0 +1,11 @@
+{
+  "src/homepage/client.tsx": {
+    "file": "assets/client-CTmVEIbb.js",
+    "name": "client",
+    "src": "src/homepage/client.tsx",
+    "isEntry": true,
+    "css": [
+      "assets/client-DSf8v7gm.css"
+    ]
+  }
+}
