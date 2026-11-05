@@ -1,0 +1,27 @@
+# HubForge Global Impact Network Foundation
+
+> A nonprofit supporting a locally rooted, globally connected monitoring, evaluation, research, learning (MERL) and technology ecosystem.
+
+## Platforms and resources
+- [EvalCanvas](https://evalcanvas.com/): MEL planning, evaluation strategy, indicators and terms of reference tools.
+- [Sampling Shala](https://samplingshala.com/#home): Sampling learning, sample-size calculators and guided sampling plans.
+- [EvalQR](https://evalqrapp.com/): Free QR code analytics, QR codes and short-link insights. Free-tier limits apply.
+- [EvalStudio](https://studio.hubforgeglobal.com/): Personalised MEL identity cards, stickers and creative downloads.
+- [HubForge Playbooks](https://playbooks.hubforgeglobal.com/): Practical playbooks, workbooks and downloadable resources for evidence work.
+
+## Organisation, initiatives and support
+- [Eval Corps | Free Pro Bono MERL Support for Nonprofits | HubForge](https://www.hubforgeglobal.com/eval-corps.html): Eval Corps is a free volunteer movement by HubForge. Evaluators, MERL professionals, and technologists give skills pro bono to nonprofits the world isn't measuring. First-time explorers get a 3-month mentored start. Evaluation design, data review, and framework input. Free, end to end.
+- [EvalAtlas | Global MEL & Evaluation Network for Social Impact | HubForge](https://www.hubforgeglobal.com/evalatlas.html): EvalAtlas is HubForge's global ecosystem and networking platform for MEL and social impact, connecting evaluators, NGOs, funders, youth, and field researchers in one inclusive space.
+- [Fellowship | MEL, Research & Evaluation Program | HubForge x EvalAtlas](https://www.hubforgeglobal.com/fellowship.html): The HubForge x EvalAtlas Fellowship is a hands-on program in MEL, research, design, and AI for early-career changemakers exploring how evidence and decisions come together.
+- [Glocal Impact Awards 2027 | Recognizing MEL & Evidence Champions | HubForge](https://www.hubforgeglobal.com/gia-mande.html): Explore the Glocal Impact Awards 2027, celebrating people and organisations using evidence for good. Contact HubForge for confirmed participation details.
+- [Global Impact Jobs | MEL, M&E & Evaluation Jobs | HubForge](https://www.hubforgeglobal.com/impact-jobs/): Find global jobs in MEL, M&E, research, tech, and social impact. A free job board connecting evaluation and impact talent with organizations worldwide.
+- [HubForge Global Impact Network Foundation | MERL + Tech](https://www.hubforgeglobal.com/): Explore HubForge's MERL tools, Playbooks, pro bono Eval Corps support and at-cost advisory. Build locally rooted evidence for better decisions and programmes.
+- [MEL & M&E Resource Hub | Free Evaluation Tools | HubForge](https://www.hubforgeglobal.com/resource-hub/): A curated hub of free MEL, M&E, research, and tech tools, including data collection, analysis, evaluation platforms, and learning resources for changemakers.
+
+## Accuracy notes
+- Eval Corps offers scoped pro bono support; professional advisory is paid and delivered at cost. These are different routes.
+- Glocal Impact Awards: 2027 edition. Contact HubForge for confirmed nomination criteria and dates.
+- Ecosystem relationships and the 2027–2036 strategic pathway are research-informed proposals, not validated causal effects or adopted commitments.
+- QR scans and link clicks do not measure completed responses or impact.
+- Platform capabilities and free-tier limits can change; consult each platform for current details.
+- This file is a navigation aid, not an indexing or AI citation guarantee.
